@@ -108,5 +108,3 @@ data/
 - `astrbot.core.log` - 日志管理
 
 ---
-
-> 详细分析参考 `docs/AstrBot分析.md`

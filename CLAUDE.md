@@ -106,5 +106,3 @@ data/
 - `astrbot.core.utils.io` - 文件下载和管理
 - `astrbot.core.utils.command_parser` - 命令解析
 - `astrbot.core.log` - 日志管理
-
----

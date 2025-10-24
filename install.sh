@@ -151,33 +151,31 @@ install_dashboard_dependencies() {
     print_message "$BLUE" "检查是否需要安装 Dashboard 依赖..."
     
     if [ -f "dashboard/package.json" ]; then
-        read -p "是否安装 Dashboard 前端依赖? (y/N): " install_dashboard
-        if [[ "$install_dashboard" =~ ^[Yy]$ ]]; then
-            if ! check_command node; then
-                print_message "$YELLOW" "未检测到 Node.js，正在安装..."
-                case $PKG_MANAGER in
-                    apt-get)
-                        curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-                        sudo apt-get install -y nodejs
-                        ;;
-                    yum|dnf)
-                        curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
-                        sudo $PKG_MANAGER install -y nodejs
-                        ;;
-                    pacman)
-                        sudo pacman -S --noconfirm nodejs npm
-                        ;;
-                    brew)
-                        brew install node
-                        ;;
-                esac
-            fi
-            
-            cd dashboard
-            npm install
-            cd ..
-            print_message "$GREEN" "Dashboard 依赖安装完成"
+        print_message "$BLUE" "检测到 Dashboard，自动安装前端依赖..."
+        if ! check_command node; then
+            print_message "$YELLOW" "未检测到 Node.js，正在安装..."
+            case $PKG_MANAGER in
+                apt-get)
+                    curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+                    sudo apt-get install -y nodejs
+                    ;;
+                yum|dnf)
+                    curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
+                    sudo $PKG_MANAGER install -y nodejs
+                    ;;
+                pacman)
+                    sudo pacman -S --noconfirm nodejs npm
+                    ;;
+                brew)
+                    brew install node
+                    ;;
+            esac
         fi
+        
+        cd dashboard
+        npm install
+        cd ..
+        print_message "$GREEN" "Dashboard 依赖安装完成"
     fi
 }
 

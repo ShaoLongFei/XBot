@@ -1,0 +1,23 @@
+{
+  "dashboard": "Dashboard",
+  "platforms": "Platforms",
+  "providers": "Providers",
+  "persona": "Persona",
+  "toolUse": "MCP Tools",
+  "config": "Config",
+  "extension": "Extensions",
+  "chat": "Chat",
+  "conversation": "Conversations",
+  "sessionManagement": "Session Management",
+  "console": "Console",
+  "alkaid": "Alkaid Lab",
+  "knowledgeBase": "Knowledge Base",
+  "about": "About",
+  "settings": "Settings",
+  "documentation": "Documentation",
+  "github": "GitHub",
+  "drag": "Drag",
+  "groups": {
+    "more": "More Features"
+  }
+}

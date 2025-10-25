@@ -1240,3 +1240,53 @@ i-j6cchnwx3b0md25upgki
 [REDACTED_URL] SDK，有demo或示例代码吗？
 
 #
+## 客服解答内容
+1. 稍等，这边看下
+2. 您好，可以参考下面这个示例：pili-sdk-java/examples/Example.java at master · pili-engineering/pili-sdk-java · GitHub
+3. 好的
+4. 您好，可以参考下面的示例代码：import com.qiniu.pili.sdk.Pili;
+5. 稍等，我这边看下
+6. 您好，获取token信息可以参考下面示例：java-sdk/src/main/java/com/qiniu/util/Auth.java at master · qiniu/java-sdk · GitHub
+7. 您好，是的
+
+#
+## 根本原因分析
+功能使用咨询，需要提供操作指引和文档
+
+---
+## 账单问题
+
+**问题分类**：账户与财务｜计费问题
+
+#
+## 详细问题描述
+三天欠费300多，每三天欠费300多，想问一下什么原因。
+
+#
+## 客服解答内容
+您好查看实时消费明细：您可以登录七牛云管理控制台 - 财务中心 - 实时消费明细：[REDACTED_URL]
+
+#
+## 根本原因分析
+需要根据具体情况进一步分析问题原因
+
+---
+## 上传报错
+
+**问题分类**：对象存储｜上传下载
+
+#
+## 详细问题描述
+2024-09-23 10:56:37上传图片报错dial tcp: lookup uc.qbox.me: i/o timeout (Service: Amazon S3; Status Code: 599; Error Code: ErrorOccurred; Request ID: HcIAAAB4rfIYwPcX; S3 Extended Request ID: null; Proxy: null)，请问这是什么原因
+
+#
+## 客服解答内容
+1. 您好，您这边将您的上传参数给一下，或者使用一下这个demo测试看下上传参考[REDACTED_URL]
+2. 您好，599应该是网络问题的，可能有网络波动
+3. 您好，嗯嗯好的不客气的
+
+#
+## 根本原因分析
+对象存储文件操作问题
+
+---

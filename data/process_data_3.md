@@ -1495,3 +1495,47 @@ HTTPS配置问题，可能涉及证书申请、验证或部署环节
 SSL证书已过期或失效，需要重新申请和部署新证书
 
 ---
+## 证书续费
+
+**问题分类**：CDN｜证书问题
+
+#
+## 详细问题描述
+证书到期，需要续费
+
+#
+## 客服解答内容
+1. 您好，手动续费证书操作请参考文档：[REDACTED_URL]]
+2. 重新申请购买相应证书就行
+
+#
+## 根本原因分析
+HTTPS配置问题，可能涉及证书申请、验证或部署环节
+
+---
+## 账号注销
+
+**问题分类**：账户与财务｜账户问题
+
+#
+## 详细问题描述
+免费额度 没有设置报警/停止，如果链接被攻击，有可能需要支付巨款。
+
+#
+## 客服解答内容
+您好，目前注销可以在控制台操作[REDACTED_URL]
+
+#
+## 根本原因分析
+需要根据具体情况进一步分析问题原因
+
+---
+## 配置域名超限
+
+**问题分类**：CDN｜配置问题
+
+#
+## 详细问题描述
+[    [        {            "title": "请求 ID",            "content": "DACBiggn8RcnxvcX, DACBiggn8RcnxvcX, DACBiggn8RcnxvcX, DACBiggn8RcnxvcX"        },        {            "title": "日志栈",            "content": "AC;fusionfiling_user_domain:8/400;fusionicp:1;fusionicp:1;BUCKET:8;BUCKET:12;AC;AC:3;fusionfiling_user_domain:6/400;AC:3;AC:3;AC;fusionicp:15;AC:3;fusionicp:8;BUCKET:9;fusiondomain_cud:195/400;APIS:281/400;PORTAL-PROXY:362/400"        }    ]]
+
+#

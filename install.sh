@@ -153,7 +153,7 @@ setup_python_environment() {
     fi
     
     print_message "$BLUE" "同步项目依赖..."
-    uv pip sync requirements.txt
+    uv sync
     
     print_message "$GREEN" "Python 依赖安装完成"
 }

@@ -22,15 +22,6 @@ chmod +x install.sh
 ./install.sh
 ```
 
-安装脚本会自动完成以下操作：
-- 检测并安装 Git（如未安装）
-- 检测并安装 Python 3.10+（如未安装）
-- 克隆项目代码
-- 创建 Python 虚拟环境
-- 安装 Python 依赖
-- 自动安装 Dashboard 前端依赖（如果存在）
-- 创建必要的数据目录
-
 ### 运行项目
 
 ```bash

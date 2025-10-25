@@ -31,40 +31,6 @@ chmod +x install.sh
 - 自动安装 Dashboard 前端依赖（如果存在）
 - 创建必要的数据目录
 
-### 手动安装
-
-如果您希望手动安装，请确保系统满足以下要求：
-
-**系统要求**
-- Python 3.10 或更高版本
-- Git
-- pip3
-
-**安装步骤**
-
-1. 克隆项目
-```bash
-git clone https://github.com/ShaoLongFei/XBot.git
-cd XBot
-```
-
-2. 创建虚拟环境
-```bash
-python3 -m venv venv
-source venv/bin/activate  # Linux/macOS
-```
-
-3. 安装依赖
-```bash
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-4. 创建必要的目录
-```bash
-mkdir -p data/config data/plugins data/temp
-```
-
 ### 运行项目
 
 1. 进入项目目录

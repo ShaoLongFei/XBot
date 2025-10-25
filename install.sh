@@ -51,46 +51,28 @@ detect_os() {
     print_message "$GREEN" "检测到操作系统: $OS"
 }
 
-check_python_version() {
-    if ! check_command python3; then
-        print_message "$RED" "错误: 未找到 Python3"
+check_uv() {
+    if check_command uv; then
+        print_message "$GREEN" "uv 已安装"
+        return 0
+    else
+        print_message "$YELLOW" "未检测到 uv"
         return 1
     fi
-    
-    PYTHON_VERSION=$(python3 --version 2>&1 | awk '{print $2}')
-    PYTHON_MAJOR=$(echo $PYTHON_VERSION | cut -d. -f1)
-    PYTHON_MINOR=$(echo $PYTHON_VERSION | cut -d. -f2)
-    
-    if [ "$PYTHON_MAJOR" -lt 3 ] || { [ "$PYTHON_MAJOR" -eq 3 ] && [ "$PYTHON_MINOR" -lt 10 ]; }; then
-        print_message "$RED" "错误: 需要 Python $PYTHON_MIN_VERSION 或更高版本，当前版本: $PYTHON_VERSION"
-        return 1
-    fi
-    
-    print_message "$GREEN" "Python 版本检查通过: $PYTHON_VERSION"
-    return 0
 }
 
-install_python() {
-    print_message "$BLUE" "正在安装 Python3..."
+install_uv() {
+    print_message "$BLUE" "正在安装 uv..."
+    curl -LsSf https://astral.sh/uv/install.sh | sh
     
-    case $PKG_MANAGER in
-        apt-get)
-            sudo apt-get update
-            sudo apt-get install -y python3 python3-pip python3-venv
-            ;;
-        yum)
-            sudo yum install -y python3 python3-pip
-            ;;
-        dnf)
-            sudo dnf install -y python3 python3-pip
-            ;;
-        pacman)
-            sudo pacman -S --noconfirm python python-pip
-            ;;
-        brew)
-            brew install python@3.11
-            ;;
-    esac
+    export PATH="$HOME/.local/bin:$PATH"
+    
+    if check_command uv; then
+        print_message "$GREEN" "uv 安装成功"
+    else
+        print_message "$RED" "uv 安装失败"
+        exit 1
+    fi
 }
 
 install_git() {
@@ -131,18 +113,15 @@ clone_repository() {
 setup_python_environment() {
     print_message "$BLUE" "正在设置 Python 虚拟环境..."
     
-    if [ ! -d "venv" ]; then
-        python3 -m venv venv
+    if [ ! -d ".venv" ]; then
+        uv venv --python $PYTHON_MIN_VERSION
         print_message "$GREEN" "虚拟环境创建成功"
     else
         print_message "$YELLOW" "虚拟环境已存在"
     fi
     
-    print_message "$BLUE" "激活虚拟环境并安装依赖..."
-    source venv/bin/activate
-    
-    pip install --upgrade pip
-    pip install -r requirements.txt
+    print_message "$BLUE" "安装项目依赖..."
+    uv pip install -r requirements.txt
     
     print_message "$GREEN" "Python 依赖安装完成"
 }
@@ -193,7 +172,7 @@ print_success() {
     print_message "$GREEN" "        XBot 安装成功！"
     print_message "$GREEN" "=========================================="
     echo ""
-    print_message "$BLUE" "运行项目: cd $PROJECT_DIR && source venv/bin/activate && python main.py"
+    print_message "$BLUE" "运行项目: cd $PROJECT_DIR && source .venv/bin/activate && python main.py"
     echo ""
 }
 
@@ -212,18 +191,9 @@ main() {
         print_message "$GREEN" "Git 已安装"
     fi
     
-    if ! check_python_version; then
-        print_message "$YELLOW" "正在安装 Python..."
-        install_python
-        if ! check_python_version; then
-            print_message "$RED" "Python 安装失败或版本不满足要求"
-            exit 1
-        fi
-    fi
-    
-    if ! check_command pip3; then
-        print_message "$RED" "错误: pip3 未找到，请手动安装"
-        exit 1
+    if ! check_uv; then
+        print_message "$YELLOW" "正在安装 uv..."
+        install_uv
     fi
     
     CURRENT_DIR=$(pwd)

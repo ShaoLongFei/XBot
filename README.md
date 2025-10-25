@@ -50,5 +50,3 @@ python main.py
 - `dashboard_config`: Web 管理界面设置
 - `admins_id`: 管理员 ID 列表
 - `wake_prefix`: 唤醒前缀
-
-详细配置说明请参考 [CLAUDE.md](CLAUDE.md)。

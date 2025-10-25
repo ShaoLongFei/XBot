@@ -1081,3 +1081,43 @@
 **适用场景**：CDN、域名配置
 
 ---
+## Q: 证书过期?
+
+**A:** 证书过期重新申请即可，手动申请并使用免费SSL证书步骤如下1.免费证书申请证书品牌：TrustAsia限免证书种类：DV限免https://portal.qiniu.com/certificate/apply2.补全信息3.免费证书验证https://developer.qiniu.com/ssl/manual/3667/ssl-certificate-of-free-dns-validation-guide4.升级HTTPS配置https://developer.qiniu.com/fusion/manual/4952/https-configuration注意事项升级https后，流量计费说明：https://developer.qiniu.com/fusion/kb/3887/https-issues-related-to-the-faq[图片]
+
+**注意事项**：
+- 证书过期重新申请即可，手动申请并使用免费SSL证书步骤如下1.免费证书申请证书品牌：TrustAsia限免证书种类：DV限免https://portal.qiniu.com/certificate/apply2.补全信息3.免费证书验证https://developer.qiniu.com/ssl/manual/3667/ssl-certificate-of-free-dns-validation-guide4.升级HTTPS配置https://developer.qiniu.com/fusion/manual/4952/https-configuration注意事项升级https后，流量计费说明：https://developer.qiniu.com/fusion/kb/3887/https-issues-related-to-the-faq[图片]
+
+**适用场景**：CDN、SSL证书
+
+---
+
+## Q: 所上传的PDF文件在ios手机上打不开?
+
+**A:** 根据问题原因，需要按以下步骤处理：
+
+**解决步骤**：
+1. 把cdn缓存和本地缓存清除刷新一下 再访问试试刷新缓存方法请参考：https://developer.qiniu.com/fusion/kb/1325/refresh-the-cache-and-the-effect-of-time方法1: portal.qiniu.com 控制台刷新缓存，点击左侧 cdn => 刷新预取方法2: api 接口地址：https://developer.qiniu.com/fusion/api/1229/cache-refreshTip : url 刷新，全网生效 10min 左右，目录刷新需要 30min 左右
+
+**适用场景**：对象存储
+
+---
+
+## Q: 请问你们将上传的中文图片名称转换成外链时，是用什么规则？
+
+**A:** 文件名中的中文字符会被自动转换成URL编码格式（也叫百分号编码）。这种编码方式是将非ASCII字符（比如中文字符）转换为一个以 % 开头的字符序列。每个中文字符会被编码成3个字节，每个字节用 % 加上两个十六进制数字表示。举例：		中文字符 "图片" 会被编码为 %E5%9B%BE%E7%89%87。
+
+**适用场景**：CDN
+
+---
+
+## Q: 麻烦帮我拉取一下较大的文件的前500个，给我一下目录。我删除一下没用的，谢谢?
+
+**A:** 根据问题原因，需要按以下步骤处理：
+
+**解决步骤**：
+1. 需要哪个空间的文件
+
+**适用场景**：对象存储
+
+---

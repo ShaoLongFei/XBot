@@ -204,7 +204,7 @@ print_success() {
     print_message "$GREEN" "        XBot 安装成功！"
     print_message "$GREEN" "=========================================="
     echo ""
-    print_message "$BLUE" "运行项目: cd $PROJECT_DIR && source .venv/bin/activate && python main.py"
+    print_message "$BLUE" "运行项目: cd $PROJECT_DIR && uv run main.py"
     echo ""
 }
 

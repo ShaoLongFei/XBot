@@ -1,7 +1,7 @@
 [project]
 name = "XBot"
 version = "0.0.1"
-description = "只能客服"
+description = "智能客服"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [

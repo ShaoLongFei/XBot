@@ -490,3 +490,58 @@
 **适用场景**：CDN、SSL证书
 
 ---
+## Q: 图片用facebook爬虫无法访问?
+
+**A:** 根据问题原因，需要按以下步骤处理：
+
+**解决步骤**：
+1. 您这边访问有什么问题，这边直接访问是正常的
+2. 。可以截图看下吗，这个链接需要登录
+3. 访问的链接提供下，还有具体的测试时间，这边查看下您的访问日志
+
+**适用场景**：CDN、域名配置
+
+---
+
+## Q: 部分图片无法访问?
+
+**A:** 根据问题原因，需要按以下步骤处理：
+
+**解决步骤**：
+1. archive unrestored 归档文件需要解冻后访问的。操作指引：https://developer.qiniu.com/kodo/8573/thaw-file-storage
+2. 是需要将归档的文件转为标准存储吗
+
+**适用场景**：对象存储
+
+---
+
+## Q: 短信一直待发送？
+
+**A:** 根据问题原因，需要按以下步骤处理：
+
+**解决步骤**：
+1. 由于九月起签名需要重新实名报备，目前已提交运营商报备，先调整通道处理了，短信可以重发试下
+2. 已在退订流程中了，一般需要1-2个工作日
+
+**适用场景**：实名认证
+
+---
+
+## Q: CNAME：qiniu-cdn-cryptoxtrades-com-idvoryq.qiniudns.com?
+
+**A:** 稍等这边看下
+
+**适用场景**：CDN
+
+---
+
+## Q: sp.shuxing.zhichizhijian.com  总是申请证书不成功?
+
+**A:** 手动申请并使用免费SSL证书步骤如下1.免费证书申请证书品牌：TrustAsia限免证书种类：DV限免https://portal.qiniu.com/certificate/apply2.补全信息3.免费证书验证https://developer.qiniu.com/ssl/manual/3667/ssl-certificate-of-free-dns-validation-guide4.升级HTTPS配置https://developer.qiniu.com/fusion/manual/4952/https-configuration注意事项升级https后，流量计费说明：https://developer.qiniu.com/fusion/kb/3887/https-issues-related-to-the-faq[图片]
+
+**注意事项**：
+- 手动申请并使用免费SSL证书步骤如下1.免费证书申请证书品牌：TrustAsia限免证书种类：DV限免https://portal.qiniu.com/certificate/apply2.补全信息3.免费证书验证https://developer.qiniu.com/ssl/manual/3667/ssl-certificate-of-free-dns-validation-guide4.升级HTTPS配置https://developer.qiniu.com/fusion/manual/4952/https-configuration注意事项升级https后，流量计费说明：https://developer.qiniu.com/fusion/kb/3887/https-issues-related-to-the-faq[图片]
+
+**适用场景**：CDN、SSL证书、域名配置
+
+---

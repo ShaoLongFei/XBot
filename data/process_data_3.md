@@ -1588,3 +1588,50 @@ CDN配置参数设置不当或理解有误
 需要根据具体情况进一步分析问题原因
 
 ---
+## 自定义 CDN 加速域名 状态为冻结
+
+**问题分类**：对象存储｜其他类咨询
+
+#
+## 详细问题描述
+询问一下pan-pudding233绑定的域名qn.furryowo.top状态为冻结是什么情况
+
+#
+## 客服解答内容
+您好，核实是您的域名没有备案如果已经备案需要恢复，请点击『解冻』，一般在 15 - 20 分钟内会解冻完成，线上服务恢复正常。[REDACTED_URL]]
+
+#
+## 根本原因分析
+需要根据具体情况进一步分析问题原因
+
+---
+## go语言sdk上传不上去
+
+**问题分类**：对象存储｜上传下载
+
+#
+## 详细问题描述
+//sdk 包版本"github.com/qiniu/go-sdk/v7/storagev2/credentials""github.com/qiniu/go-sdk/v7/storagev2/http_client""github.com/qiniu/go-sdk/v7/storagev2/uploader"// UploadFileToQiNiu2 上传到 七牛 的处理函数func (ctx *UploadToOssController) UploadFileToQiNiu2() {	// 禁用模板渲染	ctx.EnableRender = false	fmt.Println("=========进入上传七牛oss函数========")	// 获取上传的文件	file, fileHeader, err := ctx.GetFile("file")	if err != nil {		ctx.Ctx.WriteString("获取文件失败")		return	}	defer file.Close()	fmt.Printf("上传的文件名称: %+v\n", fileHeader.Filename)	fmt.Printf("上传的文件大小:  %+v\n", fileHeader.Size)	accessKey := "abc"	secretKey := "abc"	mac := QiNiu.NewCredentials(accessKey, secretKey)	bucket := "ng181"	key := "test111/" + fileHeader.Filename	key2 := fmt.Sprint("test111/", fileHeader.Filename)	fmt.Println("key ====> ", key)	fmt.Println("key2 ====> ", key2)	uploadManager := uploader.NewUploadManager(&uploader.UploadManagerOptions{		Options: http_client.Options{			Credentials: mac,		},	})	err = uploadManager.UploadReader(context.Background(), file, &uploader.ObjectOptions{		BucketName: bucket,		ObjectName: &key2,	}, nil)	if err != nil {		fmt.Println("err : ", err)		//return err	}	// 返回上传成功的消息	ctx.Ctx.WriteString("文件上传成功")}一直报错：err :  missing required field `File.Name`这个key参数，不管是直接字符串拼接，还是sprintf格式化输出，都报这个错。。。是什么原因？另外，你看看这个桶名，路径和文件名 是有这么问题吗？bucket := "ng181" ，key := "test111/" + fileHeader.Filename
+
+#
+## 客服解答内容
+1. 您好参考[REDACTED_URL] 调整下上传代码看下
+2. 您好看错误应该是文件名获取失败了，您debug模式中看下具体报错是哪一行？[图片]
+3. 您好参考这个指定下fileName参数看下[图片]
+4. 您好是文件上传成功后，存储空间中保存的文件名key
+5. 您好ObjectName   就是文件上传成功后，在存储空间中保存时的文件名。如果上传token中没有指定文件名key，可以不用配置，在存储空间保存时默认使用文件hash左右文件名key；如果上传token中指定了，需要和token中指定的key保持一致。
+
+#
+## 根本原因分析
+对象存储文件操作问题
+
+---
+## 对公账户充值，打款已成功，多久能到账
+
+**问题分类**：账户与财务｜其他类咨询
+
+#
+## 详细问题描述
+11点多完成打款的，目前还没有到账，着急要用，请尽快核实并充值到账，谢谢
+
+#

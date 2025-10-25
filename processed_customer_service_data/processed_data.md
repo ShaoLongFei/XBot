@@ -98,3 +98,58 @@
 **适用场景**：CDN
 
 ---
+## Q: UA拦截没有生效?
+
+**A:** 根据问题原因，需要按以下步骤处理：
+
+**解决步骤**：
+1. 久等了，特殊符号需要转义，小括号需要转义需要修改一下：Wget/1.20.3 \(linux-gnueabihf\)
+
+**适用场景**：CDN、域名配置
+
+---
+
+## Q: 河北地区用户无法上传文件，何时恢复？？？
+
+**A:** 9.18号 已经恢复了的，您目前现在还上传不了吗，有什么报错？
+
+**适用场景**：对象存储
+
+---
+
+## Q: OSS写着可用区域中国大陆通用？那境外是扣费的？
+
+**A:** 根据问题原因，需要按以下步骤处理：
+
+**解决步骤**：
+1. 可以给您的存储配置海外线路的cdn，国内就无法访问海外访问是收费的，可以参考下https://portal.qiniu.com/financial/price?product=fusion
+2. 不可以的，cdn使用什么线路产生什么流量2、那cdn选择国内线路就好，海外正常是无法访问的
+3. 华东的外网流出流量收费您可以参考下[图片]
+
+**适用场景**：对象存储、域名配置
+
+---
+
+## Q: SSL证书?
+
+**A:** 根据问题原因，需要按以下步骤处理：
+
+**解决步骤**：
+1. 证书验证可以参考下面的文档证书验证指南_使用文档_SSL 证书服务 - 七牛开发者中心 (qiniu.com)
+2. 这边需要按照上面提供的主机记录和cname值，到您提供的这里进行配置下
+3. 不需要
+
+**适用场景**：对象存储、SSL证书、域名配置
+
+---
+
+## Q: HTTPS?
+
+**A:** 根据问题原因，需要按以下步骤处理：
+
+**解决步骤**：
+1. 续期需要重新申请证书，手动申请并使用免费SSL证书步骤如下1.免费证书申请证书品牌：TrustAsia限免证书种类：DV限免https://portal.qiniu.com/certificate/apply2.补全信息3.免费证书验证https://developer.qiniu.com/ssl/manual/3667/ssl-certificate-of-free-dns-validation-guide4.升级HTTPS配置https://developer.qiniu.com/fusion/manual/4952/https-configuration注意事项升级https后，流量计费说明：https://developer.qiniu.com/fusion/kb/3887/https-issues-related-to-the-faq[图片]
+
+**适用场景**：CDN、SSL证书
+
+---

@@ -193,16 +193,7 @@ print_success() {
     print_message "$GREEN" "        XBot 安装成功！"
     print_message "$GREEN" "=========================================="
     echo ""
-    print_message "$BLUE" "进入项目目录:"
-    echo "  cd $PROJECT_DIR"
-    echo ""
-    print_message "$BLUE" "激活虚拟环境:"
-    echo "  source venv/bin/activate"
-    echo ""
-    print_message "$BLUE" "启动项目:"
-    echo "  python main.py"
-    echo ""
-    print_message "$YELLOW" "注意: 首次运行会自动下载管理面板文件"
+    print_message "$BLUE" "运行项目: cd $PROJECT_DIR && source venv/bin/activate && python main.py"
     echo ""
 }
 

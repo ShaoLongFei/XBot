@@ -8,7 +8,7 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m'
 
-REPO_URL="https://github.com/ShaoLongFei/XBot.git"
+REPO_SSH_URL="git@github.com:ShaoLongFei/XBot.git"
 PROJECT_DIR="XBot"
 PYTHON_MIN_VERSION="3.10"
 
@@ -123,7 +123,7 @@ clone_repository() {
         git pull origin main || print_message "$YELLOW" "警告: 更新失败，使用现有代码"
     else
         print_message "$BLUE" "正在克隆项目..."
-        git clone "$REPO_URL" "$PROJECT_DIR"
+        git clone "$REPO_SSH_URL" "$PROJECT_DIR"
         cd "$PROJECT_DIR"
     fi
 }

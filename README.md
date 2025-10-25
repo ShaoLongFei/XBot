@@ -33,22 +33,13 @@ chmod +x install.sh
 
 ### 运行项目
 
-1. 进入项目目录
 ```bash
 cd XBot
-```
-
-2. 激活虚拟环境
-```bash
 source venv/bin/activate
-```
-
-3. 启动项目
-```bash
 python main.py
 ```
 
-**注意**: 首次运行会自动下载管理面板文件，请确保网络连接正常。
+首次运行会自动下载管理面板文件，请确保网络连接正常。
 
 ### 配置说明
 

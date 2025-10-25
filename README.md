@@ -3,3 +3,95 @@
 
 ## 宗旨
 在有限时间内交付最有价值的成果
+
+## 快速开始
+
+### 一键安装（推荐）
+
+XBot 提供了一键安装脚本，支持 Linux 和 macOS 系统，无需手动配置环境。
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ShaoLongFei/XBot/main/install.sh | bash
+```
+
+或者下载后执行：
+
+```bash
+wget https://raw.githubusercontent.com/ShaoLongFei/XBot/main/install.sh
+chmod +x install.sh
+./install.sh
+```
+
+安装脚本会自动完成以下操作：
+- 检测并安装 Git（如未安装）
+- 检测并安装 Python 3.10+（如未安装）
+- 克隆项目代码
+- 创建 Python 虚拟环境
+- 安装 Python 依赖
+- 自动安装 Dashboard 前端依赖（如果存在）
+- 创建必要的数据目录
+
+### 手动安装
+
+如果您希望手动安装，请确保系统满足以下要求：
+
+**系统要求**
+- Python 3.10 或更高版本
+- Git
+- pip3
+
+**安装步骤**
+
+1. 克隆项目
+```bash
+git clone https://github.com/ShaoLongFei/XBot.git
+cd XBot
+```
+
+2. 创建虚拟环境
+```bash
+python3 -m venv venv
+source venv/bin/activate  # Linux/macOS
+```
+
+3. 安装依赖
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+4. 创建必要的目录
+```bash
+mkdir -p data/config data/plugins data/temp
+```
+
+### 运行项目
+
+1. 进入项目目录
+```bash
+cd XBot
+```
+
+2. 激活虚拟环境
+```bash
+source venv/bin/activate
+```
+
+3. 启动项目
+```bash
+python main.py
+```
+
+**注意**: 首次运行会自动下载管理面板文件，请确保网络连接正常。
+
+### 配置说明
+
+项目配置文件位于 `data/config/cmd_config.json`，首次运行会自动生成。主要配置项包括：
+
+- `platform`: 平台适配器配置（QQ、微信、Telegram 等）
+- `provider`: LLM 服务商配置（OpenAI、Claude、Gemini 等）
+- `dashboard_config`: Web 管理界面设置
+- `admins_id`: 管理员 ID 列表
+- `wake_prefix`: 唤醒前缀
+
+详细配置说明请参考 [CLAUDE.md](CLAUDE.md)。

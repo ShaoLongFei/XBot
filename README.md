@@ -26,8 +26,7 @@ chmod +x install.sh
 
 ```bash
 cd XBot
-source venv/bin/activate
-python main.py
+uv run main.py
 ```
 
 首次运行会自动下载管理面板文件，请确保网络连接正常。

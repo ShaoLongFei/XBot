@@ -131,18 +131,29 @@ clone_repository() {
 setup_python_environment() {
     print_message "$BLUE" "正在设置 Python 虚拟环境..."
     
-    if [ ! -d "venv" ]; then
-        python3 -m venv venv
+    if ! check_command uv; then
+        print_message "$YELLOW" "未检测到 uv，正在安装..."
+        curl -LsSf https://astral.sh/uv/install.sh | sh
+        export PATH="$HOME/.local/bin:$PATH"
+        
+        if ! check_command uv; then
+            print_message "$RED" "uv 安装失败"
+            exit 1
+        fi
+        print_message "$GREEN" "uv 安装成功"
+    else
+        print_message "$GREEN" "uv 已安装"
+    fi
+    
+    if [ ! -d ".venv" ]; then
+        uv venv --python $PYTHON_MIN_VERSION
         print_message "$GREEN" "虚拟环境创建成功"
     else
         print_message "$YELLOW" "虚拟环境已存在"
     fi
     
-    print_message "$BLUE" "激活虚拟环境并安装依赖..."
-    source venv/bin/activate
-    
-    pip install --upgrade pip
-    pip install -r requirements.txt
+    print_message "$BLUE" "同步项目依赖..."
+    uv sync
     
     print_message "$GREEN" "Python 依赖安装完成"
 }
@@ -193,7 +204,7 @@ print_success() {
     print_message "$GREEN" "        XBot 安装成功！"
     print_message "$GREEN" "=========================================="
     echo ""
-    print_message "$BLUE" "运行项目: cd $PROJECT_DIR && source venv/bin/activate && python main.py"
+    print_message "$BLUE" "运行项目: cd $PROJECT_DIR && uv run main.py"
     echo ""
 }
 
@@ -216,14 +227,9 @@ main() {
         print_message "$YELLOW" "正在安装 Python..."
         install_python
         if ! check_python_version; then
-            print_message "$RED" "Python 安装失败或版本不满足要求"
+            print_message "$RED" "Python 安装或版本检查失败"
             exit 1
         fi
-    fi
-    
-    if ! check_command pip3; then
-        print_message "$RED" "错误: pip3 未找到，请手动安装"
-        exit 1
     fi
     
     CURRENT_DIR=$(pwd)

@@ -51,28 +51,46 @@ detect_os() {
     print_message "$GREEN" "检测到操作系统: $OS"
 }
 
-check_uv() {
-    if check_command uv; then
-        print_message "$GREEN" "uv 已安装"
-        return 0
-    else
-        print_message "$YELLOW" "未检测到 uv"
+check_python_version() {
+    if ! check_command python3; then
+        print_message "$RED" "错误: 未找到 Python3"
         return 1
     fi
+    
+    PYTHON_VERSION=$(python3 --version 2>&1 | awk '{print $2}')
+    PYTHON_MAJOR=$(echo $PYTHON_VERSION | cut -d. -f1)
+    PYTHON_MINOR=$(echo $PYTHON_VERSION | cut -d. -f2)
+    
+    if [ "$PYTHON_MAJOR" -lt 3 ] || { [ "$PYTHON_MAJOR" -eq 3 ] && [ "$PYTHON_MINOR" -lt 10 ]; }; then
+        print_message "$RED" "错误: 需要 Python $PYTHON_MIN_VERSION 或更高版本，当前版本: $PYTHON_VERSION"
+        return 1
+    fi
+    
+    print_message "$GREEN" "Python 版本检查通过: $PYTHON_VERSION"
+    return 0
 }
 
-install_uv() {
-    print_message "$BLUE" "正在安装 uv..."
-    curl -LsSf https://astral.sh/uv/install.sh | sh
+install_python() {
+    print_message "$BLUE" "正在安装 Python3..."
     
-    export PATH="$HOME/.local/bin:$PATH"
-    
-    if check_command uv; then
-        print_message "$GREEN" "uv 安装成功"
-    else
-        print_message "$RED" "uv 安装失败"
-        exit 1
-    fi
+    case $PKG_MANAGER in
+        apt-get)
+            sudo apt-get update
+            sudo apt-get install -y python3 python3-pip python3-venv
+            ;;
+        yum)
+            sudo yum install -y python3 python3-pip
+            ;;
+        dnf)
+            sudo dnf install -y python3 python3-pip
+            ;;
+        pacman)
+            sudo pacman -S --noconfirm python python-pip
+            ;;
+        brew)
+            brew install python@3.11
+            ;;
+    esac
 }
 
 install_git() {
@@ -113,6 +131,20 @@ clone_repository() {
 setup_python_environment() {
     print_message "$BLUE" "正在设置 Python 虚拟环境..."
     
+    if ! check_command uv; then
+        print_message "$YELLOW" "未检测到 uv，正在安装..."
+        curl -LsSf https://astral.sh/uv/install.sh | sh
+        export PATH="$HOME/.local/bin:$PATH"
+        
+        if ! check_command uv; then
+            print_message "$RED" "uv 安装失败"
+            exit 1
+        fi
+        print_message "$GREEN" "uv 安装成功"
+    else
+        print_message "$GREEN" "uv 已安装"
+    fi
+    
     if [ ! -d ".venv" ]; then
         uv venv --python $PYTHON_MIN_VERSION
         print_message "$GREEN" "虚拟环境创建成功"
@@ -120,8 +152,8 @@ setup_python_environment() {
         print_message "$YELLOW" "虚拟环境已存在"
     fi
     
-    print_message "$BLUE" "安装项目依赖..."
-    uv pip install -r requirements.txt
+    print_message "$BLUE" "同步项目依赖..."
+    uv pip sync requirements.txt
     
     print_message "$GREEN" "Python 依赖安装完成"
 }
@@ -191,9 +223,13 @@ main() {
         print_message "$GREEN" "Git 已安装"
     fi
     
-    if ! check_uv; then
-        print_message "$YELLOW" "正在安装 uv..."
-        install_uv
+    if ! check_python_version; then
+        print_message "$YELLOW" "正在安装 Python..."
+        install_python
+        if ! check_python_version; then
+            print_message "$RED" "Python 安装或版本检查失败"
+            exit 1
+        fi
     fi
     
     CURRENT_DIR=$(pwd)

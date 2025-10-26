@@ -510,3 +510,248 @@ cmcdt30z3i6eoo
 
 证书过期，需要重新申请或上传新证书
 
+---
+
+## 购买的资源包是没用吗
+
+**问题分类**: CDN｜流量计费问题
+
+**适用场景**: CDN
+
+### 问题描述
+
+购买的资源包是没用吗，资源包还有配额 为啥还能扣费呢？
+
+### 客服解答
+
+**客户**：购买的资源包是没用吗，资源包还有配额 为啥还能扣费呢？
+**客服**：你好，请稍等
+**客服**：你好，您买的是存储容量的资源包，这个是用来抵扣空间容量的，不能用于抵扣源站流量，使用源站域名 或者 s3域名，会产生外网流出流量，您参考这里的账单https://portal.qiniu.com/financial/bills/estimated-consume外网流出流量隶属于存储，要买这个资源包才可以抵扣https://qmall.qiniu.com/template/MTEy?spec_combo=MzE0NQ&ref=index
+**客户**：https://qmall.qiniu.com/template/NTI?ref=respack&spec_combo=MTk0OA  这个资源包是没用的吗，还有就是能查到域名流量费用的明细吗
+**客服**：您好，源站域名的外网流出，你们在空间设置中，开启空间日志后才可以查看的这个资源包，看到你们有用全站加速，全站加速流量会用到这个资源包的
+
+### 根本原因分析
+
+资源使用超出免费额度或资源包配置不当
+
+---
+
+## 海外访问出现504超时
+
+**问题分类**: CDN｜访问下载
+
+**适用场景**: CDN
+
+### 问题描述
+
+4日-7日期间，在海外德国访问资源时，出现504超时错误，麻烦帮忙看下是否存在问题：504 Gateway Time-outThe gateway did not receive a timely response from the upstream server or application.Powered by Tengine
+
+### 客服解答
+
+**客户**：4日-7日期间，在海外德国访问资源时，出现504超时错误，麻烦帮忙看下是否存在问题：504 Gateway Time-outThe gateway did not receive a timely response from the upstream server or application.Powered by Tengine
+**客服**：您好，稍等这边看下
+**客服**：您好，经后端分析，是存在极个别少量的请求回源超时了。您域名绑定的存储空间是国内华南的，海外拉取国内源站资源时存在链路较长，跨境链路无法保证稳定性且跨境无法优化。如需要规避掉跨境链路的影响，建议您可以使用两个域名分开下国内和海外的业务请求，国内使用国内的存储空间，海外使用海外存储区域的空间。
+**客户**：暂时没办法分开，有没有其他办法？空间设置了全球覆盖，不是应该能解决这个问题吗？
+**客服**：绝大部分都是正常的，这部分少量的请求超时是被跨境的链路影响到了的，由于跨境链路无法优化，后期建议还是分一下海外和国内的业务。
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## cdn1.xiayuyue.com 证书处理中
+
+**问题分类**: CDN｜证书问题
+
+**适用场景**: CDN, SSL证书
+
+### 问题描述
+
+668d618ae595590b9914a638  10月8日到期66fe2aba09bd35461fdac5c8   新证书  一直处理中，帮忙切换新证书
+
+### 客服解答
+
+**客户**：668d618ae595590b9914a638  10月8日到期66fe2aba09bd35461fdac5c8   新证书  一直处理中，帮忙切换新证书
+**客服**：您好，这边手动介入下处理，麻烦稍等。
+**客服**：您好，抱歉让您久等了，已经处理完成，您确认下。
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 七牛云欠费问题
+
+**问题分类**: 对象存储｜上传下载
+
+**适用场景**: 对象存储
+
+### 问题描述
+
+七牛云欠费了https://portal.qiniu.com/iam/signin/[REDACTED_PHONE]35
+
+### 客服解答
+
+**客户**：七牛云欠费了https://portal.qiniu.com/iam/signin/[REDACTED_PHONE]35
+**客服**：您好查看上月账单明细：您可以登录七牛云管理控制台 - 财务中心 - 账单和消费详情，点击账单编号查看详细的消费明细：https://portal.qiniu.com/financial/summary查看实时消费明细：您可以登录七牛云管理控制台 - 财务中心 - 实时消费明细：https://portal.qiniu.com/financial/estimated-consume如果您对某个部分有疑问，可以截图到工单中，这边帮您解释下
+
+### 根本原因分析
+
+资源使用超出免费额度或资源包配置不当
+
+---
+
+## 域名申请
+
+**问题分类**: 对象存储｜上传下载
+
+**适用场景**: 对象存储
+
+### 问题描述
+
+域名到期申请延期
+
+### 客服解答
+
+**客户**：域名到期申请延期
+**客服**：您好，请稍等
+**客服**：您好，免费证书不延期的，您重新一键升级 https 即可您可以在 [域名管理] 中，点击您想要配置https的域名右侧的 [配置] 按钮，在新的页面中，在 [https配置] 下点击 [修改配置] ,点击开启->免费证书→勾选 [同意七牛云代申请免费证书] →确认，之后输入您账号的密码即可。一键https使用的是免费证书，配置一键 https 需要注意：配置生效时间主要是用于等待 CA 机构签发证书，证书一旦签发会在 10 分钟内部署完成，整体一键 https 预计可在 2 小时内完成。期间您不要操作 ssl 证书服务，否则可能造成证书签发失败。免费证书只支持绑定单个普通域名，若您需要使用一级域名的免费证书，请到购买证书页购买免费证书开启了以下功能会导致代理验证失败，无法代理申请证书： 回源鉴权、时间戳防盗链、IP 黑白名单、referer 防盗链当前加速域名需要 CNAME 到七牛给您分配的 CNAME 域名 当前加速域名的 DNS 记录中不能有 CAA 记录，或者 CAA 记录包含 Digicert.com 和 digicert.com免费证书有效期为90天，过期请重新申请需要授权七牛云代申请免费证书
+**客户**：已完成
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 访问超级慢
+
+**问题分类**: CDN｜访问下载
+
+**适用场景**: CDN
+
+### 问题描述
+
+用测试域名，秒开，用我们自己绑定的域名要好久才能打开
+
+### 客服解答
+
+**客户**：用测试域名，秒开，用我们自己绑定的域名要好久才能打开
+**客服**：您好，这边看您刚修改了覆盖范围，您这边后续再确认一下呢
+**客户**：改了覆盖范围可以了
+**客户**：上传还是有时候会出现丢包情况，能帮忙协助下么
+**客户**：走的是你们给的案例 putFileexport const uploadToQiniu = async (filePath, key) => {    const accessKey = QNConfig.accessKey;    const secretKey = QNConfig.secretKey;    const mac = new qiniu.auth.digest.Mac(accessKey, secretKey);    const options = {        scope: QNConfig.bucket,    };    const putPolicy = new qiniu.rs.PutPolicy(options);    const uploadToken = putPolicy.uploadToken(mac);    const config = new qiniu.conf.Config();    config.regionsProvider = qiniu.httpc.Region.fromRegionId("z2");    const formUploader = new qiniu.form_up.FormUploader(config);    const putExtra = new qiniu.form_up.PutExtra();    putExtra.resumeRecordFile = "progress.log";    putExtra.version = "v2";    // 文件上传    // return new Promise((resolved, reject) => {    //     formUploader.putStream(uploadToken, key, filePath, putExtra, function (respErr, respBody, respInfo) {    //         if (respErr) {    //             reject(respErr);    //         } else {    //             resolved(respBody);    //         }    //     });    // });    // 文件上传    return new Promise((resolve, reject) => {        formUploader.putFile(uploadToken, key, filePath.path, putExtra, function (respErr, respBody, respInfo) {            if (respErr) {                reject(respErr);            } else {                resolve(respBody);            }        });    });};
+**客户**：走的是你们给的案例 putFileexport const uploadToQiniu = async (filePath, key) => {    const accessKey = QNConfig.accessKey;    const secretKey = QNConfig.secretKey;    const mac = new qiniu.auth.digest.Mac(accessKey, secretKey);    const options = {        scope: QNConfig.bucket,    };    const putPolicy = new qiniu.rs.PutPolicy(options);    const uploadToken = putPolicy.uploadToken(mac);    const config = new qiniu.conf.Config();    config.regionsProvider = qiniu.httpc.Region.fromRegionId("z2");    const formUploader = new qiniu.form_up.FormUploader(config);    const putExtra = new qiniu.form_up.PutExtra();    putExtra.resumeRecordFile = "progress.log";    putExtra.version = "v2";    // 文件上传    // return new Promise((resolved, reject) => {    //     formUploader.putStream(uploadToken, key, filePath, putExtra, function (respErr, respBody, respInfo) {    //         if (respErr) {    //             reject(respErr);    //         } else {    //             resolved(respBody);    //         }    //     });    // });    // 文件上传    return new Promise((resolve, reject) => {        formUploader.putFile(uploadToken, key, filePath.path, putExtra, function (respErr, respBody, respInfo) {            if (respErr) {                reject(respErr);            } else {                resolve(respBody);            }        });    });};
+**客服**：您好，您这边使用的是js的SDK是吗？
+**客户**：嗯，NodeJS 的
+**客服**：您好，您这边目前使用的是什么版本的呢
+**客户**：qiniu SDK？？？
+**客户**："qiniu": "^7.12.0",
+**客服**：您好，您这边试下更新到7.13.0看下吧，目前这边api上传丢包的话没有其他方法的，您这边可以考虑切换一下本地网络环境测试看下的十分抱歉
+**客户**：好的
+**客服**：您好，嗯嗯好的
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 突然卡死，一直状态是关机中
+
+**问题分类**: 云主机｜主机
+
+**适用场景**: 云主机
+
+### 问题描述
+
+后续无法关机也无法重启，请帮助一下
+
+### 客服解答
+
+**客户**：后续无法关机也无法重启，请帮助一下
+**客服**：您好，这边看实例目前处于运行中的状态的，您这边看下重新登录一下后再看下呢
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 上传文件报错
+
+**问题分类**: 对象存储｜上传下载
+
+**适用场景**: 对象存储
+
+### 问题描述
+
+当文件已存在时，无法创建该文件。: 'C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\qn-regions-cache.jsonl.shrink' -> 'C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\qn-regions-cache.jsonl
+
+### 客服解答
+
+**客户**：当文件已存在时，无法创建该文件。: 'C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\qn-regions-cache.jsonl.shrink' -> 'C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\qn-regions-cache.jsonl
+**客服**：您好，稍等
+**客服**：您好，python sdk先退回下版本，使用7.13.27.14.0版本新功能影响的，已经在修了。
+**客户**：好的
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 申请域名提示域名所有权验证未通过
+
+**问题分类**: CDN｜证书问题
+
+**适用场景**: CDN, SSL证书
+
+### 问题描述
+
+申请免费域名提示域名所有权验证未通过，如何解决。免费证书订单号：67049f125f6374b135e1f6b3
+
+### 客服解答
+
+**客户**：申请免费域名提示域名所有权验证未通过，如何解决。免费证书订单号：67049f125f6374b135e1f6b3[图片]
+**客服**：您好麻烦粘贴一下您在域名服务商后台的dns配置截图
+**客户**：解析如下：[图片]
+**客户**：域名在有腾讯云
+**客服**：复制这个内容 去配置[图片]
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 扣费异常
+
+**问题分类**: CDN｜其他类咨询
+
+**适用场景**: CDN
+
+### 问题描述
+
+CDN加速月度消费扣费异常
+
+### 客服解答
+
+**客户**：[图片]CDN加速月度消费扣费异常
+**客服**：您好，您这边可以看下控制台右上角的费用—财务中心—账单管理—实时消费明细中查看您的扣费详情的，不理解的地方您这边可以截图发一下这边帮您分析一下的本月实时消费明细：https://portal.qiniu.com/financial/estimated-consume
+**客户**：为何这两个突然消费这么高？我能看懂是哪里消费的，不理解 的是为何这么高？
+**客服**：您好，所以需要您这边在实时消费明细中查看您的扣费详情的，不理解的地方您这边可以截图发一下这边帮您分析一下的，工单这边看不到您的消费明细的
+**客户**：我截图发你的那个不是吗，前一年消费近两个月月度消费涨了几十倍，都是因为那个橙色的cdn加速
+**客服**：您好，您这边需要将实时消费明细的截图给一下，看下是为什么产生的费用对象存储产生的费用就是：存储空间的文件大小每GB多少钱CDN产生的费用就是：用户通过CDN域名访问您的资源产生的流量费用，每GB多少钱的
+**客服**：您好，所以您需要看下CDN访问流量具体产生了多少的，这个就是CDN流量费用，用户访问您的资源产生的流量
+**客户**：是不是这个[图片]
+**客服**：您好，嗯嗯是的，这个就是CDN流量的
+**客户**：然后呢
+**客服**：您好，就是CDN流量产生的计费的，就是用户这边的访问流量的，这个您需要自行判断一下您的用户侧的访问情况的或者您可以查看下您可以在 控制台 - cdn - 统计分析 - 日志分析 中看到您的top访问情况，比如高频访问的URL和客户端IP。https://portal.qiniu.com/cdn/statistics/log/top如有部分IP请求数/请求流量异常，不符合您的业务预期，您可以在域名管理 - 访问控制 中，开启IP黑白名单，对这部分IP进行封禁。[图片]﻿分析具体的访问量和访问行为，建议在控制台 https://portal.qiniu.com/cdn/log 下载CDN日志后进行分析或者通过API来下载，参考文档：https://developer.qiniu.com/fusion/api/1226/download-the-logCDN日志的下载方式，以及日志中字段的含义参考文档：https://developer.qiniu.com/fusion/manual/3847/cdn-log-fusion这边可以查看到访问量前100的流量和ip：https://portal.qiniu.com/cdn/statistics/log/top针对非法的请求和访问，建议配置 referer 和 ip 黑白名单等方式来进行访问限制。
+
+### 根本原因分析
+
+资源使用超出免费额度或资源包配置不当
+

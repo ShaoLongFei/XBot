@@ -2029,3 +2029,364 @@ SDK配置问题或网络环境问题
 
 需要根据具体情况分析，建议查看文档或联系技术支持
 
+---
+
+## 退票
+
+**问题分类**: 账户与财务｜发票问题
+
+**适用场景**: 账户与财务
+
+### 问题描述
+
+退票，余额提现
+
+### 客服解答
+
+**客户**：退票，余额提现[图片]
+**客服**：您好，您稍等这边帮您反馈一下
+**客服**：您好，这边已经为您反馈了，您这边耐心等待退票完成即可，退票完成后即可申请提现
+**客户**：退票完成大概需要几天呢？
+**客服**：您好，这边看已经退票完成了的
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 密码修改
+
+**问题分类**: 账户与财务｜账户问题
+
+**适用场景**: 账户与财务
+
+### 问题描述
+
+本身密码忘记了用微信登录的,让密码验证密码?如何修改密码?
+
+### 客服解答
+
+**客户**：本身密码忘记了用微信登录的,让密码验证密码?如何修改密码?
+**客服**：您好可以到https://portal.qiniu.com/developer/user/security 修改密码
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 台湾用户需要访问空间怎么设置权限
+
+**问题分类**: CDN｜其他类咨询
+
+**适用场景**: CDN
+
+### 问题描述
+
+台湾用户需要访问空间怎么设置权限
+
+### 客服解答
+
+**客户**：台湾用户需要访问空间怎么设置权限
+**客服**：您好，目前无法访问吗？可以切换下cdn线路到海外，在访问看下
+**客户**：目前图片无法显示，怎么切换，提供一下操作路径，操作是否会影响之前可以正常访问的数据[图片]
+**客服**：您好，控制台 -【域名管理】目前已支持域名覆盖区域（中国大陆、全球、海外）切换，您可以在[图片]点击『修改』自助切换。以下两种情况暂不支持 portal 自动切换：对于未备案域名不能从海外加速切换至全球或国内特殊计费方式的域名需要联系技术支持说明情况后，由七牛技术支持操作
+**客户**：请问我这个属于特殊情况吗？是否是需要您技术这边说明一下费用再由技术操作
+**客服**：您好，您这边无法访问的链接提供下，这边看下
+**客户**：[图片]————————你好是微信小程序
+**客户**：麻烦你那边代为操作域名的切换
+**客户**：[图片]https://tp.kangzepp.com
+**客服**：您好，您控制台无法操作线路切换吗？有什么报错吗
+**客户**：我这边不会，也怕弄错了会影响现有业务
+**客服**：您好，不会有影响的，如果需要这边操作，需要处理的域名麻烦提供下呢是需要切到海外还是全球，海外的话，国内大概率无法访问的
+**客户**：https://tp.kangzepp.com需要国内和海外可访问
+**客服**：稍等下，这边处理下
+**客户**：好的
+**客服**：您好，稍等
+**客服**：您好，很抱歉久等了，已经切换完成了
+**客户**：好的
+**客服**：您好，嗯嗯好的
+**客户**：可以了，谢谢
+**客服**：您好，嗯嗯好的不客气的
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 咨询扣费问题
+
+**问题分类**: 对象存储｜其他类咨询
+
+**适用场景**: 对象存储
+
+### 问题描述
+
+咨询扣费问题
+
+### 客服解答
+
+**客户**：咨询扣费问题
+**客服**：您好七牛为预充值，先使用，后付费逻辑。建议您在账户内预先充值一定的金额，目前按量付费资源采取月结算模式，对于还未出账结算的资源，系统每天8点左右将根据用户已使用的用量进行计费，更新一次实时消费明细，用户可以通过该明细来了解按量付费（后付费）资源的消耗情况。并且，在账户内会暂时冻结实时消费金额，冻结的金额并未实际消耗，月账单出账扣费后，实时消费金额将重新调整。注：月账单出账时间一般为每月5号左右。账单查询方式：查询已出账的历史月度账单： 管理控制台 - 财务中心 - 账单和消费详情，点击账单编号查看详细的消费明细：https://portal.qiniu.com/financial/summary查看本月预估账单（实时消费明细）： 管理控制台 - 财务中心 - 实时消费明细：https://portal.qiniu.com/financial/estimated-consume特别说明：实时消费明细仅做参考，实际账单将以月账单为准，如果您在出账时遇到问题或者存在疑惑，您可以通过工单联系我们。欠费问题：出账后，当账户的可用额度小于0时，立即进入保护期，保护期内七牛云会每天向您推送一次提醒，保护期内充值达到充值要求后，您的账号将自动恢复正常。欠费流程说明参考https://developer.qiniu.com/af/kb/5996/new-owe-the-process-description
+
+### 根本原因分析
+
+资源使用超出免费额度或资源包配置不当
+
+---
+
+## 我微信扫码登录的 密码是什么？
+
+**问题分类**: 账户与财务｜账户问题
+
+**适用场景**: 账户与财务
+
+### 问题描述
+
+我微信扫码登录的 密码是什么？我删除空间 想购买  但是要密码我修改密码 默认密码是什么？
+
+### 客服解答
+
+**客户**：我微信扫码登录的 密码是什么？我删除空间 想购买  但是要密码我修改密码 默认密码是什么？
+**客服**：您好，退出登录后，可在登录页面下方「忘记密码」处，通过账号绑定的手机号或邮箱重置密码[图片]
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 2024年7月费用异常
+
+**问题分类**: CDN｜流量计费问题
+
+**适用场景**: CDN
+
+### 问题描述
+
+2024-7月的费用异常
+
+### 客服解答
+
+**客户**：2024-7月的费用异常[图片][图片]
+**客服**：您好，这块是cdn产生的扣费，是对用量有疑惑吗
+**客服**：您好您可以在 控制台 - cdn - 统计分析 - 日志分析 中看到您的top访问情况，比如高频访问的URL和客户端IP。https://portal.qiniu.com/cdn/statistics/log/top如有部分IP请求数/请求流量异常，不符合您的业务预期，您可以在域名管理 - 访问控制 中，开启IP黑白名单，对这部分IP进行封禁。[图片]
+**客户**：1、是对用量有疑惑2、高频访问的URL，是由哪里进入哪里进行？是从网页进入官网访问的吗？3、如何挑选乱进的IP黑白名单4、如何开启黑白名单5、2024-8月到9月，海外流量占据比较高，是哪里海外进入的？
+**客服**：1.用量是根据客户端请求，我们传输给客户端多少流量，就产生多少cdn用量。我们会保留近一个月的cdn访问日志，计量都是根据日志来的。在控制台 https://portal.qiniu.com/cdn/log 下载CDN日志，日志中字段的含义参考文档：https://developer.qiniu.com/fusion/manual/3847/cdn-log-fusion2，url是根据客户端请求到绑定在我们这边的域名，日志中referer字段是来源网址，您可以查看。3.上条回复中，top数据有top ip数据，如果您判断是异常用量的ip，可以添加到ip黑名单中4。设置ip黑白名单 图文教程：https://developer.qiniu.com/fusion/4977/ip-black-and-white-list5，您可以查看top ip 数据，过滤区域「海外」，然后查看这些海外ip的归属地，百度即可查看到[图片]
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 文件解冻一直提示解冻中
+
+**问题分类**: 对象存储｜其他类咨询
+
+**适用场景**: 对象存储
+
+### 问题描述
+
+文件解冻一直提示解冻中，已经很长时间了
+
+### 客服解答
+
+**客户**：文件解冻一直提示解冻中，已经很长时间了
+**客服**：您好，哪个空间，哪个文件呢，这边查询确认下
+**客户**：这是空间名称：wsjkbpublic/upload/3/5/这是文件目录之一
+**客服**：您好，您方便提供一个具体的文件链接么，这边帮您核实，具体的URL 链接
+**客户**：https://sj.qz.17wxx.com/[REDACTED_PATH]
+**客户**：已经好几个小时了
+**客服**：好的，收到，这边帮您确认下，有结论后再给您反馈
+**客服**：您好，这边帮您确认了下，解冻深度归档文件，需要 5～12小时才可以完成解冻的
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 这黑名单怎么久还没改完
+
+**问题分类**: CDN｜配置问题
+
+**适用场景**: CDN
+
+### 问题描述
+
+很长时间了
+
+### 客服解答
+
+**客户**：[图片]很长时间了
+**客服**：您好，请稍等，这边帮您确认下
+**客服**：您好，久等了，已处理完成
+**客户**：能查到我提交的配置修改的时间吗
+**客服**：您好，这个当前只能看到配置修改完成时间，提交时间暂时无法查看的
+**客户**：那能查，我这次黑名单，增加了哪几个吗
+**客服**：您好，这边无法看到新增，只能看到全部的ip本次任务修改1.192.240.0/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]
+[REDACTED_IP]
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]
+[REDACTED_IP]
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]
+[REDACTED_IP]/16
+[REDACTED_IP]/16
+[REDACTED_IP]/24
+[REDACTED_IP]
+[REDACTED_IP]
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]
+[REDACTED_IP]
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]
+[REDACTED_IP]
+[REDACTED_IP]/24
+[REDACTED_IP]
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+[REDACTED_IP]/24
+历史任务的ip  "ipACLValue": "[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP],[REDACTED_IP],[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP],[REDACTED_IP],[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP],[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP],[REDACTED_IP],[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP],[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP],[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP],[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP],[REDACTED_IP],[REDACTED_IP]/24,[REDACTED_IP],[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24,[REDACTED_IP]/24",
+**客户**：有添加了一些，请配置一下
+**客服**：好的
+**客服**：您好，已处理完成
+**客户**：我申请了新的黑名单，帮忙处理一下
+**客服**：您好，已处理完成
+**客户**：我申请了新的黑名单，请通过一下
+**客服**：稍等
+**客服**：您好，配置已下发了哈
+**客户**：我申请了新的黑名单，请通过一下
+**客服**：稍等
+**客服**：您好，已经处理完成了
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 流量包购买了还是5000g,直播用了1个多g为啥显示欠费了
+
+**问题分类**: 直播云｜其他类咨询
+
+**适用场景**: 直播云
+
+### 问题描述
+
+流量包购买了还是5000g,直播用了1个多g为啥显示欠费了
+
+### 客服解答
+
+**客户**：流量包购买了还是5000g,直播用了1个多g为啥显示欠费了[图片]
+**客服**：您好，请稍等
+**客服**：您好，这边帮您检查了下，你 9月是直播带宽计费的，不是按照流量计费的，资源包未生效，如果您需要调整计费方式或者退订资源包，你给个电话联系方式，这边安排商务与您联系
+**客户**：调整计费方式我这边可以自己调吗
+**客服**：您好，这个您无法调整的
+**客户**：你给我给联系方式
+**客服**：您好，这边您给个联系方式，这个需要这边商务主动跟您联系才可以的
+**客户**：[REDACTED_PHONE]
+**客服**：好的，收到
+
+### 根本原因分析
+
+资源使用超出免费额度或资源包配置不当
+
+---
+
+## heic格式图片imageView2 处理异常
+
+**问题分类**: 对象存储｜其他类咨询
+
+**适用场景**: 对象存储
+
+### 问题描述
+
+部分heic格式图片 通过  图片基础处理（imageView2)  后无法正常展示
+
+### 客服解答
+
+**客户**：部分heic格式图片 通过  图片基础处理（imageView2)  后无法正常展示
+**客服**：您好，麻烦提供下异常图片外链呢，这边分析
+**客户**：原链接    https://private.red-ring.cn/[REDACTED_PATH]    https://private.red-ring.cn/[REDACTED_PATH] 为  imageView2/0/q/75/format/jpg
+**客服**：{"error":"The original image abnormal"}
+原图异常。生成heic原图的设备是ios18吗
+**客户**：用户侧设备目前还不知道     现在ios18生成的图片  imageView2   处理会有异常么   上述图片 通过你们后台下载下来是能正常展示的
+**客服**：ios18的heic图片处理异常，近期有相关反馈，已有产研同事跟进正在处理。您那边和用户确认下呢，如果是ios18的，应该是同一个问题
+**客户**：刚刚问了用户那边  就是ios18
+**客户**：这个大概什么时候能处理好知道么
+**客服**：暂时还不确定，需排期处理。
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+

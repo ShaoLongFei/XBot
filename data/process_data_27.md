@@ -1178,3 +1178,244 @@ GET请求鉴权成功，POST请求鉴权失败
 
 ---
 
+## 加速域名一直在处理中？
+
+**分类**：CDN｜配置问题
+
+### 问题描述
+
+加速域名一直在处理中？
+
+### 客服解答
+
+1. 您好，这边手动介入下处理，麻烦稍等。
+2. 您好，抱歉让您久等了，已经处理完成，您确认下。
+
+### 根本原因
+
+需要进一步技术支持或业务咨询
+
+---
+
+## 怎么理解告警配置里“1个数据点”
+
+**分类**：CDN｜配置问题
+
+### 问题描述
+
+监控指标配置里持续N个数据点，怎么理解这个数据点，是时间单位还是频率单位？
+
+### 客服解答
+
+1. 您好，一个数据点，就是5分钟
+
+### 根本原因
+
+需要进一步技术支持或业务咨询
+
+---
+
+## 空间内文件/文件夹无法删除
+
+**分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+如图，没有文件，文件夹也无法删除
+
+### 客服解答
+
+1. 您好您可以使用最新的图形化工具kodo-browser进行删除，支持批量管理[已脱敏URL]注意：使用该工具目前进行上传/下载，如果不指定cdn域名的话，下载产生的流量费用为「外网流量」
+
+### 根本原因
+
+需要进一步技术支持或业务咨询
+
+---
+
+## 有没有C#版的签名生成方法
+
+**分类**：云短信｜短信发送问题
+
+### 问题描述
+
+用这套代码，报401，应该是在生成签名的地方有问题，我是参照nodejs版本改造写的，请问有什么问题code...
+///
+/// 发送短信
+///
+///
+///
+[AllowAnonymous]
+[HttpPost("SendCode/{mobile}")]
+public async Task SendCode(string mobile)
+{
+var code = DomainHelper.[已脱敏密钥]();
+var obj = new
+{
+template_id = "[已脱敏手机号]58424832",
+mobile = mobile,
+parameters = new { code = code }
+};
+var client = new HttpClient();
+var baseAddr = "[已脱敏URL]
+client.BaseAddress = new Uri(baseAddr);
+var content = new StringContent(DomainHelper.SerializeObject(obj));
+content.Headers.ContentType = new System.Net.Http.Headers.[已脱敏密钥]("application/json");
+client.[已脱敏密钥].Add(HeaderNames.Authorization, GenerateSignature(DomainHelper.SerializeObject(obj)));
+var request = new HttpRequestMessage();
+request.Method = HttpMethod.Post;
+request.RequestUri = new Uri(baseAddr + "/v1/message/single");
+request.Content = content;
+HttpResponseMessage response = await client.SendAsync(request);
+var c = response.Content.ReadAsStringAsync();
+// sendMessage
+_memoryCache.Set(mobile, code, DateTimeOffset.Now.AddMinutes(5));
+return ResultOk();
+}
+public string GenerateSignature(string body)
+{
+string data = $"POST [已脱敏URL]
+data += $"\nHost: [已脱敏URL]
+data += $"\nContent-Type: application/json";
+data += "\n\n";
+if (!string.IsNullOrEmpty(body))
+{
+data += body;
+}
+var secretKey = "[REDACTED_SECRET_KEY]";
+byte[] sign = ComputeHmacSha1(data, secretKey);
+string encodedSign = UrlSafeBase64Encode(sign);
+return $"Qiniu {secretKey}:{encodedSign}";
+}
+private byte[] ComputeHmacSha1(string data, string key)
+{
+using var hmacsha1 = new HMACSHA1(Encoding.UTF8.GetBytes(key));
+return hmacsha1.ComputeHash(Encoding.UTF8.GetBytes(data));
+}
+private string UrlSafeBase64Encode(byte[] bytes)
+{
+return Convert.ToBase64String(bytes).Replace('+', '-').Replace('/', '_');
+}
+
+### 客服解答
+
+1. c#可以参考下
+
+### 根本原因
+
+需要进一步技术支持或业务咨询
+
+---
+
+## 创建的HTML5页面分享到微信公众平台访问不了图标，怎么解决？
+
+**分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+如图所示。
+
+### 客服解答
+
+1. 对应这个图标的链接提供下，这边查看下
+2. 您好，这个图标的链接是什么可以提供下吗？直接在微信访问这个图标的链接是否可以访问
+
+### 根本原因
+
+需要进一步技术支持或业务咨询
+
+---
+
+## 计费问题
+
+**分类**：CDN｜流量计费问题
+
+### 问题描述
+
+[已脱敏URL]你好，我司应用发现 CDN 流量最近使用暴涨，研发过程中使用到类似上面的获取图片接口。如上资源链接是为了获取视频的某一帧，是不是每次 CDN 都要读取完整个视频才接去视频阵呢？
+
+### 客服解答
+
+1. 您好，是的
+
+### 根本原因
+
+需要进一步技术支持或业务咨询
+
+---
+
+## 文件缓存时间最长只可以设置1年，能延长吗
+
+**分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+在后台文件的缓存时间最长只可以设置1年，能延长吗
+
+### 客服解答
+
+1. 您好，缓存配置设置最长时间为1年，无法再延长了
+
+### 根本原因
+
+需要进一步技术支持或业务咨询
+
+---
+
+## 创建域名
+
+**分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+创建域名，显示域名所有权待验证，怎么解决
+
+### 客服解答
+
+1. 您好，点击 域名所有权待验证  有弹窗说明，配置弹窗页的验证记录进行验证，验证通过后即可创建域名。
+
+### 根本原因
+
+需要进一步技术支持或业务咨询
+
+---
+
+## 上传图片的token
+
+**分类**：对象存储｜上传下载
+
+### 问题描述
+
+upload makeupImg failed:invalid upload token, format error只看到了ak和sk，没找到token
+
+### 客服解答
+
+1. 您好，上传token是由ak，sk签算生成的sdk有封装示例：[已脱敏URL]
+2. 您好，bucket是指红框中这个名称。您这个报错是key问题，您token中如果指定了key，那么上传方法中也需要传递对应key值，不能为空。
+3. retKey是在哪需要的这个参数的呢，我们这边是key，代表空间中存储的文件名。
+...（共4条回复）
+
+### 根本原因
+
+系统错误或配置问题
+
+---
+
+## 空间文件全部迁移到另一个账号的空间上
+
+**分类**：对象存储｜数据迁移
+
+### 问题描述
+
+怎样空间文件全部迁移到另一个账号的空间上
+
+### 客服解答
+
+1. 您好，这个可以帮您将空间迁移到新账号，您提供一个联系方式即可
+
+### 根本原因
+
+需要进一步技术支持或业务咨询
+
+---
+

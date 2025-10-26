@@ -2030,3 +2030,283 @@ cdn.rugeai.com已配置处理中HTTPS下载分发2024-10-31 15:42:12刷新配置
 
 ---
 
+## 免费 from 自动催单
+
+**问题分类**: CDN｜证书问题
+
+### 问题描述
+
+长时间处于域名发布环节
+
+### 客服解答
+
+不支持的目前，免费证书需要手动申请；域名下发全球配置较慢，您再等待下
+
+### 详细对话过程
+
+**客户**：长时间处于域名发布环节
+**客服**：稍等
+**客户**：你们这里可以使用免费的https证书自动续费吗？就和宝塔一样，自动续费https的证书
+**客户**：这里的我不想每次过期了都要自己去手动处理，可以自动续费https证书
+**客服**：不支持的目前，免费证书需要手动申请
+**客户**：那我这个是怎么回事，怎么一直都是发布状态
+**客服**：域名下发全球配置较慢，您再等待下
+**客服**：可以了
+
+### 根本原因分析
+
+CDN证书配置或域名绑定问题
+
+---
+
+## 上传资源时返回579，自测callback地址，完全正常
+
+**问题分类**: 对象存储｜上传下载
+
+### 问题描述
+
+用natapp内网穿透的方式测试业务代码。之前测试时回调是正常可以收到的，现在一直是HTTP 579.响应如下：{    "error": "{\"callback_url\":\"[URL已脱敏] \\\"user_id\\\":\\\"[REDACTED_ID_CARD_18]\\\", \\\"activities_id\\\":\\\"[REDACTED_ID_CARD_18]\\\", \\\"type\\\":\\\"photo\\\"}\",\"token\":\"\",\"err_code\":404,\"error\":\"Not Found\",\"hash\":\"Frg57H3QbcSNDwXuHFXdEuC3UKQS\",\"key\":\"Frg57H3QbcSNDwXuHFXdEuC3UKQS\"}"}
+
+### 客服解答
+
+您好579报错是指上传成功但是回调失败，检查一下您的回调地址是否能正确返回200；回调响应需要返回 json 格式的数据，而不是直接返回空回调服务器接收到回调请求后，负责生成七牛返回给客户端的数据(json格式)，该数据作为此次回调请求的响应内容；您上传token中不要设置callbackHost	，要设置也是设置域名，不要携带[URL已脱敏]
+
+### 详细对话过程
+
+**客户**：用natapp内网穿透的方式测试业务代码。之前测试时回调是正常可以收到的，现在一直是HTTP 579.响应如下：{    "error": "{\"callback_url\":\"[URL已脱敏] \\\"user_id\\\":\\\"[REDACTED_ID_CARD_18]\\\", \\\"activities_id\\\":\\\"[REDACTED_ID_CARD_18]\\\", \\\"type\\\":\\\"photo\\\"}\",\"token\":\"\",\"err_code\":404,\"error\":\"Not Found\",\"hash\":\"Frg57H3QbcSNDwXuHFXdEuC3UKQS\",\"key\":\"Frg57H3QbcSNDwXuHFXdEuC3UKQS\"}"}
+**客服**：您好579报错是指上传成功但是回调失败，检查一下您的回调地址是否能正确返回200
+**客户**：用工具测试了，回调地址可以正常返回
+**客户**：这个是用工具测试的回调地址[图片]
+**客户**：空间的区域是：华东-浙江，上传用的[URL已脱敏]
+**客服**：回调响应需要返回 json 格式的数据，而不是直接返回空回调服务器接收到回调请求后，负责生成七牛返回给客户端的数据(json格式)，该数据作为此次回调请求的响应内容
+如果回调成功，回调服务应对七牛云存储作出类似如下的响应（注意：回调响应内容由回调服务生成，以下仅作为示例）：
+HTTP/1.1 200 OK
+Server: nginx/1.1.19
+Date: Thu, 19 Dec 2013 06:27:30 GMT
+Content-Type: text/html
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+{"success":true,"name":"sunflowerb.jpg"}
+**客户**：按照这个格式响应七牛回调服务器，依然是这个报错
+**客服**：稍等
+**客服**：您上传token中不要设置callbackHost	，要设置也是设置域名，不要携带http://
+**客户**：好的，谢谢
+**客服**：您好不客气呢
+
+### 根本原因分析
+
+上传性能受网络环境和SDK版本影响
+
+---
+
+## 测试域名被回收了
+
+**问题分类**: 对象存储｜其他类咨询
+
+### 问题描述
+
+测试域名被回收了
+
+### 客服解答
+
+您好每个测试域名生命周期为30个自然日（已有测试域名自回收功能上线之日起算，新产生的测试域名自系统自动生成之日起算），超过30日系统将自动回收，回收即为域名删除，您可以绑定自定义域名继续使用详细说明请参考：https://developer.qiniu.com/fusion/kb/1319/test-domain-access-restriction-rules
+
+### 详细对话过程
+
+**客户**：测试域名被回收了
+**客服**：您好每个测试域名生命周期为30个自然日（已有测试域名自回收功能上线之日起算，新产生的测试域名自系统自动生成之日起算），超过30日系统将自动回收，回收即为域名删除，您可以绑定自定义域名继续使用详细说明请参考：https://developer.qiniu.com/fusion/kb/1319/test-domain-access-restriction-rules
+
+### 根本原因分析
+
+需要根据具体场景进行问题定位
+
+---
+
+## CDN长时间配置不成功
+
+**问题分类**: CDN｜配置问题
+
+### 问题描述
+
+修改、删除、都不生效
+
+### 客服解答
+
+您好这边帮您手动介入处理下 请稍等；已经处理完成
+
+### 详细对话过程
+
+**客户**：修改、删除、都不生效
+**客服**：您好这边帮您手动介入处理下 请稍等
+**客服**：已经处理完成
+
+### 根本原因分析
+
+问题通过人工介入处理解决
+
+---
+
+## 几个小时了，https显示一直在处理中
+
+**问题分类**: CDN｜证书问题
+
+### 问题描述
+
+一直在处理中
+
+### 客服解答
+
+您好这边帮您手动介入处理下 请稍等；已经处理完成
+
+### 详细对话过程
+
+**客户**：一直在处理中
+**客服**：您好这边帮您手动介入处理下 请稍等
+**客服**：已经处理完成
+
+### 根本原因分析
+
+系统处理延迟或异步任务未完成；CDN证书配置或域名绑定问题
+
+---
+
+## ssl证书已经续费为何还会提示已经过期，该如何操作呢
+
+**问题分类**: CDN｜证书问题
+
+### 问题描述
+
+ssl证书已经续费为何还会提示已经过期，该如何操作呢
+
+### 客服解答
+
+您好，可以手动申请手动申请并使用免费SSL证书步骤如下1.免费证书申请证书品牌：TrustAsia限免证书种类：DV限免https://portal.qiniu.com/certificate/apply2.补全信息3.免费证书验证https://developer.qiniu.com/ssl/manual/3667/ssl-certificate-of-free-dns-validation-guide4.升级HTTPS配置https://developer.qiniu.com/fusion/manual/4952/https-configuration注意事项升级https后，流量计费说明：https://developer.qiniu.com/fusion/kb/3887/https-issues-related-to-the-faq[图片]
+
+### 详细对话过程
+
+**客户**：ssl证书已经续费为何还会提示已经过期，该如何操作呢
+**客服**：您好，可以手动申请手动申请并使用免费SSL证书步骤如下1.免费证书申请证书品牌：TrustAsia限免证书种类：DV限免https://portal.qiniu.com/certificate/apply2.补全信息3.免费证书验证https://developer.qiniu.com/ssl/manual/3667/ssl-certificate-of-free-dns-validation-guide4.升级HTTPS配置https://developer.qiniu.com/fusion/manual/4952/https-configuration注意事项升级https后，流量计费说明：https://developer.qiniu.com/fusion/kb/3887/https-issues-related-to-the-faq[图片]
+
+### 根本原因分析
+
+CDN证书配置或域名绑定问题
+
+---
+
+## 免费 from 自动催单
+
+**问题分类**: CDN｜证书问题
+
+### 问题描述
+
+长时间处于免费证书申请环节
+
+### 客服解答
+
+您好证书目前在验证中 请稍等；已经处理好了
+
+### 详细对话过程
+
+**客户**：长时间处于免费证书申请环节
+**客服**：您好证书目前在验证中 请稍等
+**客服**：已经处理好了
+
+### 根本原因分析
+
+CDN证书配置或域名绑定问题
+
+---
+
+## HTTPS 配置长时间未配置完成
+
+**问题分类**: 对象存储｜工具使用
+
+### 问题描述
+
+域名升级 HTTPS 处理中，免费证书申请耗时相对较长，平均 15 分钟完成，期间域名访问不受影响，部分配置不可修改，若长时间未配置完成，请提交工单反馈
+
+### 客服解答
+
+您好这边帮您手动介入处理下 请稍等
+
+### 详细对话过程
+
+**客户**：[图片]域名升级 HTTPS 处理中，免费证书申请耗时相对较长，平均 15 分钟完成，期间域名访问不受影响，部分配置不可修改，若长时间未配置完成，请提交工单反馈
+**客服**：您好这边帮您手动介入处理下 请稍等
+
+### 根本原因分析
+
+系统处理延迟或异步任务未完成
+
+---
+
+## 账号注销
+
+**问题分类**: 账户与财务｜账户问题
+
+### 问题描述
+
+账号注销
+
+### 客服解答
+
+您好，目前注销可以在控制台操作https://portal.qiniu.com/developer/user/security目前用户自助注销需满足以下所有条件：1、账号为普通账号（非财务父子账号、OEM账号）2、账号下实时消费无产品用量、无消费金额（数据需要您自己删除）对象存储：https://portal.qiniu.com/kodo/bucketCDN：https://portal.qiniu.com/cdn/domain3、账号下无各种欠费实时消费明细（查看您当月消费）https://portal.qiniu.com/financial/bills/estimated-consume如有欠费，将在下月5号出账、8号扣款，结算后，您再提交账号注销。4、账号下没有正在处理的提现审批https://portal.qiniu.com/financial/withdraw5、账号当前没有被冻结注意：账号注销后，账号无法找回；注销需要确认：1、注销原因：2、账户资源是否全部清除？（需要您操作清除，未清除的话，会在注销期间产生费用，影响您的注销流程）具体您的资源使用可以在实时消费链接这边查看确定下：https://portal.qiniu.com/financial/bills/estimated-consume3、账户是否有余额？余额是否需要退款？退款可以在这里提交下：https://portal.qiniu.com/financial/withdraw4、如有欠费，将在下月5号出账、8号扣款，由商务为您结算。结算后，我们为您操作注销账户，您看可以吗？；您好，已为您申请注销当前账号，注销流程会需要些时间，待注销完成将会邮件通知您，请知悉，
+
+### 详细对话过程
+
+**客户**：账号注销
+**客户**：账号注销
+**客服**：您好，目前注销可以在控制台操作https://portal.qiniu.com/developer/user/security目前用户自助注销需满足以下所有条件：1、账号为普通账号（非财务父子账号、OEM账号）2、账号下实时消费无产品用量、无消费金额（数据需要您自己删除）对象存储：https://portal.qiniu.com/kodo/bucketCDN：https://portal.qiniu.com/cdn/domain3、账号下无各种欠费实时消费明细（查看您当月消费）https://portal.qiniu.com/financial/bills/estimated-consume如有欠费，将在下月5号出账、8号扣款，结算后，您再提交账号注销。4、账号下没有正在处理的提现审批https://portal.qiniu.com/financial/withdraw5、账号当前没有被冻结注意：账号注销后，账号无法找回
+**客户**：控制台提示 请提交工单注销，你又让我去平台...
+**客服**：注销需要确认：1、注销原因：2、账户资源是否全部清除？（需要您操作清除，未清除的话，会在注销期间产生费用，影响您的注销流程）具体您的资源使用可以在实时消费链接这边查看确定下：https://portal.qiniu.com/financial/bills/estimated-consume3、账户是否有余额？余额是否需要退款？退款可以在这里提交下：https://portal.qiniu.com/financial/withdraw4、如有欠费，将在下月5号出账、8号扣款，由商务为您结算。结算后，我们为您操作注销账户，您看可以吗？
+**客户**：这个账号是新号，没有任何消费记录
+**客服**：您好，已为您申请注销当前账号，注销流程会需要些时间，待注销完成将会邮件通知您，请知悉，
+
+### 根本原因分析
+
+账号注销需满足多项前置条件
+
+---
+
+## 免费 from 自动催单
+
+**问题分类**: CDN｜证书问题
+
+### 问题描述
+
+长时间处于域名发布环节
+
+### 客服解答
+
+您好这边帮您手动介入处理下 请稍等；fmimg.tianshuoyun.cn 这个域名您账号下目前没有可用证书 您可以手动申请一个证书再部署到cdn域名手动申请并使用免费SSL证书步骤如下1.免费证书申请证书品牌：TrustAsia限免证书种类：DV限免https://portal.qiniu.com/certificate/apply2.补全信息3.免费证书验证https://developer.qiniu.com/ssl/manual/3667/ssl-certificate-of-free-dns-validation-guide4.升级HTTPS配置https://developer.qiniu.com/fusion/manual/4952/https-configuration注意事项升级https后，流量计费说明：https://developer.qiniu.com/fusion/kb/3887/https-issues-related-to-the-faq[图片]；这边处理下 请稍等；[更多对话内容见详细描述]
+
+### 详细对话过程
+
+**客户**：长时间处于域名发布环节
+**客户**：一直是11分钟，好久好久了[图片]
+**客服**：您好这边帮您手动介入处理下 请稍等
+**客户**：好的，谢谢
+**客服**：fmimg.tianshuoyun.cn 这个域名您账号下目前没有可用证书 您可以手动申请一个证书再部署到cdn域名手动申请并使用免费SSL证书步骤如下1.免费证书申请证书品牌：TrustAsia限免证书种类：DV限免https://portal.qiniu.com/certificate/apply2.补全信息3.免费证书验证https://developer.qiniu.com/ssl/manual/3667/ssl-certificate-of-free-dns-validation-guide4.升级HTTPS配置https://developer.qiniu.com/fusion/manual/4952/https-configuration注意事项升级https后，流量计费说明：https://developer.qiniu.com/fusion/kb/3887/https-issues-related-to-the-faq[图片]
+**客户**：好的，谢谢
+**客服**：好的
+**客户**：你好，又出现刚刚那个问题了，现在显示是22分钟，实际过去半小时了都[图片]
+**客服**：这边处理下 请稍等
+**客服**：您好目前系统侧有优化 当前暂时不能帮您手动介入处理 辛苦您耐心等待系统下发配置
+**客服**：证书文件验证您没有配置 CA审核机构未签发[URL已脱敏] DNS TXT 验证，系统会自动轮询，轮询通过才会颁发证书参考文档：https://developer.qiniu.com/ssl/manual/3667/ssl-certificate-of-free-dns-validation-guide
+**客户**：你好！这个域名之前用的CNAME，我现在怎么改为TXT啊？还有TXT 记录值我从哪获取？[图片]
+**客服**：证书的验证方式不能调整 可以重新申请 选择dns验证的方式
+**客户**：好吧，那你那边可以帮我操作停用当前这个 fmimg.tianshuoyun.cn 的域名吗？现在我这边显示一直在‘处理中’，都十几个小时了。我操作不了，不删除的话，也没法重新添加这个域名。[图片]
+**客服**：已经处理
+**客户**：我在腾讯云申请了免费证书，也在咱后台重新申请了这个域名，为啥还是不能访问啊？[图片]
+**客户**：好像可以了，可能有延迟
+**客服**：把缓存清除一下再访问 证书是在有效期内的[图片]
+**客户**：嗯嗯，谢谢了
+
+### 根本原因分析
+
+CDN证书配置或域名绑定问题
+
+---
+

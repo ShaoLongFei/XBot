@@ -1,6 +1,6 @@
 # 客服问答数据集 - Part 48
 
-本文档包含 30 个客服问答记录，已进行结构化处理和隐私脱敏。
+本文档包含 40 个客服问答记录，已进行结构化处理和隐私脱敏。
 
 ---
 
@@ -673,6 +673,254 @@ Error=ServiceUnavailable : The request has failed due to a temporary failure of 
 **客户**：[REDACTED_IP];[REDACTED_IP];[REDACTED_IP];[REDACTED_IP];[REDACTED_IP];[REDACTED_IP];[REDACTED_IP];[REDACTED_IP];[REDACTED_IP];[REDACTED_IP]
 **客户**：我重新获取了下地址，看下这几台
 **客服**：您好内部核实了下CDN节点未发现异常，日志中也未见异常状态码，这边先帮您调整一组新CDN节点，您那边后续再观察看看如果后续有复现到，辛苦获取下当时异常的CDN节点ip、客户端ip、请求时间、状态码等信息
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## base64音频文件（mp3）如何上传；
+
+**问题分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+我有个tts接口，文本通过火山方舟转mp3音频，火山方舟返回的是base64字符串；我需要把这个文件上传七牛云；请问java sdk有相关的接口？？？文档我没有找到
+
+### 客服解答
+
+**客户**：我有个tts接口，文本通过火山方舟转mp3音频，火山方舟返回的是base64字符串；我需要把这个文件上传七牛云；请问java sdk有相关的接口？？？文档我没有找到
+**客服**：您好，您可以参考下这个的[REDACTED_URL]
+**客户**：incorrect region, please use up-cn-east-2.qiniup.com, bucket is: youtiaotalk-test请问 对应的域名如何获取
+**客服**：您好，如果您这边是华东-浙江2区域的话使用这个域名的：up-cn-east2.qiniup.com可以参考这个文档﻿[REDACTED_URL]
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## 验证不了
+
+**问题分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+验证不了
+
+### 客服解答
+
+**客户**：[图片]验证不了
+**客户**：解析什么都正常
+**客服**：您好这个需要到您的域名服务商后台配置 配置完成后再来点击验证[图片]
+
+### 根本原因分析
+
+具体问题需要根据日志和配置进一步分析
+
+---
+
+## 证书问题：[REDACTED_URL]
+
+**问题分类**：CDN｜证书问题
+
+### 问题描述
+
+证书过期了，已经重新上传了新的证书，当时不生效，麻烦看一下
+
+### 客服解答
+
+**客户**：证书过期了，已经重新上传了新的证书，当时不生效，麻烦看一下
+**客服**：您好这边处理下 请稍等
+**客服**：已经处理好了
+
+### 根本原因分析
+
+SSL证书过期，需要续期或申请新证书
+
+---
+
+## 使用 imageView2 处理图片相同图片会重复收费吗
+
+**问题分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+使用 imageView2 处理图片相同图片会重复收费吗
+
+### 客服解答
+
+**客户**：使用 imageView2 处理图片相同图片会重复收费吗
+**客服**：您好，您是指同步处理，url后面加 imageView2参数的处理形式吗
+**客户**：就链接访问的时候
+**客服**：您好，好的存在多次计费的。由于cdn节点是全国（全球）覆盖的，您所在区域请求到的cdn节点，处理过一次，就不会二次处理了，第二次访问将直接返回处理后的缓存资源其他区域的cdn节点，由于还没有图片处理后的缓存，客户端请求时，将图片处理一次，同理这片区域的客户端后续二次访问是访问到缓存，不再处理。
+
+### 根本原因分析
+
+具体问题需要根据日志和配置进一步分析
+
+---
+
+## 服务器无法上传文件到对象存储
+
+**问题分类**：对象存储｜上传下载
+
+### 问题描述
+
+同样的上传方式，服务器无法上传成功，从11月1日开始的
+
+### 客服解答
+
+**客户**：同样的上传方式，服务器无法上传成功，从11月1日开始的
+**客服**：您好，麻烦确认下python sdk使用的哪个版本呢
+**客户**：这个
+**客户**：[root@localhost ~]# /usr/local/python3.8/bin/python3.8 /root/sbin/pyshell/upload.py /data/mumayi/soft/union/soft/2024/11/04/103030/kumayi_103030_release.apk_ResponseInfo__response:None, exception:HTTPConnectionPool(host='upload-cn-north-1.qiniuio.com', port=80): Max retries exceeded with url: /buckets/apkumumayicom/objects/[REDACTED_KEY]/uploads/[REDACTED_KEY]/1 (Caused by ProtocolError('Connection aborted.', timeout('timed out'))), url:None, status_code:-1, text_body:None, req_id:None, x_log:None, error:HTTPConnectionPool(host='upload-cn-north-1.qiniuio.com', port=80): Max retries exceeded with url: /buckets/apkumumayicom/objects/[REDACTED_KEY]/uploads/[REDACTED_KEY]/1 (Caused by ProtocolError('Connection aborted.', timeout('timed out')))Traceback (most recent call last):  File "/root/sbin/pyshell/upload.py", line 53, in <module>    asyncio.run(main())  File "/usr/local/python3.8/lib/python3.8/asyncio/runners.py", line 44, in run    return loop.run_until_complete(main)  File "/usr/local/python3.8/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete    return future.result()  File "/root/sbin/pyshell/upload.py", line 48, in main    await upload_file(file_path)  File "/root/sbin/pyshell/upload.py", line 37, in upload_file    assert ret['key'] == keyTypeError: 'NoneType' object is not subscriptable[root@localhost ~]# pip listbackports.ssl-match-hostname ([REDACTED_IP])boto3 (1.16.43)botocore (1.19.43)chardet (2.2.1)configobj (4.7.2)decorator (3.4.0)futures (3.3.0)iniparse (0.4)ipaddress (1.0.16)jmespath (0.10.0)kitchen (1.1.1)perf (0.1)pip (8.1.2)pycurl (7.19.0)pygobject (3.22.0)pygpgme (0.3)pyliblzma (0.5.3)python-dateutil (2.8.1)python-linux-procfs (0.4.9)python-magic (0.4.18)pyudev (0.15)
+**客户**：请问有什么反馈吗？
+**客服**：请求超时，ping upload-cn-north-1.qiniuio.com看下能ping通吗
+**客户**：[root@localhost ~]# ping upload-cn-north-1.qiniuio.comPING upload-cn-north-1.qiniuio.com ([REDACTED_IP]) 56(84) bytes of data.64 bytes from [REDACTED_IP] ([REDACTED_IP]): icmp_seq=1 ttl=49 time=12.1 ms64 bytes from [REDACTED_IP] ([REDACTED_IP]): icmp_seq=2 ttl=49 time=12.0 ms64 bytes from [REDACTED_IP] ([REDACTED_IP]): icmp_seq=3 ttl=49 time=11.9 ms64 bytes from [REDACTED_IP] ([REDACTED_IP]): icmp_seq=4 ttl=49 time=12.0 ms
+**客户**：通的啊
+**客户**：这边的ip是120.192.81.166
+**客服**：您好，您机器带宽有多少，能通，但是上传报超时的
+**客户**：济南联通300MB
+**客服**：您好，您看下80端口通吗，其他设备上跑一下程序试试看。
+**客户**：[root@localhost 103030]# telnet upload-cn-north-1.qiniuio.com 80Trying [REDACTED_IP]...Connected to upload-cn-north-1.qiniuio.com.Escape character is '^]'.
+**客户**：其他设备试了可以上传，只有这台不行120.192.81.166，从11月1号开始的。
+**客服**：应该是这台设备网络有点问题的，您能测速一下吗，看下这台机器当前实际带宽是否预期。
+**客户**：[root@localhost ~]# ./speedtest-cli --shareRetrieving speedtest.net configuration...Testing from China Mobile ([REDACTED_IP])...Retrieving speedtest.net server list...Selecting best server based on ping...Hosted by China Telecom JiangSu 5G (Nanjing) [538.69 km]: 919.599 msTesting download speed................................................................................Download: 21.55 Mbit/sTesting upload speed................................................................................................Upload: 2.62 Mbit/sShare results: [REDACTED_URL]
+**客户**：这个上传也够吧
+**客服**：你提高下带宽再试下。这上行带宽比较低了，系统本身还有其他程序会占用的。
+**客户**：这个，没法提高了啊。这个带宽不行吗？
+**客服**：能换个网络吗，对比看下，如果其他网络可以，可以判断是这个网络问题
+**客户**：其他的可以上传。我们之前这个服务器还是可以上传的从11月1号后这个IP就不行了，还以为有黑名单啥的呢。
+**客服**：您好，报错是超时的错误，-1是本地网络问题，还未到达我们服务器，而且我们这边没有黑名单的。
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## 如何查询创建的目录存储的文件大小
+
+**问题分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+如何查询创建的目录存储的文件大小
+
+### 客服解答
+
+**客户**：如何查询创建的目录存储的文件大小
+**客服**：您好，我们底层是key-value结构的，文件夹显示是根据“/”分隔来模拟出文件夹结构的样子，实际上并无文件夹结构，也无法按照文件夹目录来直接获得大小。需要通过工具，列举出目录下所有的文件，进行求和来获取相同目录的总大小您可以使用qshell工具的listbucket2命令，列举空间指定前缀目录的文件名到一个本地的txt文件中（包含有文件大小），在本地做一下求和qshell下载安装:[REDACTED_URL]
+**客户**：好的 谢谢
+**客服**：您好，不客气的，您还有其他问题吗
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## 我买的资源包不适用增量审核吗？
+
+**问题分类**：人工智能｜内容安全
+
+### 问题描述
+
+我买的资源包不适用增量审核吗？为什么没有抵扣使用量，麻烦看一下。
+
+### 客服解答
+
+**客户**：我买的资源包不适用增量审核吗？为什么没有抵扣使用量，麻烦看一下。
+**客服**：您好，您这边将您的资源包截图给一下，这边看下您的资源包类型
+**客户**：[REDACTED_URL]
+**客户**：图片传不上来，你点链接看一下，我传七牛oss上面了
+**客户**：[REDACTED_URL]
+**客服**：您好，内容审核通用项即可正常抵扣的，只是目前是月初出账期还未显示的，您可以后续两天再观察看下的
+**客户**：好的，但是上一次我提工单问你们工作人员告诉我说2号就会显示的，有没有精确时间能告知一下
+**客服**：您好，正常是1～5号为月初出账期的，目前应该是还有延迟的，您这边可以后续再看下的
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## 海外访问CDN资源超时
+
+**问题分类**：CDN｜访问下载
+
+### 问题描述
+
+海外访问CDN资源超时
+
+### 客服解答
+
+**客户**：海外访问CDN资源超时[图片]
+**客服**：您好，1、麻烦提供下用户的 ip、dns 信息，和cdn节点信息，这边代理测试下可以通过访问这个链接 [REDACTED_URL] 获取本地的 ip 和 dns 信息，在检测域名这边输入下cdn域名，点击提交检测，然后截图通过工单提交给我们[图片]2、建议让用户使用 chrome 浏览器，按照下述文档获取下 remote adress(对端节点ip)，request header(客户端请求头) 以及 response header(服务端响应头)信息，方便我们查询分析问题。[REDACTED_URL]
+**客户**：信息如下：[REDACTED_URL]
+**客户**：这边有消息群没有？
+**客服**：您好，代理看访问是正常的[图片]
+**客服**：这边过滤日志给您看下，稍等
+**客户**：现在看起来好像是正常了，中间有一段时间突然国外都访问超时，但是国内访问都是正常。
+**客户**：这种情况从来没有发生过。
+**客服**：您好，这个cdn节点没有查看到504 的日志
+**客服**：您好，稍等下，这边单独过滤504看下
+**客服**：您好，这边查看日志访问504看起来是因为回源超时的原因，这边重新给您调整了下，您再观察看下
+**客户**：因为我这边是开了全球加速，这个具体是什么原因导致的。
+**客户**：因为是国外所有用户突然就都不能访问了，以后是否可能还有出现类似的问题。
+**客服**：您好，回源超时，海外cdn节点回源国内存储还是会有一定影响的，这边重新给您调整了下海外回源，您再观察下
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## q21.xianlaiban.top 证书过期请帮解决一下
+
+**问题分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+您的账号 [REDACTED_EMAIL] 在七牛云对象存储有以下源站域名绑定的 SSL 证书即将过期，证书过期会导致您的域名无法支持 HTTPS 访问。为保证您的服务正常使用，请尽快更换证书。如证书已弃用，请忽略。
+
+### 客服解答
+
+**客户**：您的账号 [REDACTED_EMAIL] 在七牛云对象存储有以下源站域名绑定的 SSL 证书即将过期，证书过期会导致您的域名无法支持 HTTPS 访问。为保证您的服务正常使用，请尽快更换证书。如证书已弃用，请忽略。
+**客户**：q21.xianlaiban.top  用不了啊，麻烦帮处理一下
+**客服**：您好，您这边重新部署一下证书就好了，可以上传自有证书也可以购买我们的免费证书使用手动申请并使用免费SSL证书步骤如下1.免费证书申请证书品牌：TrustAsia限免证书种类：DV限免[REDACTED_URL]
+**客户**：这么复杂，能不能帮操作一下，搞个免费的
+**客户**：我已经申请了个免费的，不会部署
+**客户**：在不在啊！！！
+**客服**：您好，这边无法帮您操作的，您这边申请后补全证书信息，然后完成一下域名所有权验证的2.补全信息3.免费证书验证[REDACTED_URL]
+**客户**：DNS验证 入口在哪里 ，没找到
+**客服**：您好，这个的话需要到您的域名购买厂商的，dns解析验证需要到域名购买厂商的解析记录这边添加一下的
+
+### 根本原因分析
+
+SSL证书过期，需要续期或申请新证书
+
+---
+
+## 紧急，麻烦请帮忙指导找到这两个图片文件的路径，谢谢
+
+**问题分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+[REDACTED_URL]  张生
+
+### 客服解答
+
+**客户**：https://qiniu.xgxshop.com/20220111-1.pnghttps://qiniu.xgxshop.com/20220111-2.png这两个图片文件能打开，但找不到所在路径，我们需要替换掉，谢谢！需要电话沟通请电：[REDACTED_PHONE]  张生
+**客服**：您好您开启的是镜像回源策略 是从镜像源站拉取资源的 这个文件没有落存储
+**客户**：好的，谢谢你
+**客服**：好的
+**客户**：你好，请问一下：在七牛这边能不能帮忙删除这两行记录，我们也找不到是在哪里来的链接
+**客服**：这个文件并没有落存储空间 这边是无法删除的您要检查您配置的镜像源站 [REDACTED_URL]
+**客户**：好的。完结，谢谢
 
 ### 根本原因分析
 

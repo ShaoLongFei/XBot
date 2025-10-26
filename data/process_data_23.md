@@ -1223,3 +1223,159 @@ DCN域名maillimg.top3.vip删除了很久都还在处理中
 需要根据具体情况分析
 
 ---
+## iOS 设置超时时间无效
+
+**问题分类**: 对象存储｜SDK使用
+
+### 详细问题描述
+pod 'Qiniu', '8.5.0'设置超时时间无效，设置了3秒，那3秒之后completionHandler应该有回调的吧，现在没有。let configuration = QNConfiguration.build { builder in         builder?.timeoutInterval = 3 }         let qnUploader = QNUploadManager.init(configuration: configuration)
+
+### 客服解答内容
+1. 您好，您稍等这边帮您确认一下
+2. 这个是ios系统的 网络超时时间 不是上传超时时间
+3. 自己计时  如果超时 就设置cancel为YES
+4. [图片]
+5. 比如断网3秒 就会timeout  如果http链接正常就不会超时
+
+### 根本原因分析
+文件传输权限或网络问题
+
+---
+## image.w1.cn 一直解冻中好久了
+
+**问题分类**: CDN｜配置问题
+
+### 详细问题描述
+image.w1.cn 一直解冻中好久了
+
+### 客服解答内容
+1. 您好，这边手动介入下处理，麻烦稍等。
+2. 您好，抱歉让您久等了，已经处理完成，您确认下。
+
+### 根本原因分析
+需要根据具体情况分析
+
+---
+## 账号注销
+
+**问题分类**: 账户与财务｜账户问题
+
+### 详细问题描述
+不再使用了
+
+### 客服解答内容
+1. 您好，目前注销可以在控制台操作https://portal.qiniu.com/[REDACTED_PATH]
+
+### 根本原因分析
+账户注销或退款流程
+
+---
+## 配置cname，主机名填什么
+
+**问题分类**: CDN｜配置问题
+
+### 详细问题描述
+你好，我在DNS中添加cname，主机名填什么呢
+
+### 客服解答内容
+1. 您好，您这个域名进行解析验证的，主机记录是verification
+2. 您好，数据记录为@
+3. 主机记录
+4. 您好，这个域名解析如下主机记录：cdn记录类型：cname记录值：cdn-gale...[REDACTED].qiniudns.com
+5. 您好，配置截图看下
+
+### 根本原因分析
+域名配置或DNS解析问题
+
+---
+## 本月cdn流量用的有点多，有异常，希望能知道哪个文件所耗得流量多
+
+**问题分类**: CDN｜其他类咨询
+
+### 详细问题描述
+本月cdn流量用的有点多，有异常，希望能知道哪个文件所耗得流量多，或告知如何查询哪些文件用的流量多
+
+### 客服解答内容
+1. 您好，请稍等
+2. 您好，这边帮您检查了下，您主要是http://img.qjsmartech.com/[REDACTED_PATH] 控制台 - cdn - 统计分析 - 日志分析 中看到您的top访问情况，比如高频访问的URL和客户端IP。https://portal.qiniu.com/[REDACTED_PATH] - 访问控制 中，开启IP黑白名单，对这部分IP进行封禁。[图片]
+
+### 根本原因分析
+需要根据具体情况分析
+
+---
+## 能加速审核一下吗
+
+**问题分类**: 云短信｜签名模板审核
+
+### 详细问题描述
+一般审核时间是多久呢
+
+### 客服解答内容
+1. 您好，正在审核中，需要运营商侧审核，需要 3 ~ 5个工作日，请耐心等待下
+
+### 根本原因分析
+需要根据具体情况分析
+
+---
+## 鸿蒙release环境下Upload不成功
+
+**问题分类**: 对象存储｜上传下载
+
+### 详细问题描述
+鸿蒙SDK：在debug下能正常上传，在release环境下createMu...[REDACTED]就不成功；代码都一样，包括获取updata Token都是一样的code...// 创建上传数据const fileData: UploadFile = { type: 'uri', data: this.imgURl }const key:string = makeSystemUuid()fileData.key = keyfileData.filename = keyconst config: UploadConfig = {  tokenProvider: async () => {    const res = await getQnToken()    const token: string = res?.['uploadToken'] || ''    return Promise.resolve(token)  },}createMu...[REDACTED](this.context, fileData, config).start()  .then((result) => {    // 处理任务完成结果    interface obj {      hash: string,      key: string    }    const res: obj = JSON.parse(result?.['result']) as obj    console.log(JSON.stringify(result), 'why处理任务完成结果')    this.imageToken=res.key    console.log('上传成功后的token：imageToken = ' + this.imageToken );  })  .catch((error:UploadError) => {      console.log('上传失败后的token：error = ' + error.message + error.name)    // 处理任务启动失败错误  });
+
+### 客服解答内容
+1. 您好，您参考下这个demo看下https://github.com/[REDACTED_PATH]
+2. 您好，您这边鸿蒙是什么版本的SDK？
+3. 您好您使用的上传token可以提供下吗
+4. 看报错是没有解析出上传域名，您debug和release环境下用的上传token是否是一样的呢
+5. 你好，稍等下，这边同步下
+
+### 根本原因分析
+文件传输权限或网络问题
+
+---
+## Kodo 浏览器怎么配置UC服务和区域设置
+
+**问题分类**: 对象存储｜上传下载
+
+### 详细问题描述
+如题
+
+### 客服解答内容
+1. 您好uc服务是私有云的，选择公有云 输入您的密钥即可[图片]
+
+### 根本原因分析
+需要根据具体情况分析
+
+---
+## 视频外链
+
+**问题分类**: CDN｜其他类咨询
+
+### 详细问题描述
+售后
+
+### 客服解答内容
+1. 您好，请问您具体是有什么问题呢
+2. 你们现在先确认下1：视频是在哪个空间2：哪个域名做的cname解析，解析的记录麻烦截图这边看下mahayanamedia.com 这个域名，你们确认是用来加载空间资源，而不是用于你们网站网页访问的么
+3. 您好，已电话联系
+
+### 根本原因分析
+域名配置或DNS解析问题
+
+---
+## 我如何计算我的空间中的文件被下载了多少次，似乎没有统计被下载次数的说明
+
+**问题分类**: 对象存储｜其他类咨询
+
+### 详细问题描述
+我如何计算我的空间中的文件被下载了多少次，似乎没有统计被下载次数的说明
+
+### 客服解答内容
+1. 您好，绑定的是cdn域名，需要在cdn产品处查看使用统计和访问情况。您可以在控制台 https://portal.qiniu.com/[REDACTED_PATH] 下载CDN日志后统计具体文件资源的访问次数或者通过API来下载，参考文档：https://developer.qiniu.com/[REDACTED_PATH]
+
+### 根本原因分析
+需要根据具体情况分析
+
+---

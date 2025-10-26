@@ -2921,3 +2921,142 @@ code...七牛云图片上传成功后 在项目里图片无法呈现
 
 SDK配置问题或网络环境问题
 
+---
+
+## 图片无法预览
+
+**问题分类**: 对象存储｜上传下载
+
+**适用场景**: 对象存储
+
+### 问题描述
+
+能上传但不能读取,直接访问是一段xml提示
+
+### 客服解答
+
+**客户**：能上传但不能读取,直接访问是一段xml提示
+**客服**：您好，您的访问链接提供下呢
+
+### 根本原因分析
+
+SDK配置问题或网络环境问题
+
+---
+
+## 通用证书怎么部署多个域名
+
+**问题分类**: 对象存储｜其他类咨询
+
+**适用场景**: 对象存储, SSL证书
+
+### 问题描述
+
+我上传了huomc.com的通用证书 ，怎么部署到以下域名：img.help.huomc.comv.help.huomc.comimg.help.huomc.com v.help.huomc.com cdn.huomc.com 部署时只看到cdn.huomc.com  这一个域名能选择
+
+### 客服解答
+
+**客户**：我上传了huomc.com的通用证书 ，怎么部署到以下域名：img.help.huomc.comv.help.huomc.comimg.help.huomc.com v.help.huomc.com cdn.huomc.com 部署时只看到cdn.huomc.com  这一个域名能选择[图片][图片]
+**客服**：您好，您的证书不支持这些三级域名，只能匹配到cdn.huomc.com 这个二级域名
+**客户**：是贵司的七牛云不支持还是我的证书不支持三级域名？
+**客服**：您好，您的证书不支持的通配符证书，只能往上支持一级证书的
+
+### 根本原因分析
+
+SDK配置问题或网络环境问题
+
+---
+
+## 上传新图片
+
+**问题分类**: 对象存储｜上传下载
+
+**适用场景**: 对象存储
+
+### 问题描述
+
+将空间的图片文件删除后上传相同名称的新图片，返回的还是旧图片
+
+### 客服解答
+
+**客户**：将空间的图片文件删除后上传相同名称的新图片，返回的还是旧图片
+**客服**：您好，这个是CDN缓存导致的，你们刷新下CDN缓存即可刷新缓存方法请参考：https://developer.qiniu.com/fusion/kb/1325/refresh-the-cache-and-the-effect-of-time方法1: portal.qiniu.com 控制台刷新缓存，点击左侧 cdn => 刷新预取方法2: api 接口地址：https://developer.qiniu.com/fusion/api/1229/cache-refreshTip : url 刷新，全网生效 10min 左右，目录刷新需要 30min 左右
+**客户**：好的谢谢
+
+### 根本原因分析
+
+SDK配置问题或网络环境问题
+
+---
+
+## tls: failed to verify certificate: x509: certificate signed by unknown authority
+
+**问题分类**: 对象存储｜上传下载
+
+**适用场景**: 对象存储
+
+### 问题描述
+
+{"callback_url":"https://admin.fastbuy.sale/[REDACTED_PATH]","callback_bodyType":"application/json","callback_body":"{\"key\":\"product/2024/10/08/182708/fastbay-logo白底用.png\",\"hash\":\"Fibmd4sIYbAZ0BJ6dKKkvNp1OKbs\",\"fileSize\":\"21392\",\"contentType\":\"image/png\",\"ext\":\".png\",\"width\":\"1024\",\"height\":\"300\",\"fileOriginName\":\"fastbay-logo白底用.png\",\"merId\":\"-1\",\"userId\":\"3\",\"pid\":\"0\",\"username\":\"演示账号\"}","token":"","err_code":502,"error":"Post \"https://admin.fastbuy.sale/[REDACTED_PATH]\": tls: failed to verify certificate: x509: certificate signed by unknown authority","hash":"Fibmd4sIYbAZ0BJ6dKKkvNp1OKbs","key":"product/2024/10/08/182708/fastbay-logo白底用.png"}
+
+### 客服解答
+
+**客户**：{"callback_url":"https://admin.fastbuy.sale/[REDACTED_PATH]","callback_bodyType":"application/json","callback_body":"{\"key\":\"product/2024/10/08/182708/fastbay-logo白底用.png\",\"hash\":\"Fibmd4sIYbAZ0BJ6dKKkvNp1OKbs\",\"fileSize\":\"21392\",\"contentType\":\"image/png\",\"ext\":\".png\",\"width\":\"1024\",\"height\":\"300\",\"fileOriginName\":\"fastbay-logo白底用.png\",\"merId\":\"-1\",\"userId\":\"3\",\"pid\":\"0\",\"username\":\"演示账号\"}","token":"","err_code":502,"error":"Post \"https://admin.fastbuy.sale/[REDACTED_PATH]\": tls: failed to verify certificate: x509: certificate signed by unknown authority","hash":"Fibmd4sIYbAZ0BJ6dKKkvNp1OKbs","key":"product/2024/10/08/182708/fastbay-logo白底用.png"}
+**客服**：您好，admin.fastbuy.sale证书没有正确识别，试试回调地址使用http？
+**客户**：这个是哪边的保存，七牛云提示证书错误码？还是自己这边服务器提示错误
+**客户**：是公司的服务器SSL配置错误导致七牛云无法回调？
+**客服**：您好，您好，您好，我们这边请求您的域名报错，可以将您的回调地址设置为http看下
+**客户**：好的
+**客服**：您好，您先试试
+**客户**：还有一个问题 ，我这边上传视频，需要获取 视频的截图，回调添加闲时任务 $(persistentId)，但是没看到七牛云有回调z0.01z012d4buxkbfc2jy00mumo36001vrnz0.01z011d4dgsusd7enr00mumo36001y2rz0.01z011d4f00xkidd2b00mumo36001xfm上面几个是 persistentId，帮我查下是否配置错误
+**客户**：StringMap putPolicy = new StringMap();putPolicy.put("callbackUrl", callbackUrl);putPolicy.put("callbackBody", VIDEO_CALLBACK_BODY);putPolicy.put("callbackBodyType", "application/json");//表示只允许视频类型putPolicy.put("mimeLimit", "video/*;");//https://developer.qiniu.com/dora/1291/persistent-data-processing-pfop//资源上传成功后触发执行预转持久化处理的任务类型   0:为普通任务，1:为闲时任务putPolicy.put("persistentType", 1);//视频单帧缩略图接口(vframe)用于从视频流中截取指定时刻的单帧画面并按指定大小缩放成图片putPolicy.put("persistentOps", "vframe/jpg/offset/1");//持久化处理结果通知URLputPolicy.put("persistentUrl", QiNiuOssConfig.getNotifyUrl());//限定上传文件大小最大值，单位ByteputPolicy.put("fsizeLimit", QiNiuOssConfig.getVideoSizeLimit() * 1024 * 1024);//限定为新增语意。如果设置为非 0 值，则无论 scope 设置为什么形式，仅能以新增模式上传文件putPolicy.put("insertOnly", 1);//自定义资源名。支持魔法变量和自定义变量putPolicy.put("saveKey", "$(year)/$(mon)/$(day)/$(hour)$(min)$(sec)/$(fname)");return putPolicy;
+**客户**：使用命令 vframe/jpg/offset/1回调地址配置 https://dp.erp.kuaxun.net/[REDACTED_PATH]
+**客服**：您好，这个任务id是在哪复制的？好像并没有查看到
+**客户**：应该是七牛云返回的，系统保存了[图片]
+**客户**：9月底上传的[图片]
+**客户**：[图片]直接读取自定义参数
+**客户**：{"callback_url":"http://admin.fastbuy.sale/[REDACTED_PATH]","callback_bodyType":"application/json","callback_body":"{\"key\":\"content/2024/10/08/192029/微信截图_[REDACTED_PHONE]915.png\",\"hash\":\"FnUqMRTTAXhdS47Yw0qhkjAy3f-M\",\"fileSize\":\"10900\",\"contentType\":\"image/jpeg\",\"ext\":\".png\",\"width\":\"441\",\"height\":\"317\",\"fileOriginName\":\"微信截图_[REDACTED_PHONE]915.png\",\"merId\":\"1\",\"userId\":\"4\",\"pid\":\"0\",\"username\":\"[REDACTED_EMAIL]\"}","token":"","err_code":502,"error":"Post \"https://admin.fastbuy.sale/[REDACTED_PATH]\": tls: failed to verify certificate: x509: certificate signed by unknown authority","hash":"FnUqMRTTAXhdS47Yw0qhkjAy3f-M","key":"content/2024/10/08/192029/微信截图_[REDACTED_PHONE]915.png"}改成http还是有问题
+**客服**：您好，或者更换一个证书看下？您这边源站是开启了强制https？
+**客户**：可能是这边nginx配置问题，你先帮我下查询 视频截图的闲时任务看下
+**客服**：您好，您的任务id没有对应任务的http://api.qiniu.com/status/get/prefop?id=z0.01z012d4buxkbfc2jy00mumo36001vrn
+**客户**：是参数传错了吗？我的需求就是上传视频的时候获取视频的截图， vframe/jpg/offset/1，我这边要怎么传
+**客服**：您好，参数是没有问题的
+**客服**：您好，上传token提供看下可以吗
+**客户**：明天看下
+**客服**：您好，好的
+**客户**：上传视频截图需求， 闲时任务没有回调，token 如下C-ZyYiCvsU9bCi8_CrS3aS65SrJ9IouytTwA97yu:HEUi6H2fInRHOAdgVMv6w4a7EOc=:eyJpbnNlcnRPbmx5IjoxLCJzYXZlS2V5IjoiJCh5ZWFyKS8kKG1vbikvJChkYXkpLyQoaG91cikkKG1pbikkKHNlYykvJChmbmFtZSkiLCJjYWxsYmFja0JvZHlUeXBlIjoiYXBwbGljYXRpb24vanNvbiIsInNjb3BlIjoic2hvcGtlZXBlciIsIm1pbWVMaW1pdCI6InZpZGVvLyo7IiwiY2FsbGJhY2tVcmwiOiJodHRwczovL2RwLmVycC5rdWF4dW4ubmV0L3JlcXVlc3QvbGlzdGluZy9yZXNvdXJjZS9xaW5pdS92aWRlby91cGxvYWQvY2FsbGJhY2siLCJmc2l6ZUxpbWl0IjoyMDk3MTUyMCwicGVyc2lzdGVudE9wcyI6InZmcmFtZS9qcGcvb2Zmc2V0LzEiLCJkZWFkbGluZSI6MTcyODQ2MjIyNywicGVyc2lzdGVudFR5cGUiOjEsImNhbGxiYWNrQm9keSI6IntcImV4dFwiOlwiJChleHQpXCIsXCJwZXJzaXN0ZW50SWRcIjpcIiQocGVyc2lzdGVudElkKVwiLFwiYWNjb3VudElkXCI6XCIkKHg6YWNjb3VudElkKVwiLFwiY29tcGFueUlkXCI6XCIkKHg6Y29tcGFueUlkKVwiLFwiZmlsZVNpemVcIjpcIiQoZnNpemUpXCIsXCJmaWxlT3JpZ2luTmFtZVwiOlwiJChmbmFtZSlcIixcImFjY291bnROYW1lXCI6XCIkKHg6YWNjb3VudE5hbWUpXCIsXCJjb250ZW50VHlwZVwiOlwiJChtaW1lVHlwZSlcIixcImtleVwiOlwiJChrZXkpXCIsXCJoYXNoXCI6XCIkKGV0YWcpXCIsXCJmb2xkZXJJZFwiOlwiJCh4OmZvbGRlcklkKVwiLFwibWQ1XCI6XCIkKHg6bWQ1KVwifSIsInBlcnNpc3RlbnRVcmwiOiJodHRwczovL2RwLmVycC5rdWF4dW4ubmV0L3JlcXVlc3QvbGlzdGluZy9yZXNvdXJjZS9xaW5pdS9ub3RpZnkifQ==
+**客户**：七牛云回调{"ext":".mp4","persistentId":"z0.01z012d4r4pbgsi3a400mumo36001vu6","accountId":"[REDACTED_PHONE]25802752","companyId":"[REDACTED_PHONE]00265984","fileSize":"827614","fileOriginName":"小视频.mp4","accountName":"刘进辉","contentType":"video/mp4","key":"2024/10/09/162251/小视频.mp4","hash":"Fust_7KcJVp_vcTtDXdy3pu9yx5Y","folderId":"[REDACTED_PHONE]36965376","md5":"94c5945f4544caa9bc4bd52d4b9a44fb"}
+**客服**：您好，这个任务还在等待执行，所以没有回调的[图片]
+**客户**：回调大概要多久，我之前发布的视频好像都没回调过
+**客户**：[图片]返回ID好像是不一样
+**客户**：任务ID保存多久，有的任务ID查询不到
+**客服**：您好，7天的，如果等待数据太久您可以选择不使用闲时任务的当前任务id还没有进行处理
+**客户**：不用闲时任务会很慢吗，需求就截图下
+**客服**：您好，用闲时会很慢，需要利用非峰值时间段的机器资源，来处理低实时性的多媒体处理需求
+**客户**：我改成普通任务，任务处理成功了，但是没看到回调日志任务ID ： z0.01z011d4r5hpxo2m8d00mumo36001x63
+**客服**：回调地址还是是https://dp.erp.kuaxun.net/[REDACTED_PATH]
+**客户**：是上面的
+**客服**：您好。看记录是正常进行回调了的[图片]
+**客户**：上面的是任务执行成功吧，我们这边系统有返回吗
+**客户**：什么时候回调的[图片]
+**客户**：接收请求有问题吗[图片]
+**客服**：您好，回调时间是16:59:57
+**客户**：只收到上传成功的回调，没有普通任务的回调[图片]
+**客服**：这边看下日志
+**客服**：您好，这个您是如何提交的任务，上传转码？
+**客户**：上传视频，通过vframe/jpg/offset/1 [图片]
+**客户**：上传视频回调执行了，任务的回调没有执行
+**客服**：您好，稍等下，这边再查看下
+**客服**：您好，您查看下，对应的回调日志POST		{"Accept-Encoding":"gzip","Content-Length":"392","Content-Type":"application/json","Host":"[REDACTED_PRIVATE_IP].26:7222","IP":"[REDACTED_PRIVATE_IP].41","RawQuery":"[REDACTED_KEY]\u0026retry=1\u0026sign_method=\u0026timeout=0s\u0026uid=1381702002\u0026url=https%3A%2F%2Fdp.erp.kuaxun.net%2Frequest%2Flisting%2Fresource%2Fqiniu%2Fvideo%2Fupload%2Fcallback","User-Agent":"qboxup/1724829354 (linux/amd64; go1.22.5) yzh450/34579","X-Reqid":"lykAAABbY_s1vfwX"}	200	{"success":true,"code":0,"message":"操作成功","data":{"crtUserId":null,"crtTime":null,"uptUserId":null,"uptTime":null,"id":"[REDACTED_PHONE]44885504","originFileName":"小视频.mp4","fileUrl":"https://img.test.kuaxun.net/[REDACTED_PATH]","fileSize":"827614","coverUrl":null,"size":"0.79M"}}	{"Content-Type":"application/json","X-Log":["redis.g;QINIUPROXY:190"],"X-Qn-Opinfo":{"req_cost":1902302,"req_body_bytes":392,"resp_body_bytes":306},"X-Reqid":"lykAAABbY_s1vfwX"}	306	1902302	QINIUPROXY	[REDACTED_PHONE]479556	yzh936	REQ	/callback		z0	z0-req-qiniuproxy	0			lykAAABbY_s1vfwX	[REDACTED_PRIVATE_IP].26:7222	qboxup/1724829354 (linux/amd64; go1.22.5) yzh450/34579			55	[REDACTED_PHONE]27101856		s3a://logverse-kodo/log/parquet/kodo/186/req/z0_req_qiniuproxy/day=20241009/hour=16/jf-gather-kodo-788886dfb7-vjlg7-AQAAAHMOAzz7vPwX-55.zstd.parquet	2024-10-09 08:59:56.748		20241009	16
+**客户**：这个是哪个时间回调的，nginx上都没日志
+**客户**：上面的日志是上传回调啊，不是任务通知回调
+**客户**：https://dp.erp.kuaxun.net/[REDACTED_PATH]  这个地址是任务通知回调
+**客服**：您好，稍等下，这边核实下
+**客服**：您好，您转码的回调地址参数设置错了，应该是persistentNotifyUrl﻿https://developer.qiniu.com/kodo/1206/put-policy
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+

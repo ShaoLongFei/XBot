@@ -1,6 +1,6 @@
 # 客服问答数据集 - Part 48
 
-本文档包含 100 个客服问答记录，已进行结构化处理和隐私脱敏。
+本文档包含 110 个客服问答记录，已进行结构化处理和隐私脱敏。
 
 ---
 
@@ -2470,6 +2470,223 @@ SSL证书验证失败，需要正确配置DNS记录
 ### 根本原因分析
 
 SSL证书过期，需要续期或申请新证书
+
+---
+
+## story.logoip.cn
+
+**问题分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+我这域名配置了https,为什么不能访问？[REDACTED_URL]
+
+### 客服解答
+
+**客户**：我这域名配置了https,为什么不能访问？[REDACTED_URL]
+**客服**：稍等
+**客服**：您好，配置已下发，您再试下呢
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## 烦请帮解析下述9个token
+
+**问题分类**：对象存储｜上传下载
+
+### 问题描述
+
+您好，由于我用python试图解析自己生成的token，但是好像无法实现，所以烦请您帮我解析下下述9个不同时间设置，不同代码实现下生成的不同token，想确定下是自己操作问题还是什么问题导致token过期时间无法更改，谢谢！粘贴如下（也可见附件）：（1）代码设置：// 生成上传Policy  const options = {    scope: bucket,    deadline: Math.floor(Date.now() / 1000) + 1800,};         时间：申请token开始时间2024年11月5日 08:24，结果：完成token生产 [REDACTED_KEY]:bsubR1wZW8NgH5UOMetbWkh1QTU=:[REDACTED_KEY]=请求响应状态: success （2）代码设置：// 生成上传Policy  const options = {    scope: bucket,    deadline: Math.floor(Date.now() / 1000) + 3600,};         时间：申请token开始时间2024年11月5日 08:29，结果：完成token生产 [REDACTED_KEY]:w5y6bpbaYERnctvFyu2aPr6qHLg=:[REDACTED_KEY]=请求响应状态: success (3) 代码设置：// 生成上传Policy  const options = {    scope: bucket,    deadline: Math.floor(Date.now() / 1000) + 7200,};         时间：申请token开始时间2024年11月5日 08:32，结果：完成token生jIEfgs6rtOwnM_A77lDU7qGgoq0vIcmW-mcjKILH:hNXWGek5NgMJUaL6WE_z0rebPiw=:[REDACTED_KEY]=请求响应状态: success (4) 代码设置：// 生成上传Policy  const options = {    scope: bucket,    deadline: Math.floor(Date.now() / 1000) + 18000,};         时间：申请token开始时间2024年11月5日 08:36，结果：完成token生产 [REDACTED_KEY]:5OsKVB2vtA4sndWPB6SmHp4tx-s=:[REDACTED_KEY]=请求响应状态: success(5) 代码设置：// 生成上传Policy  const options = {    scope: bucket,    deadline: Math.floor(Date.now() / 1000) + 36000,};         时间：申请token开始时间2024年11月5日 08:39，结果：完成token生产 [REDACTED_KEY]:E4fq19CkF774eiwpMFbbAM9BUY0=:[REDACTED_KEY]=请求响应状态: success(6) 代码设置：// 生成上传Policy  const options = {    scope: bucket,    deadline: Math.floor(Date.now() / 1000) + 72000,};         时间：申请token开始时间2024年11月5日 08:42，结果：完成token生产 [REDACTED_KEY]:UOQs5p_sWk3yUsvI6-z4XYLPjAw=:[REDACTED_KEY]=请求响应状态: success (7) 代码设置：// 生成上传Policy  const options = {    scope: bucket,    expires:50000,, };         时间：申请token开始时间2024年11月5日 08:46，结果：完成token生产 [REDACTED_KEY]:7EJNTHp5rPLn8AFP3_5rDPGUIEc=:[REDACTED_KEY]=请求响应状态: success(8) 代码设置：// 生成上传Policy  const options = {    scope: bucket,    expires:7200, };         时间：申请token开始时间2024年11月5日 08:50，结果：完成token生产 [REDACTED_KEY]:f2jYDTb3ybGmSjwrnyIcM-k2Y5c=:[REDACTED_KEY]=请求响应状态: success(9) 代码设置：// 生成上传Policy  const options = {    scope: bucket,    expires:1800, };         时间：申请token开始时间2024年11月5日 08:53，结果：完成token生产 [REDACTED_KEY]:1putWvXnAo8Q07j8I1YeT6w8DYk=:[REDACTED_KEY]=请求响应状态: success
+
+### 客服解答
+
+**客户**：您好，由于我用python试图解析自己生成的token，但是好像无法实现，所以烦请您帮我解析下下述9个不同时间设置，不同代码实现下生成的不同token，想确定下是自己操作问题还是什么问题导致token过期时间无法更改，谢谢！粘贴如下（也可见附件）：（1）代码设置：// 生成上传Policy  const options = {    scope: bucket,    deadline: Math.floor(Date.now() / 1000) + 1800,};         时间：申请token开始时间2024年11月5日 08:24，结果：完成token生产 [REDACTED_KEY]:bsubR1wZW8NgH5UOMetbWkh1QTU=:[REDACTED_KEY]=请求响应状态: success （2）代码设置：// 生成上传Policy  const options = {    scope: bucket,    deadline: Math.floor(Date.now() / 1000) + 3600,};         时间：申请token开始时间2024年11月5日 08:29，结果：完成token生产 [REDACTED_KEY]:w5y6bpbaYERnctvFyu2aPr6qHLg=:[REDACTED_KEY]=请求响应状态: success (3) 代码设置：// 生成上传Policy  const options = {    scope: bucket,    deadline: Math.floor(Date.now() / 1000) + 7200,};         时间：申请token开始时间2024年11月5日 08:32，结果：完成token生jIEfgs6rtOwnM_A77lDU7qGgoq0vIcmW-mcjKILH:hNXWGek5NgMJUaL6WE_z0rebPiw=:[REDACTED_KEY]=请求响应状态: success (4) 代码设置：// 生成上传Policy  const options = {    scope: bucket,    deadline: Math.floor(Date.now() / 1000) + 18000,};         时间：申请token开始时间2024年11月5日 08:36，结果：完成token生产 [REDACTED_KEY]:5OsKVB2vtA4sndWPB6SmHp4tx-s=:[REDACTED_KEY]=请求响应状态: success(5) 代码设置：// 生成上传Policy  const options = {    scope: bucket,    deadline: Math.floor(Date.now() / 1000) + 36000,};         时间：申请token开始时间2024年11月5日 08:39，结果：完成token生产 [REDACTED_KEY]:E4fq19CkF774eiwpMFbbAM9BUY0=:[REDACTED_KEY]=请求响应状态: success(6) 代码设置：// 生成上传Policy  const options = {    scope: bucket,    deadline: Math.floor(Date.now() / 1000) + 72000,};         时间：申请token开始时间2024年11月5日 08:42，结果：完成token生产 [REDACTED_KEY]:UOQs5p_sWk3yUsvI6-z4XYLPjAw=:[REDACTED_KEY]=请求响应状态: success (7) 代码设置：// 生成上传Policy  const options = {    scope: bucket,    expires:50000,, };         时间：申请token开始时间2024年11月5日 08:46，结果：完成token生产 [REDACTED_KEY]:7EJNTHp5rPLn8AFP3_5rDPGUIEc=:[REDACTED_KEY]=请求响应状态: success(8) 代码设置：// 生成上传Policy  const options = {    scope: bucket,    expires:7200, };         时间：申请token开始时间2024年11月5日 08:50，结果：完成token生产 [REDACTED_KEY]:f2jYDTb3ybGmSjwrnyIcM-k2Y5c=:[REDACTED_KEY]=请求响应状态: success(9) 代码设置：// 生成上传Policy  const options = {    scope: bucket,    expires:1800, };         时间：申请token开始时间2024年11月5日 08:53，结果：完成token生产 [REDACTED_KEY]:1putWvXnAo8Q07j8I1YeT6w8DYk=:[REDACTED_KEY]=请求响应状态: success
+**客服**：稍等
+**客服**：{"scope":"test","deadline":1730769838}{"scope":"test","deadline":1730770166}{"scope":"test","deadline":1730770356}{"scope":"test","deadline":1730770564}{"scope":"test","deadline":1730770761}{"scope":"test","deadline":1730770926}{"scope":"test","deadline":1730817558}{"scope":"test","deadline":1730774990}{"scope":"test","deadline":1730769783}
+**客户**：（1）谢谢您的帮助，上述结果转成具体日期，我这里通过ai转的结果为：Item 1: 2024-11-05 16:03:58Item 2: 2024-11-05 16:09:26Item 3: 2024-11-05 16:12:36Item 4: 2024-11-05 16:16:04Item 5: 2024-11-05 16:19:21Item 6: 2024-11-05 16:22:06Item 7: 2024-11-05 22:39:18Item 8: 2024-11-05 17:29:50Item 9: 2024-11-05 16:03:03使用deadline或者expire修改过期时间根本没有用，token过期时间完全不受控制。（2）请问下该如何设置token过期时间？折腾我很久了，也尝试过重新获得token，但是上传也出问题。（3）麻烦帮我解析下下述token，并转换成年月日时分秒，谢谢，好像你们这个token别的程序无法解析。完成token生产 [REDACTED_KEY]:o4vt9qJHq9wAdcNPG5vnHrOQk6E=:[REDACTED_KEY]= 麻烦您了，再次感谢！
+**客服**：1,确认下您是使用什么什么要转时间的，以第一个举例 1730769838转换是2024-11-05 09:23:58，不是您回复中的。[REDACTED_URL] 检查下本地时间是否校准北京时间3冒号后的，base64解码 [REDACTED_KEY]=  》》{"scope":"test","deadline":1730944743}
+**客户**：谢谢！按照你转换的值进行转换其他值，（以第一个举例 1730769838转换是2024-11-05 09:23:58），所有的值都是1个小时，不管我如何在代码中设置过期时间。那就是七牛SDK的问题了，七牛SDK不管我unicloud函数代码如何设置过期时间，都无法改变token过期时间，都是1小时。这个有办法解决吗？我想上传大视频文件，需要将token过期时间设置到1小时以上！
+**客服**：您好，您是通过什么语言去生成token的呢，生成token的部分代码可以提供下
+**客户**：我是通过unicloud云函数生成token，然后通过云函数URL访问获得的，代码包括两部分如下，麻烦帮我找找原因，谢谢：（1）index.jsconst qiniu = require('qiniu');  console.log('获得参数') // 设置您的七牛云accessKey和secretKey  const accessKey = '输入';  const secretKey = '输入';  const bucket = 'test'; // 存储空间名称   // 创建Mac实例  const mac = new qiniu.auth.digest.Mac(accessKey, secretKey);    // 生成上传Policy  const options = {    scope: bucket,    deadline: Math.floor(Date.now() / 1000) + 7200, };  const putPolicy = new qiniu.rs.PutPolicy(options);    // 生成上传Token  const uploadToken = putPolicy.uploadToken(mac);    exports.main = async (event, context) => {    console.log('完成token生产', uploadToken)  return {      code: 200,      data: {        uploadToken: uploadToken,      },    };  };（2）package.json{  "name": "generateQiniuToken",  "dependencies": {      "qiniu": "^7.13.0"     },    "extensions": {    "uni-cloud-jql": {}  }}
+**客服**：unicloud有是后封装了七牛的sdk吗，这边无法确认生成token的内部实现我们这边方法一般都是把过期时间在生成token时传递的。例如您有使用的python[REDACTED_URL]
+token = q.upload_token(bucket_name, key, 3600, policy)
+**客户**：我的上述代码，也是将过期时间在生成token时传递，但是试过很多次改变过期时间生成token无效，都是1小时。我是生成token后，通过Android Studio 访问URL，提取token，然后用于qiniu Android SDK 上传手机中的视频。实现了上传，在一个小时内能完成的视频都可以上传，但是token过期了即使重新获取又由于qiniu Android SDK 会重头开始也不能继续上传，也试过各种方法断点续传，也不行，所以又回到修改token时长试试，qiniu Android SDK 中的代码uploadManager.put(file.getAbsolutePath(), key, uploadToken, new UpCompletionHandler()
+**客服**：安卓的是客户端sdk，没有token生成的，put方法也是使用token而非生成token。token需要服务端sdk生成：[REDACTED_URL]
+**客户**：有精通这个的帮问下。。。。。。是不是你们故意设置死的？
+**客服**：我们这边的生成token方法里是可以改的哈，不确定您使用的那个是不是写死了的
+
+### 根本原因分析
+
+SSL证书过期，需要续期或申请新证书
+
+---
+
+## 证书申请了一天都没下来 一直卡在15分钟
+
+**问题分类**：CDN｜证书问题
+
+### 问题描述
+
+证书申请了一天都没下来 一直卡在15分钟
+
+### 客服解答
+
+**客户**：证书申请了一天都没下来 一直卡在15分钟
+**客户**：无法上传附件
+**客服**：您好，这边手动介入下处理，麻烦稍等。
+**客服**：您好，抱歉让您久等了，已经处理完成，您确认下。
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## 我买的全时段资源包未使用
+
+**问题分类**：CDN｜流量计费问题
+
+### 问题描述
+
+麻烦帮忙看一下，我的CDN全时段资源包未使用，账户目前欠费了
+
+### 客服解答
+
+**客户**：麻烦帮忙看一下，我的CDN全时段资源包未使用，账户目前欠费了
+**客服**：您好，目前看您的账单是出的10月份的账单的，10月份的已经抵扣过了的
+
+### 根本原因分析
+
+账户欠费或余额不足导致服务受限
+
+---
+
+## 申请的免费证书部署后一直显示处理中
+
+**问题分类**：CDN｜证书问题
+
+### 问题描述
+
+申请的免费证书部署后一直显示处理中，昨天开始到现在已经一天，不知道是什么问题？
+
+### 客服解答
+
+**客户**：申请的免费证书部署后一直显示处理中，昨天开始到现在已经一天，不知道是什么问题？
+**客服**：您好这边处理下 请稍等
+**客服**：已经处理好了
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## kodo browser可以解压缩么
+
+**问题分类**：对象存储｜工具使用
+
+### 问题描述
+
+kodo browser可以解压缩么
+
+### 客服解答
+
+**客户**：kodo browser可以解压缩么
+**客服**：您好这个工具不支持解压缩的
+
+### 根本原因分析
+
+具体问题需要根据日志和配置进一步分析
+
+---
+
+## 请问多媒体任务触发器可以给图片设置缩小处理吗？
+
+**问题分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+我对接云存储的系统端没有图片缩放的功能，所以请问上传图片有没有像视频转码的任务触发器这样的功能。或者别的方式能压缩上传到空间的图片的？、谢谢！
+
+### 客服解答
+
+**客户**：我对接云存储的系统端没有图片缩放的功能，所以请问上传图片有没有像视频转码的任务触发器这样的功能。或者别的方式能压缩上传到空间的图片的？、谢谢！
+**客服**：您好可以配置图片样式的处理 参考 [REDACTED_URL]
+**客户**：这个也是跟任务触发器这样不需要另外对接接口吗？ 上传到空间的就自动处理？
+**客服**：不是的 这个是先把预期的样式创建好 访问的时候带上样式名称去访问图片处理后的文件 [图片]
+**客户**：那就是通过接口上传的也不会自动转？
+**客服**：是的 图片处理不能自动触发
+**客户**：好，谢谢
+**客服**：好的
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## 免费额度取消了吗
+
+**问题分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+最近收到欠费账单，以前10G的免费额度取消了吗？
+
+### 客服解答
+
+**客户**：最近收到欠费账单，以前10G的免费额度取消了吗？
+**客服**：没有的，免费额度没有取消，你可以看下是否是你的业务增量了超出10GB了
+**客户**：好的，我先充值，删除一些增量再看看。
+**客服**：嗯嗯好的
+
+### 根本原因分析
+
+账户欠费或余额不足导致服务受限
+
+---
+
+## 请问资源包的消耗量怎么都是0
+
+**问题分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+现在当月已用量都是0怎么回事呢？
+
+### 客服解答
+
+**客户**：[图片]现在当月已用量都是0怎么回事呢？
+**客服**：您好，把您的消费明细截图上传过来 这边看下查看实时消费明细：您可以登录七牛云管理控制台 - 财务中心 - 实时消费明细：[REDACTED_URL]
+**客户**：系统升级吗？要多久[图片]
+**客服**：您好账单里您的消费是转码产生的计费 因此资源包未能抵扣
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## 证书更换一直处理中
+
+**问题分类**：CDN｜证书问题
+
+### 问题描述
+
+cdn.youtuant22.com ，该域名更换证书一直显示处理中，麻烦尽快帮我们处理一下
+
+### 客服解答
+
+**客户**：cdn.youtuant22.com ，该域名更换证书一直显示处理中，麻烦尽快帮我们处理一下
+**客服**：您好这边处理下 请稍等
+**客服**：已经处理好了
+
+### 根本原因分析
+
+SSL证书配置问题
 
 ---
 

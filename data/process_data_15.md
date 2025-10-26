@@ -1787,3 +1787,245 @@ qshell pfop qiniutest test.avi 'avthumb/mp4/vcodec/libx264'
 
 SDK配置问题或网络环境问题
 
+---
+
+## 证书更新不成功
+
+**问题分类**: CDN｜证书问题
+
+**适用场景**: CDN, SSL证书
+
+### 问题描述
+
+以下域名证书更新未成功：vshare.frontrow.com.cnvd-dl-vlognow.frontrow.com.cnavatar-cdn-vlognow.frontrow.com.cnop-activity.frontrow.com.cn现在一直显示处理中
+
+### 客服解答
+
+**客户**：以下域名证书更新未成功：vshare.frontrow.com.cnvd-dl-vlognow.frontrow.com.cnavatar-cdn-vlognow.frontrow.com.cnop-activity.frontrow.com.cn现在一直显示处理中
+**客服**：收到，稍等
+**客服**：久等了，配置已下发
+**客户**：谢谢
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 上传图片是否支持敏感色情图片的识别
+
+**问题分类**: 对象存储｜其他类咨询
+
+**适用场景**: 对象存储
+
+### 问题描述
+
+调用api上传图片的时候是否支持色情敏感图片的识别
+
+### 客服解答
+
+**客户**：调用api上传图片的时候是否支持色情敏感图片的识别
+**客服**：您好，可以调用内容审核的图片审核接口，或者开启内容审核的增量审核（上传后自动触发审核）接口：https://developer.qiniu.com/censor/5588/image-censor增量审核：https://developer.qiniu.com/censor/8066/censor-portal-stream
+**客户**：免费额度有多少，后续如何收费
+**客服**：内容审核没有免费额度计费方式：https://developer.qiniu.com/censor/4833/censor-price定价：https://www.qiniu.com/prices/censor
+**客户**：好的，感谢
+
+### 根本原因分析
+
+SDK配置问题或网络环境问题
+
+---
+
+## 使用开发文档，无法正常播放视频
+
+**问题分类**: 视频监控｜SDK使用
+
+**适用场景**: 其他
+
+### 问题描述
+
+集成qplayer2后，按照官方文档，无法正常播放视频。
+
+### 客服解答
+
+**客户**：集成qplayer2后，按照官方文档，无法正常播放视频。
+**客服**：您好，您这个无法播放是否有什么具体的报错呢
+**客户**：没有什么报错，我就用文档的代码，各种参数也换了尝试，然后还更换过mp4的链接，就是不能播放，黑屏状态。
+**客户**：https://developer.qiniu.com/pili/12220/qplayer2-core-quick-start 这个文档的。
+**客服**：您好，您这个看下有没有什么运行异常的log 输出呢，播放黑屏的mp4链接是什么呢
+**客户**：http://demo-videos.qnsdk.com/[REDACTED_PATH]
+**客户**：你们的文档应该要更新了，落后于SDK里面的方法了。
+**客户**：BufferQueueProducer     surfaceflinger                       I  [SurfaceView[com.yurenzz.yubuild/com.yurenzz.yubuild.activity.monitor.MonitorQPlayerActivity](BLAST)#139628](this:0xb400007be18ff8b0,id:-1,api:0,p:-1,c:873) queueBuffer: fps=59.94 dur=1000.95 max=16.96 min=16.462024-10-08 16:48:58.867 21782-22936 GED                     com.yurenzz.yubuild                  I  ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 31, oppidx_max 31, oppidx_min 02024-10-08 16:48:58.883 21782-22936 GED                     com.yurenzz.yubuild                  I  ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 31, oppidx_max 31, oppidx_min 02024-10-08 16:48:58.900 21782-22936 GED                     com.yurenzz.yubuild                  I  ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 31, oppidx_max 31, oppidx_min 02024-10-08 16:48:58.917 21782-22936 GED                     com.yurenzz.yubuild                  I  ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 31, oppidx_max 31, oppidx_min 02024-10-08 16:48:58.934 21782-22936 GED                     com.yurenzz.yubuild                  I  ged_boost_gpu_freq, level 100, eOrigin 2, final_idx 31, oppidx_max 31, oppidx_min 0
+**客户**：最多的日志就是这样的，第一帧一闪而过，就没了。
+**客服**：您好，播放器SDK 您这个没有授权，无法使用，您需要提供一个联系方式，这边安排商务与您联系
+**客户**：[REDACTED_PHONE]
+**客服**：好的
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 删除域名卡在「处理中」
+
+**问题分类**: CDN｜配置问题
+
+**适用场景**: CDN
+
+### 问题描述
+
+提交了一段时间了，还没处理完：
+
+### 客服解答
+
+**客户**：提交了一段时间了，还没处理完：[图片]
+**客服**：你好，请稍等
+**客服**：您好，久等了，已处理完成
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## pod 'Qiniu'后，上传AppStroe时HappyDNS报错
+
+**问题分类**: 对象存储｜其他类咨询
+
+**适用场景**: 对象存储
+
+### 问题描述
+
+如图，我们在使用Xcode16.0时，上传AppStroe报错，有什么有效的解决办法吗？或者是什么时候更新一个新的版本修改这个问题？
+
+### 客服解答
+
+**客户**：[图片]如图，我们在使用Xcode16.0时，上传AppStroe报错，有什么有效的解决办法吗？或者是什么时候更新一个新的版本修改这个问题？[图片]
+**客服**：稍等
+**客服**：happydns不是源码导入的吗？
+**客服**：https://www.jianshu.com/[REDACTED_PATH]  参考一下这个命令 移除HappyDNS里面的bitcode哈
+**客户**：你好，    我pod 'QiNiu'的时候会同时pod上HappyDNS，不是自己导入的。 cd /*/Desktop/Douguo_iOS/Pods/HappyDNS xcrun bitcode_strip -r $proj_path/HappyDNS.framework/HappyDNS -o $proj_path/HappyDNS.framework/HappyDNSxcrun bitcode_strip -r /*/Desktop/Douguo_iOS/Pods/HappyDNS/HappyDNS -o /*/Desktop/Douguo_iOS/Pods/HappyDNS/HappyDNS而且上面的命令并没有成功
+**客户**：找到问题了，其他SDK里面也有HappyDNS，这个导致的上传失败，抱歉
+
+### 根本原因分析
+
+SDK配置问题或网络环境问题
+
+---
+
+## 日本无法访问图片
+
+**问题分类**: CDN｜访问下载
+
+**适用场景**: CDN
+
+### 问题描述
+
+图片没法打开，是不是国庆期间限制国外访问了
+
+### 客服解答
+
+**客户**：图片没法打开，是不是国庆期间限制国外访问了
+**客服**：你好，您这边访问有什么报错？
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## vivo  上架审核不通过
+
+**问题分类**: 对象存储｜SDK使用
+
+**适用场景**: 对象存储
+
+### 问题描述
+
+上架vivo应用商店，隐私自动化检测不通过，提示SDK在静默状态下或在后台运行时，（HappyDNS）SDK仍收集用户个人信息((SDK: 七牛云存储) 读取设备IP)。
+
+### 客服解答
+
+**客户**：上架vivo应用商店，隐私自动化检测不通过，提示SDK在静默状态下或在后台运行时，（HappyDNS）SDK仍收集用户个人信息((SDK: 七牛云存储) 读取设备IP)。
+**客服**：您好，您这边使用的是什么产品的SDK呢？什么语言的SDK呢？
+**客户**：对象存储       android  com.qiniu:qiniu-android-sdk:8.4.+
+**客服**：您好，您稍等这边确认一下
+**客服**：关闭dns预解析就可以了GlobalConfiguration.getInstance().isDnsOpen = false 关闭 DNS 预解析
+**客户**：好的我看下，谢谢
+**客服**：您好，嗯嗯好的不客气的
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 登录提示证书过期
+
+**问题分类**: CDN｜证书问题
+
+**适用场景**: CDN, SSL证书
+
+### 问题描述
+
+登录提示错误信息 "request;fail net; err_date_invalid"
+
+### 客服解答
+
+**客户**：登录提示错误信息 "request;fail net; err_date_invalid"[图片]
+**客服**：您好，这个域名目前看证书是在有效期内的 您再看下[图片]
+**客户**：那这个是什么问题呢？需要怎么解决？
+**客服**：这是您本地网络dns的问题，建议修改dns为 [REDACTED_IP]，备用选择 180.76.76.76试试
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 海外 ip 无法访问云空间资源
+
+**问题分类**: 对象存储｜其他类咨询
+
+**适用场景**: 对象存储
+
+### 问题描述
+
+使用海外 ip 无法访问该资源，但国内 ip 可以，请问是为什么？https://qiniu.wenhai.tech/[REDACTED_PATH]
+
+### 客服解答
+
+**客户**：使用海外 ip 无法访问该资源，但国内 ip 可以，请问是为什么？https://qiniu.wenhai.tech/[REDACTED_PATH]
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+
+---
+
+## 将空间中的指定的某个大目录，迁移到另一个空间，且自动设置为深度归档？
+
+**问题分类**: 对象存储｜数据迁移
+
+**适用场景**: 对象存储
+
+### 问题描述
+
+将空间中的指定的某个大目录，迁移到另一个空间，且自动设置为深度归档？主要是降低存储费用。
+
+### 客服解答
+
+**客户**：将空间中的指定的某个大目录，迁移到另一个空间，且自动设置为深度归档？主要是降低存储费用。
+**客服**：您好，您这边可以先将新空间(需要与原空间不一个存储区域的)设置一个生命周期规则，如新上传的文件多少天后自动转为深度归档的生命周期，设置完成后，再设置跨区域迁移，将资源迁移到新空间的您好，生命周期规则设置成功后，仅对新上传的文件有效果，空间内旧有文件不会通过生命周期规则执行变更。生命周期规则设置成功后，新上传的文件，会在设置在xx天后的当天内删除文件。当portal中设置对整个空间生效的生命周期规则，接口或SDK中设置了单个文件生命周期规则，其接口或SDK中单个文件的生命周期设置优先级最高详情参考：https://developer.qiniu.com/kodo/manual/3699/life-cycle-management一个账号不同存储区域的数据迁移方式您好，不同存储区域之间不支持执行move或者copy等操作，您可以在七牛云后台-对象存储中，使用跨区域同步功能进行数据迁移，注意勾选上需要同步历史数据。参考文档：https://developer.qiniu.com/kodo/manual/1700/cross-regional-synchronization
+**客户**：此类转存后，新的bucket中经过一天后自动转为深度归档的文件（通过设置空间生命周期），通过windows客户端工具：kodo-browser-Windows-x64，是可以直接下载取回到本地，而不需要通过什么预计预取的操作？防止后期需要，从里边拿些文件回来本地进行排查。
+**客户**：此类转存后，新的bucket中经过一天后自动转为深度归档的文件（通过设置空间生命周期），通过windows客户端工具：kodo-browser-Windows-x64，是可以直接下载取回到本地，而不需要通过什么预计预取的操作？防止后期需要，从里边拿些文件回来本地进行排查。还有，这种转存会需要调用到旧bucket的外网流量吗，即文件的转存引起的读取流量？
+**客服**：您好，转为深度归档后无法直接随时取回的，需要先操作解冻的，解冻时间约5～12个小时的，而且如果存储的时间没有超过最低的180天的话，就是180天内操作解冻取回会产生提前取回的费用的[图片]
+**客户**：感觉您的回复，看来我需要换一种存储类型。另外上边提到一个问题，就是从旧bucket往新bucket的迁移过程中，是否会产生bucket的读取流量，然后我从旧bucket中迁移1T到新bucket，除了新bucket的存储费用，是否还会产生1T的流量费用？
+**客服**：您好，这个是不会的，迁移的话您可以使用下这个方法吧，跨区域迁移的话是会计费的https://developer.qiniu.com/kodo/12666/set-data-migration
+**客户**：收到，感谢解答。
+
+### 根本原因分析
+
+需要根据具体情况分析，建议查看文档或联系技术支持
+

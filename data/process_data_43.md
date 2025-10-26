@@ -3317,3 +3317,105 @@ CDN证书配置或域名绑定问题
 
 ---
 
+## 报错no such bucket
+
+**问题分类**: 对象存储｜SDK使用
+
+### 问题描述
+
+用这段代码下载文件时报错# -*- coding: utf-8 -*-# flake8: noqaimport qiniuaccess_key = '[REDACTED_ACCESS_KEY]'secret_key = '[REDACTED_SECRET_KEY]'bucket_name = 'wodeeetuchuang'auth = qiniu.Auth(access_key, secret_key)bucket = qiniu.BucketManager(auth)ret, info = bucket.fetch(bucket_name, "image-20231230134618010.png")if ret.status_code == 200:    print("fetch ok")
+
+### 客服解答
+
+您好，麻烦python sdk退一个版本使用7.13.2试下7.14.0存在已知新功能问题，将在下个版本修复。；您好您可以使用图形化工具kodo-browser下载到本地https://developer.qiniu.com/kodo/tools/5972/kodo-browser注意：使用该工具目前进行下载，如果不指定cdn域名的话，下载产生的流量费用为「外网流量」
+
+### 详细对话过程
+
+**客户**：用这段代码下载文件时报错# -*- coding: utf-8 -*-# flake8: noqaimport qiniuaccess_key = "[REDACTED_LONG_KEY]"secret_key = "[REDACTED_LONG_KEY]"bucket_name = 'wodeeetuchuang'auth = qiniu.Auth(access_key, secret_key)bucket = qiniu.BucketManager(auth)ret, info = bucket.fetch(bucket_name, "image-20231230134618010.png")if ret.status_code == 200:    print("fetch ok")[图片][图片]
+**客服**：稍等
+**客服**：您好，麻烦python sdk退一个版本使用7.13.2试下7.14.0存在已知新功能问题，将在下个版本修复。
+**客户**：我的域名备案注销了,怎么下载私有空间里的文件
+**客服**：您好您可以使用图形化工具kodo-browser下载到本地https://developer.qiniu.com/kodo/tools/5972/kodo-browser注意：使用该工具目前进行下载，如果不指定cdn域名的话，下载产生的流量费用为「外网流量」
+
+### 根本原因分析
+
+需要系统后台异步处理
+
+---
+
+## 怎么使用命令上传图片，我文件太多了
+
+**问题分类**: 对象存储｜工具使用
+
+### 问题描述
+
+怎么使用命令上传图片，我文件太多了
+
+### 客服解答
+
+您好，您可以使用qshell 工具的上传功能：1、下载对应系统和版本的 qshell 解压到指定目录： https://developer.qiniu.com/kodo/tools/1302/qshell#72、命令行终端进入工具所在目录执行 qshell account AK SK name3、当前目录下创建一个配置文件，如 config.txt，内容为：{
+
+### 详细对话过程
+
+**客户**：怎么使用命令上传图片，我文件太多了
+**客服**：稍等
+**客服**：您好，您可以使用qshell 工具的上传功能：1、下载对应系统和版本的 qshell 解压到指定目录： https://developer.qiniu.com/kodo/tools/1302/qshell#72、命令行终端进入工具所在目录执行 qshell account AK SK name3、当前目录下创建一个配置文件，如 config.txt，内容为：{
+  "src_dir" : "要上传的文件所在的本地目录",
+  "bucket" : "存储空间的名称"
+}
+4、执行 qshell qupload config.txt  https://github.[密钥已脱敏].md
+
+### 根本原因分析
+
+上传性能受网络环境和SDK版本影响
+
+---
+
+## 29003866k6.oicp.com被冻结
+
+**问题分类**: 对象存储｜其他类咨询
+
+### 问题描述
+
+请问[REDACTED_EMAIL]账号下的29003866k6.oicp.com为什么被冻结和停用？如何恢复？
+
+### 客服解答
+
+稍等，这边查询下；您好，长时间无量域名自动下线的，如需再次使用，控制台域名管理处重新启用：https://portal.qiniu.com/cdn/domain
+
+### 详细对话过程
+
+**客户**：请问[REDACTED_EMAIL]账号下的29003866k6.oicp.com为什么被冻结和停用？如何恢复？
+**客户**：是29003866k6.oicp.vip，不是29003866k6.oicp.com
+**客服**：稍等，这边查询下
+**客服**：您好，长时间无量域名自动下线的，如需再次使用，控制台域名管理处重新启用：https://portal.qiniu.com/cdn/domain
+
+### 根本原因分析
+
+需要系统后台异步处理
+
+---
+
+## 证书绑定一直在处理中
+
+**问题分类**: CDN｜证书问题
+
+### 问题描述
+
+证书绑定一直在处理中
+
+### 客服解答
+
+您好，配置已下发了哈
+
+### 详细对话过程
+
+**客户**：证书绑定一直在处理中
+**客服**：您好，配置已下发了哈
+
+### 根本原因分析
+
+系统处理延迟或异步任务未完成；CDN证书配置或域名绑定问题
+
+---
+

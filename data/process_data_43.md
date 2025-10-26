@@ -887,3 +887,290 @@ CDN证书配置或域名绑定问题
 
 ---
 
+## 一直配置中，无响应
+
+**问题分类**: CDN｜配置问题
+
+### 问题描述
+
+创建域名处理中， 无响应
+
+### 客服解答
+
+您好目前系统侧在验证配置中 请稍等；已经处理好了
+
+### 详细对话过程
+
+**客户**：创建域名处理中， 无响应
+**客服**：您好目前系统侧在验证配置中 请稍等
+**客服**：已经处理好了
+
+### 根本原因分析
+
+系统处理延迟或异步任务未完成
+
+---
+
+## 绑定了新的域名 cname了 很长时间了 显示处理中
+
+**问题分类**: 对象存储｜其他类咨询
+
+### 问题描述
+
+域名 weixin.file.samst.net桶 storage112124273-2410281455
+
+### 客服解答
+
+久等了，配置已下发
+
+### 详细对话过程
+
+**客户**：域名 weixin.file.samst.net桶 storage112124273-2410281455
+**客服**：稍等
+**客服**：久等了，配置已下发
+
+### 根本原因分析
+
+系统处理延迟或异步任务未完成
+
+---
+
+## 新上传的图片自动变小了
+
+**问题分类**: 对象存储｜上传下载
+
+### 问题描述
+
+[URL已脱敏]
+
+### 客服解答
+
+您好，文件的原图大小是多少；把缓存刷新一下再访问看看刷新缓存方法请参考：https://developer.qiniu.com/fusion/kb/1325/refresh-the-cache-and-the-effect-of-time方法1: portal.qiniu.com 控制台刷新缓存，点击左侧 cdn => 刷新预取方法2: api 接口地址：https://developer.qiniu.com/fusion/api/1229/cache-refreshTip : url 刷新，全网生效 10min 左右，目录刷新需要 30min 左右；最好绑定自定义域名使用 测试域名有使用限制cdn域名是利用多级缓存进行加速的 访问过的资源都会产生缓存
+
+### 详细对话过程
+
+**客户**：[URL已脱敏]
+**客服**：您好，文件的原图大小是多少
+**客户**：有几M吧，执行一个预处理，有些设备上看是大图，估计是缓存了。[密钥已脱敏]|saveas/
+**客服**：把缓存刷新一下再访问看看刷新缓存方法请参考：https://developer.qiniu.com/fusion/kb/1325/refresh-the-cache-and-the-effect-of-time方法1: portal.qiniu.com 控制台刷新缓存，点击左侧 cdn => 刷新预取方法2: api 接口地址：https://developer.qiniu.com/fusion/api/1229/cache-refreshTip : url 刷新，全网生效 10min 左右，目录刷新需要 30min 左右
+**客户**：每次上传完一张图片都要刷新缓存吗，这一点不方便，有其它方案吗
+**客服**：最好绑定自定义域名使用 测试域名有使用限制cdn域名是利用多级缓存进行加速的 访问过的资源都会产生缓存
+
+### 根本原因分析
+
+上传性能受网络环境和SDK版本影响
+
+---
+
+## dnzj.fun域名删除
+
+**问题分类**: 对象存储｜其他类咨询
+
+### 问题描述
+
+dnzj.fun域名删除
+
+### 客服解答
+
+您好，很抱歉让你久等了，当前已经处理好了，您看一下
+
+### 详细对话过程
+
+**客户**：dnzj.fun域名删除
+**客服**：您好，很抱歉让你久等了，当前已经处理好了，您看一下
+**客户**：谢谢！
+
+### 根本原因分析
+
+域名解绑流程需要系统异步处理
+
+---
+
+## 1
+
+**问题分类**: 对象存储｜上传下载
+
+### 问题描述
+
+从相册里面选择上传视频, 怎么可以转码或者压缩视频
+
+### 客服解答
+
+您好，上传并转码，主要动作是上传，附带自动转码，在上传token 中设置 转码命令(fops)，七牛服务器接收到含有fops 的上传token后，会自动对该文件进行转码处理如下提供对应的 sdk 实例做参考：java-sdk：https://github.com/qiniu/java-sdk/blob/master/examples/upload_pfops.javaphp-sdk：https://github.com/qiniu/php-sdk/blob/master/examples/upload_and_pfop.phppython-sdk：https://github.com/qiniu/python-sdk/blob/master/examples/upload_pfops.pynode-sdk：生成带转码命令的token，然后使用此 token 上传let mac = new qiniu.auth.digest.Mac(accessKey, secretKey);；您好，可以参考下这个demohttps://github.com/qiniu/php-sdk/blob/master/examples/upload_and_pfop.php
+
+### 详细对话过程
+
+**客户**：从相册里面选择上传视频, 怎么可以转码或者压缩视频[图片]
+**客户**：麻烦快点
+**客服**：您好，上传并转码，主要动作是上传，附带自动转码，在上传token 中设置 转码命令(fops)，七牛服务器接收到含有fops 的上传token后，会自动对该文件进行转码处理如下提供对应的 sdk 实例做参考：java-sdk：https://github.com/qiniu/java-sdk/blob/master/examples/upload_pfops.javaphp-sdk：https://github.com/qiniu/php-sdk/blob/master/examples/upload_and_pfop.phppython-sdk：https://github.com/qiniu/python-sdk/blob/master/examples/upload_pfops.pynode-sdk：生成带转码命令的token，然后使用此 token 上传let mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
+//设置转码后的图片名称 :不可以省略 bucket 表示空间名称
+let saveMp4 = qiniu.util.urlsafeBase64Encode(bucket + ":qiniu_640.mp4");
+//设置转码参数 force1 允许转码后文件覆盖已存在文件
+let options = {
+scope: bucket,
+//消息队列名称
+persistentPipeline: pipeline,
+//fops命令
+persistentOps: 'avthumb/mp4/s/640x360/vb/1.25m|saveas/'.concat(saveMp4),
+force: 1
+}
+let putPolicy = new qiniu.rs.PutPolicy(options);
+let uploadToken = putPolicy.uploadToken(mac);
+其他sdk 基本类似，主要是在 token中设置转码 persistentOps 的转码命令值，转码命令规格可以参考这里https://developer.qiniu.com/dora/manual/1248/audio-and-video-transcoding-avthumb客户端如果拿到服务端生成的token，也可以实现上传并转码，上述的实例都是服务端生成token&上传
+**客户**：PHP怎么才能实现快速上传呢
+**客服**：您好，可以参考下这个demohttps://github.com/qiniu/php-sdk/blob/master/examples/upload_and_pfop.php
+
+### 根本原因分析
+
+上传性能受网络环境和SDK版本影响
+
+---
+
+## 新提交得CDN,配置了半个多小时了，还没配置好
+
+**问题分类**: CDN｜配置问题
+
+### 问题描述
+
+新提交得CDN,配置了半个多小时了，还没配置好
+
+### 客服解答
+
+久等了，配置已下发
+
+### 详细对话过程
+
+**客户**：新提交得CDN,配置了半个多小时了，还没配置好
+**客服**：稍等
+**客服**：久等了，配置已下发
+**客户**：好的，感谢
+
+### 根本原因分析
+
+需要系统后台异步处理
+
+---
+
+## 证书过期，重新绑定证书之前的内容无法访问问题
+
+**问题分类**: CDN｜证书问题
+
+### 问题描述
+
+无法访问
+
+### 客服解答
+
+您好，您这边将访问链接给一下；您好，您的域名解析有问题，您这边是不是将CDN域名的cname解析删除了
+
+### 详细对话过程
+
+**客户**：无法访问[图片]
+**客服**：您好，您这边将访问链接给一下
+**客户**：[URL已脱敏]
+**客服**：您好，您的域名解析有问题，您这边是不是将CDN域名的cname解析删除了
+
+### 根本原因分析
+
+CDN证书配置或域名绑定问题
+
+---
+
+## 切换访问控制
+
+**问题分类**: 对象存储｜其他类咨询
+
+### 问题描述
+
+切换访问控制
+
+### 客服解答
+
+您好，您稍等这边在确认中了；您好，您这边再看下是否可以正常修改了的；外链的时间戳过期了 重新生成一下[图片]；[更多对话内容见详细描述]
+
+### 详细对话过程
+
+**客户**：切换访问控制[图片]
+**客户**：[URL已脱敏]
+**客户**：[URL已脱敏]
+**客服**：您好，您稍等这边在确认中了
+**客服**：您好，您这边再看下是否可以正常修改了的
+**客户**：那那个外链是什么情况 为啥打不开
+**客服**：外链的时间戳过期了 重新生成一下[图片]
+**客户**：[URL已脱敏]
+**客服**：这个链接可以正常下载 您重试下
+**客户**：我复制签名链接在浏览器上打不开，而且图片为还是预览失败
+**客服**：这个不是图片 是PPTX演示文稿 访问后会直接下载的
+**客户**：上面给你发的图片就是
+**客户**：而且我上传的，复制那个外链都打不开，而且都是预览不了
+**客服**：这边测试可以打开的 您再看下[图片]
+**客服**：这个空间目前来看是公开空间 不需要授权访问 直接访问即可
+**客户**：我了解了，我想问下 一般office文件或者pdf这些文件，有什么方法能直接通过外链打开，不下载的嘛
+**客服**：文件类型是 application/pdf 格式 可以直接在浏览器端访问打开
+**客户**：我如何确定文件是否是 application/pdf 格式
+**客服**：在存储空间里看您的文件类型 或者上传文件时指定一下[图片]
+**客户**：[URL已脱敏]
+**客服**：时间戳已经过期[图片]
+**客户**：[URL已脱敏] 怎么还是打不开
+**客服**：您这个是pptx的文件 不是pdf的格式[图片]
+**客户**：[图片]我修改了文件类型 还是打不开
+**客服**：浏览器不兼容ppt格式，您可以转换为pdf格式 在线打开预览查看
+**客户**：你们这边哪些文件可以预览 哪些文件不能预览 有没有文档
+**客服**：目前暂时没有这个文档 是浏览器的处理策略 这边无法干预
+**客户**：但是我用爱数网盘是可以直接打开的 通过同一个浏览器
+**客户**：也是网络链接 不是本地的
+**客服**：不同浏览器的处理策略不同  这个是浏览器端的行为 这边无法干预调整
+
+### 根本原因分析
+
+上传性能受网络环境和SDK版本影响
+
+---
+
+## 部分文件如何跨账号迁移
+
+**问题分类**: 对象存储｜数据迁移
+
+### 问题描述
+
+公司有两个系统，对应两个七牛云账号，现在需要将当前账号部分文件迁移到另外一个账号的指定目录有什么比较好的办法
+
+### 客服解答
+
+不同账号下相同存储区域的数据迁移方式您好，不同账号下相同存储区域的数据迁移，有两种方法1、您这边可以先使用空间授权，然后再使用 qshell 工具中的 batchcopy 命令将一个空间中的文件批量复制到另一个空间。这个是空间授权的操作文档：https://developer.qiniu.com/kodo/manual/3647/authorization-of-the-space这个是 qshell 的说明文档：https://developer.qiniu.com/kodo/tools/1302/qshell第一步：qshell 列举空间中文件列表 https://github.[密钥已脱敏].md第二步：qshell 的 batchcopy 方法把文件进行复制到新空间 https://github.[密钥已脱敏].md2、您这边可以先使用空间授权，然后再使用图形化工具将一个空间中的文件批量复制到另一个空间。这个是空间授权的操作文档：https://developer.qiniu.com/kodo/manual/3647/authorization-of-the-space图形化工具文档：https://developer.qiniu.com/kodo/5972/kodo-browser 注意：使用该工具目前进行上传/下载，如果不指定cdn域名的话，下载产生的流量费用为「外网流量」；不同账号下不同存储区域的数据迁移方式您好，您这边可以先使用空间授权服务，把账号下A空间授权给B账号，然后开启跨区域同步功能把数据同步过去，注意勾选上需要同步历史数据。空间授权的操作文档：https://developer.qiniu.com/kodo/manual/3647/authorization-of-the-space跨区域同步参考文档：https://developer.qiniu.com/kodo/manual/1700/cross-regional-synchronization
+
+### 详细对话过程
+
+**客户**：公司有两个系统，对应两个七牛云账号，现在需要将当前账号部分文件迁移到另外一个账号的指定目录有什么比较好的办法
+**客服**：不同账号下相同存储区域的数据迁移方式您好，不同账号下相同存储区域的数据迁移，有两种方法1、您这边可以先使用空间授权，然后再使用 qshell 工具中的 batchcopy 命令将一个空间中的文件批量复制到另一个空间。这个是空间授权的操作文档：https://developer.qiniu.com/kodo/manual/3647/authorization-of-the-space这个是 qshell 的说明文档：https://developer.qiniu.com/kodo/tools/1302/qshell第一步：qshell 列举空间中文件列表 https://github.[密钥已脱敏].md第二步：qshell 的 batchcopy 方法把文件进行复制到新空间 https://github.[密钥已脱敏].md2、您这边可以先使用空间授权，然后再使用图形化工具将一个空间中的文件批量复制到另一个空间。这个是空间授权的操作文档：https://developer.qiniu.com/kodo/manual/3647/authorization-of-the-space图形化工具文档：https://developer.qiniu.com/kodo/5972/kodo-browser 注意：使用该工具目前进行上传/下载，如果不指定cdn域名的话，下载产生的流量费用为「外网流量」
+**客服**：不同账号下不同存储区域的数据迁移方式您好，您这边可以先使用空间授权服务，把账号下A空间授权给B账号，然后开启跨区域同步功能把数据同步过去，注意勾选上需要同步历史数据。空间授权的操作文档：https://developer.qiniu.com/kodo/manual/3647/authorization-of-the-space跨区域同步参考文档：https://developer.qiniu.com/kodo/manual/1700/cross-regional-synchronization
+
+### 根本原因分析
+
+上传性能受网络环境和SDK版本影响
+
+---
+
+## 从哪里看该账号储存空间有多大
+
+**问题分类**: 对象存储｜上传下载
+
+### 问题描述
+
+从哪里看该账号储存空间有多大
+
+### 客服解答
+
+您好，存储空间是没有上限的，是按量计费的，您这边用多少计费多少的
+
+### 详细对话过程
+
+**客户**：从哪里看该账号储存空间有多大
+**客服**：您好，存储空间是没有上限的，是按量计费的，您这边用多少计费多少的
+
+### 根本原因分析
+
+需要根据具体场景进行问题定位
+
+---
+

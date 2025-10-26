@@ -2901,3 +2901,419 @@ CDN证书配置或域名绑定问题
 
 ---
 
+## PHP-SDK的图片审核如何使用？
+
+**问题分类**: 人工智能｜内容安全
+
+### 问题描述
+
+你好，根据SDK文档https://developer.qiniu.com/kodo/1241/php，中有写SDK支持图片内容审核，但这个文档太长了，对于内容审核似乎没有做太详细的说明，能给个例子吗？
+
+### 客服解答
+
+您好，请稍等；您好，您参考下这个案列，修改下请求ak  sk  url 和 body 即可；您好，麻烦报错信息提供下，这边确认下；[更多对话内容见详细描述]
+
+### 详细对话过程
+
+**客户**：你好，根据SDK文档https://developer.qiniu.com/kodo/1241/php，中有写SDK支持图片内容审核，但这个文档太长了，对于内容审核似乎没有做太详细的说明，能给个例子吗？
+**客服**：您好，请稍等
+**客服**：您好，您参考下这个案列，修改下请求ak  sk  url 和 body 即可
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+use \Qiniu\Auth;
+use Qiniu\Http\Client;
+//需要填写你的 Access Key 和 Secret Key
+$ak = 'IsUiK1DPtt22Bj1T******2JyK3S87B';
+$sk = 'qRCE5DC-SKA********uL6ReJt2t8Jmx';
+$auth = new Auth($ak, $sk);
+$url = "[URL已脱敏]
+$data = array();
+$data['data']['text'] = '[URL已脱敏]
+$data['params']['scenes'] = array('antispam');
+$body = json_encode($data);
+print($body);
+$auth = new Auth($ak, $sk);
+$headers = $auth->authorizationV2($url,"POST",$body,"application/json");
+$headers['Content-Type']='application/json';
+$ret = Client::post($url, $body, $headers);
+var_dump($ret);
+**客户**：谢谢，再请教一下，我的参数这样填写是有什么问题吗？会报错呢：$auth = new Auth(self::$accessKey, self::$secretKey);$apiUrl = "[URL已脱敏] = [    'data' => [        'text' => $url    ],    'params' => [        'scenes' => [            //'antispam'            'pulp',//色情       'terror',//恐怖       'politician',//政治       'ads',//广告       'behavior'//行为     ]    ]];$body = json_encode($data);$headers = $auth->authorizationV2($apiUrl, "POST", $body, "application/json");$ret = Client::post($apiUrl, $body, $headers);
+**客服**：您好，麻烦报错信息提供下，这边确认下
+**客户**：{"code":400,"error":"�PNG\r\n\u001a\n\u0000\u0000\u0000\rIHDR\u0000\u0000\u0000d\u0000\u0000\u0000d\b\u0002\u0000\u0000\u0000��\u0002\u0003\u0000\u0000\u0000\u0004gAMA\u0000\u0000��7\u0005��\u0000\u0000\u0000\u0019tEXtSoftware\u0000Adobe ImageReadyq�e<\u0000\u0000\rXIDATx���[s�6\u0010�e[��N���!����=�8Q�q{��>�]� \b�N�\u0012\u000f\u001eF�H�`�g\u0017��۷o7��\u001b�+\u0004+X+X+X+X+X+X+\u0004�#����NO�~�?\u000fC\u0007'''|r��}�`���\u0003�\u0018:\u0016X@�������?9���Y��\u000f\u000bW��\u0015��Ͳ��ͺ'�\u001e=XV�\u0007\u0010�G\u000f����O\u000fC\"&�\u0012R����z�`]\\\\l��?\u000e\u0003�~��)�����+`1����\u0004M=z+�\u001f���-\u0012\u0004\":x���˗\/=%�+a�]l�\u001c�\t�%!�v`�<������n\u000f���\u0007x�䉾ҁ�d���\\��}�+\u0005V��`:??�_\t���wш��\t\u000b����Xy��K���\u001a��<\u001c|���˗\/z�aC.\\,_Z\u0003]9�B���7�a���V�\u0007\u0002\u000b�\"LV+�r{\u0018z*�\u00052��c�\u0011^^����s\"��o��\u0006}����@���G1��1kŽ���0��86\u0016�\u001a��δ\u0016\f�,��utYAϽ\u0000H���\u001c?{��)a��\t\u000b�$\r\u001a4�\b�&$u0\u0016��\u001f��\u0002�39G\u0003+;����\u001a��ׯ_?|�����h��;ΑEc��-�&pA�A\r<q��_\u0013��\u0011{t\u0001��\u0016+�s�)�,Z���E�m�u}A�p��-@2��PS�\u001c������\r�fƴ�D�>}��f�YdV\u0015\t�\u0001��\u0019vLBg����Z��ng�\u0007��b��l�Ž\u0011lI�>���\/p�`tCZO�,�@\r!UR�\u0015�-�\r\u0010G<\u0001E�m�ؠ�J��E޼y#�\u0015⚆�c�-\u001b���\u001a\u0002��#����=��\u001d�\/<W\u0002�\u000e�g8\u000b�v=��1\u0007\u0017)���~6X��5]!�mzr\u0018\u0012\u001cib\fy�\u0016�&�D�_\u0011Pη\u0004��]��k03���v�s�L\r����\u000b���\u000b,\u0007\u0010�8�Y�(\u0005h..�A�a5.�e\t�zZ*�X\bbi���l�H�pFRCctyy��,f#�s0ac��E\t2:�TGs�to!_��\u000e�\/���uDd��\u000f\tml�\u0004\"rDTa�Dh�D����$\u0005�@\\\u0012��\u0014�\u0019��k6X��h\u0019ʅKvl\u0015�,b\u001cT�\u0001W��W!�\u001a�a�r�\u0017ӌ�\u0002+&=� �Ѩ$A)���\u0017.pL\u0006(2\u0007�0�\u0002'al�]�*q\\���{����d_T\u000b\"�8�-r��s\f��-)D@*\u0013s�'�ZJ�YP�\u0017m}�\u000bP\u0002\u0017��A \u0001*��R���>~��\u0004\u0015-��D#mG�^�j��OJJ���3�a\u0012�\u0001\u001d��u,\u0002�jPX\n�+\u001c_�\u0019�����ٴ[�\u001d����#��6��,#e���Զ�T�\u001d&}qqa�&ݓ\u0005�\n�� \u0013&uV�\u0014Ëh��\u001b�\u000fN������RPl�y�SCO�Y*��\"X\u0017�Dm\u0017��7��\\\u001d\u001a�OHK�����[�\u0006�,��jH\f�\u0000�h6˪\u0017\u0011\u0001#Ǌs�\r]!�ұ����s\u0017i�\u0000VL�iZ��5:%��1&v�{���Cg�[SԪ�J����p{\u0006zx=6<�$\u0005\u001e\u0011�[�\u0015v�����a��\u0017^�\u0005�H�.\u0005��>���\u0001�݉�k��J-�!����̥#�!\u0002r��\u0015�H\u001eu\u0005!������k��߶���TS�Ͻ�\u0003h�,����h\\]]�����2\u001f\u0017�L'\u0000��<\"��n*�A�\u0004�r{L�y��d\u001c(�.�`g��큟�{��\u0015�\u0014�p�һ*-a�5�\u000ef;�\u001c�2V���?ӎ��cR4�;c�k�\u001aL\u0015~���)C�\u0005�\b�T��\t_�G\u0005\u0004�Y�\u0012\u0015[m�qy4 Ψ��\u001b�&D��\u0015]��9a�%&�0\u0010\r�\u0014խ��ӷ��$�!\u001e�K�\u000b\/\u0007\u0013�%��@,\rJ������\u0001�LlA���.(Se�#��+�m���+���6g@��\u001a\"\u0004٦��4\u0005\u0010�����ò\u0003�0?\u00013!)Ё��R@쮁\u001b�z��_��΁��q岴\u0007`��i�X�uJp\u0004�\u0010ԅMO\b?\u0015 L��:)�9\u0013\u0017���\u000e\u0011�l\nq\u0014�h6X��O��-\u0002��x���C7� �|��\u001a\u00172\u0012�\u001ci\t\u0017�a_�\u0015r\u0011��I�\u0012�Ӧj���\f�L�,\u0015ژ�K��I�\u0015i\u0006��\"�O\u0004t���Jb�� Q����ɜ:\u0013^\u000b�\\s�6����\u0015��\u000fq\u000bY�qi��f�+�\fJ�l�ϯE�k\tqZ\u0006\\�CM�ł��c�˙�5�_a�ҜR��x�ԉ\u001c��W�ۙ�OY�)�?ͧ\u0017,d[Ǎy�\u0007�մ�S4�\u0019��-(��l'�\u0007��u\u0004\u0019��R\fW7\u0013{�؋~��I��&��N$r�9\u0012��:�9y9\"RxE�|\n#�B�8˥Y�B��LF���6\b�`.�\u001f�WY�E�������M�\u000fT�LK�+��[\f�{bnGFe�ɀ�p�XVL��e�rLX�՞_�C�M�\t}ڝ]1Q[�K�\b��F�q\u000f�wހGr���\u000b��h\u000b]p�=\u0019s\u0001��H�3�d�\u0016���C\\mY�4\u001cn��bB'\u000f+���{b+o<l�'2��?�+\u0017���~�=K�K\u0013=�\u0011ӤpY���$ѕG=�\u0012F�ƴ����M�ـl�������yƲog\u001e�`5dmyT\u0002e�v=^�ϯ_I�t\u0005\u0005��u�\u0004��\u0013�?\bhh,\u0013>\u0012y<5W��U�`�\"�캡\u000b�$%�1�\\����Q�vu5x>�'�-BH�s[��fc��ٲ@���.�o�w�U\u0017uD�l#�\u0002�v7z8��7��mC�0�(�\u0004\u000f�ő�\u0018�۔D�iZU��v;\u0002�h_fu04R���m���0@��\fh��\u0011�r\u00033�G9\n�\u0016�!\\Ǘ-ie'L�+���\u0018{�6f<���-LM�:��8�g0�\"�( ����4\u0010yj��\ro�ŉrH�\u0014O\u0002� S�β3 ����q3k�g�v\u0006�ш�N���w����ԓi����\u0005����\r]\u001c���X!S\u001aɨ�\u0006c�0��\rzC'::Ѓ�X��,��Zcre�\u001f\u0003#��Ր\u0017����gP<Ec��,,z������D�DnZ�����޽�T��,��\u001b�\u0011\u0014���\u0010�G\bB�\u0001��-��e짠Y.��n'H�M�!�)�O�*i\u001c�n\u0018\t)f\u0006��\u001c���`K\u0019I�X-�b��[\u001cb5(r\u0006�\u0011L�e�\u000b�C�M���U\n\u000bZ���\u001a`wƂ�\u0018\nln��Ӷ�\bV)�N\u0000\"�X�\\�S�>�\u0011�\fD�\u0011����b)�4���-�)��۠�^�Қ�<�+iquQp7���7jm�\u0017�\u001cG�����&�{\u0000�\u0004Jþ��D<��\n�\t*F���|�\u0015�]�\u0007G\u001b�c�,o�$\u0011��\/�'Vo4Yш����\u001eV�#�Ŵɑl��\nv ���o������c`y%c\u0013|\u000f�����\u0011����\u00114�ۨ��\u0010\u001e�̲Tv.�t\u0003nz\f݌�3-�\u0016�\t���j�SN%2�%��\u0002�9�(AD�ަ@��\u0012z<�\u001c F\t��\u001cG��H��N�u�\u000fS��\u001a����v�\u001a�ً)�r�\u001a�~�ꕩ�(�qg���=�#`a�)�@��T��nI�b}!�8\u001e�^̉H�VX�b�f��N>���1_4\u000e\u0016�1�A�&BK�{R���,�Ϗx�&l��[��\t���:`�����R�3\u0017n�\u0019\u0001\u000b\u0006\u001d�N�F��ng��]mSq�>\u0012�J�}��T\u0016�-zF�\u001d೚��\u001d,�8�ҍ�$ؒ�j9+�[L5\u001c\rER���Ҋ\u0016m?T_B6E�1�.�\rcM\u0015��b\r��z\u0018�Eҫ�~��H�\t`��W>D\/\u0006�`\/\u0016��w\n;\/)� \u0017���ʯ�,\u0007u��\u0014Cx���+�8ȭX�bqs��$�5F�Ư�J��}�\tĲ�g���F���Y����\b��>\u0019wiB\u0015\u0011\u0004���\t�kݔ�l��?�\u0015�\u0002[�7��hS�\u000f\u0007\u0016�\u0006\u0005�;a\u0001d��\\%�\u0006%���\u001c\u0007�]���.�_\u0000�_\u0015g\"�\/&@R\"�\u0014�七Z���)��n\u0016�\u000f��\b�}��vW�\u001bw�.\\__sl\t�%jd6�\tX�јB����\u0016��vZ\u001f�\u0011�h����Ǜk1XqÍ3D��n��47�l�����\u0018����H=&�\u0006%�z�.t~7\u0003\u001f�*�w��\u001c����6�����g���jgm��5���X�p��\u0006V�V�V�V�V�ֱ�������������\u0004\u0018\u0000l��þ�1�\u0000\u0000\u0000\u0000IEND�B`�","message":"�PNG\r\n\u001a\n\u0000\u0000\u0000\rIHDR\u0000\u0000\u0000d\u0000\u0000\u0000d\b\u0002\u0000\u0000\u0000��\u0002\u0003\u0000\u0000\u0000\u0004gAMA\u0000\u0000��7\u0005��\u0000\u0000\u0000\u0019tEXtSoftware\u0000Adobe ImageReadyq�e<\u0000\u0000\rXIDATx���[s�6\u0010�e[��N���!����=�8Q�q{��>�]� \b�N�\u0012\u000f\u001eF�H�`�g\u0017��۷o7��\u001b�+\u0004+X+X+X+X+X+X+\u0004�#����NO�~�?\u000fC\u0007'''|r��}�`���\u0003�\u0018:\u0016X@�������?9���Y��\u000f\u000bW��\u0015��Ͳ��ͺ'�\u001e=XV�\u0007\u0010�G\u000f����O\u000fC\"&�\u0012R����z�`]\\\\l��?\u000e\u0003�~��)�����+`1����\u0004M=z+�\u001f���-\u0012\u0004\":x���˗\/=%�+a�]l�\u001c�\t�%!�v`�<������n\u000f���\u0007x�䉾ҁ�d���\\��}�+\u0005V��`:??�_\t���wш��\t\u000b����Xy��K���\u001a��<\u001c|���˗\/z�aC.\\,_Z\u0003]9�B���7�a���V�\u0007\u0002\u000b�\"LV+�r{\u0018z*�\u00052��c�\u0011^^����s\"��o��\u0006}����@���G1��1kŽ���0��86\u0016�\u001a��δ\u0016\f�,��utYAϽ\u0000H���\u001c?{��)a��\t\u000b�$\r\u001a4�\b�&$u0\u0016��\u001f��\u0002�39G\u0003+;����\u001a��ׯ_?|�����h��;ΑEc��-�&pA�A\r<q��_\u0013��\u0011{t\u0001��\u0016+�s�)�,Z���E�m�u}A�p��-@2��PS�\u001c������\r�fƴ�D�>}��f�YdV\u0015\t�\u0001��\u0019vLBg����Z��ng�\u0007��b��l�Ž\u0011lI�>���\/p�`tCZO�,�@\r!UR�\u0015�-�\r\u0010G<\u0001E�m�ؠ�J��E޼y#�\u0015⚆�c�-\u001b���\u001a\u0002��#����=��\u001d�\/<W\u0002�\u000e�g8\u000b�v=��1\u0007\u0017)���~6X��5]!�mzr\u0018\u0012\u001cib\fy�\u0016�&�D�_\u0011Pη\u0004��]��k03���v�s�L\r����\u000b���\u000b,\u0007\u0010�8�Y�(\u0005h..�A�a5.�e\t�zZ*�X\bbi���l�H�pFRCctyy��,f#�s0ac��E\t2:�TGs�to!_��\u000e�\/���uDd��\u000f\tml�\u0004\"rDTa�Dh�D����$\u0005�@\\\u0012��\u0014�\u0019��k6X��h\u0019ʅKvl\u0015�,b\u001cT�\u0001W��W!�\u001a�a�r�\u0017ӌ�\u0002+&=� �Ѩ$A)���\u0017.pL\u0006(2\u0007�0�\u0002'al�]�*q\\���{����d_T\u000b\"�8�-r��s\f��-)D@*\u0013s�'�ZJ�YP�\u0017m}�\u000bP\u0002\u0017��A \u0001*��R���>~��\u0004\u0015-��D#mG�^�j��OJJ���3�a\u0012�\u0001\u001d��u,\u0002�jPX\n�+\u001c_�\u0019�����ٴ[�\u001d����#��6��,#e���Զ�T�\u001d&}qqa�&ݓ\u0005�\n�� \u0013&uV�\u0014Ëh��\u001b�\u000fN������RPl�y�SCO�Y*��\"X\u0017�Dm\u0017��7��\\\u001d\u001a�OHK�����[�\u0006�,��jH\f�\u0000�h6˪\u0017\u0011\u0001#Ǌs�\r]!�ұ����s\u0017i�\u0000VL�iZ��5:%��1&v�{���Cg�[SԪ�J����p{\u0006zx=6<�$\u0005\u001e\u0011�[�\u0015v�����a��\u0017^�\u0005�H�.\u0005��>���\u0001�݉�k��J-�!����̥#�!\u0002r��\u0015�H\u001eu\u0005!������k��߶���TS�Ͻ�\u0003h�,����h\\]]�����2\u001f\u0017�L'\u0000��<\"��n*�A�\u0004�r{L�y��d\u001c(�.�`g��큟�{��\u0015�\u0014�p�һ*-a�5�\u000ef;�\u001c�2V���?ӎ��cR4�;c�k�\u001aL\u0015~���)C�\u0005�\b�T��\t_�G\u0005\u0004�Y�\u0012\u0015[m�qy4 Ψ��\u001b�&D��\u0015]��9a�%&�0\u0010\r�\u0014խ��ӷ��$�!\u001e�K�\u000b\/\u0007\u0013�%��@,\rJ������\u0001�LlA���.(Se�#��+�m���+���6g@��\u001a\"\u0004٦��4\u0005\u0010�����ò\u0003�0?\u00013!)Ё��R@쮁\u001b�z��_��΁��q岴\u0007`��i�X�uJp\u0004�\u0010ԅMO\b?\u0015 L��:)�9\u0013\u0017���\u000e\u0011�l\nq\u0014�h6X��O��-\u0002��x���C7� �|��\u001a\u00172\u0012�\u001ci\t\u0017�a_�\u0015r\u0011��I�\u0012�Ӧj���\f�L�,\u0015ژ�K��I�\u0015i\u0006��\"�O\u0004t���Jb�� Q����ɜ:\u0013^\u000b�\\s�6����\u0015��\u000fq\u000bY�qi��f�+�\fJ�l�ϯE�k\tqZ\u0006\\�CM�ł��c�˙�5�_a�ҜR��x�ԉ\u001c��W�ۙ�OY�)�?ͧ\u0017,d[Ǎy�\u0007�մ�S4�\u0019��-(��l'�\u0007��u\u0004\u0019��R\fW7\u0013{�؋~��I��&��N$r�9\u0012��:�9y9\"RxE�|\n#�B�8˥Y�B��LF���6\b�`.�\u001f�WY�E�������M�\u000fT�LK�+��[\f�{bnGFe�ɀ�p�XVL��e�rLX�՞_�C�M�\t}ڝ]1Q[�K�\b��F�q\u000f�wހGr���\u000b��h\u000b]p�=\u0019s\u0001��H�3�d�\u0016���C\\mY�4\u001cn��bB'\u000f+���{b+o<l�'2��?�+\u0017���~�=K�K\u0013=�\u0011ӤpY���$ѕG=�\u0012F�ƴ����M�ـl�������yƲog\u001e�`5dmyT\u0002e�v=^�ϯ_I�t\u0005\u0005��u�\u0004��\u0013�?\bhh,\u0013>\u0012y<5W��U�`�\"�캡\u000b�$%�1�\\����Q�vu5x>�'�-BH�s[��fc��ٲ@���.�o�w�U\u0017uD�l#�\u0002�v7z8��7��mC�0�(�\u0004\u000f�ő�\u0018�۔D�iZU��v;\u0002�h_fu04R���m���0@��\fh��\u0011�r\u00033�G9\n�\u0016�!\\Ǘ-ie'L�+���\u0018{�6f<���-LM�:��8�g0�\"�( ����4\u0010yj��\ro�ŉrH�\u0014O\u0002� S�β3 ����q3k�g�v\u0006�ш�N���w����ԓi����\u0005����\r]\u001c���X!S\u001aɨ�\u0006c�0��\rzC'::Ѓ�X��,��Zcre�\u001f\u0003#��Ր\u0017����gP<Ec��,,z������D�DnZ�����޽�T��,��\u001b�\u0011\u0014���\u0010�G\bB�\u0001��-��e짠Y.��n'H�M�!�)�O�*i\u001c�n\u0018\t)f\u0006��\u001c���`K\u0019I�X-�b��[\u001cb5(r\u0006�\u0011L�e�\u000b�C�M���U\n\u000bZ���\u001a`wƂ�\u0018\nln��Ӷ�\bV)�N\u0000\"�X�\\�S�>�\u0011�\fD�\u0011����b)�4���-�)��۠�^�Қ�<�+iquQp7���7jm�\u0017�\u001cG�����&�{\u0000�\u0004Jþ��D<��\n�\t*F���|�\u0015�]�\u0007G\u001b�c�,o�$\u0011��\/�'Vo4Yш����\u001eV�#�Ŵɑl��\nv ���o������c`y%c\u0013|\u000f�����\u0011����\u00114�ۨ��\u0010\u001e�̲Tv.�t\u0003nz\f݌�3-�\u0016�\t���j�SN%2�%��\u0002�9�(AD�ަ@��\u0012z<�\u001c F\t��\u001cG��H��N�u�\u000fS��\u001a����v�\u001a�ً)�r�\u001a�~�ꕩ�(�qg���=�#`a�)�@��T��nI�b}!�8\u001e�^̉H�VX�b�f��N>���1_4\u000e\u0016�1�A�&BK�{R���,�Ϗx�&l��[��\t���:`�����R�3\u0017n�\u0019\u0001\u000b\u0006\u001d�N�F��ng��]mSq�>\u0012�J�}��T\u0016�-zF�\u001d೚��\u001d,�8�ҍ�$ؒ�j9+�[L5\u001c\rER���Ҋ\u0016m?T_B6E�1�.�\rcM\u0015��b\r��z\u0018�Eҫ�~��H�\t`��W>D\/\u0006�`\/\u0016��w\n;\/)� \u0017���ʯ�,\u0007u��\u0014Cx���+�8ȭX�bqs��$�5F�Ư�J��}�\tĲ�g���F���Y����\b��>\u0019wiB\u0015\u0011\u0004���\t�kݔ�l��?�\u0015�\u0002[�7��hS�\u000f\u0007\u0016�\u0006\u0005�;a\u0001d��\\%�\u0006%���\u001c\u0007�]���.�_\u0000�_\u0015g\"�\/&@R\"�\u0014�七Z���)��n\u0016�\u000f��\b�}��vW�\u001bw�.\\__sl\t�%jd6�\tX�јB����\u0016��vZ\u001f�\u0011�h����Ǜk1XqÍ3D��n��47�l�����\u0018����H=&�\u0006%�z�.t~7\u0003\u001f�*�w��\u001c����6�����g���jgm��5���X�p��\u0006V�V�V�V�V�ֱ�������������\u0004\u0018\u0000l��þ�1�\u0000\u0000\u0000\u0000IEND�B`�"}}
+接口响应了一个400错误，错误信息好像是一张图片，我也看不懂这个错误具体是什么意思。我是根据这个文档参考请求的参数：https://developer.qiniu.com/censor/5588/image-censor我的代码是这样的：public static function checkImage($url){    $auth = new Auth(self::$accessKey, self::$secretKey);    $apiUrl = "[URL已脱敏]    $data = [        'data' => [            'uri' => $url        ],        'params' => [            'scenes' => [                //'antispam'                'pulp',//色情                'terror',//恐怖                'politician',//政治                //'ads',//广告                //'behavior'//行为            ]        ]    ];    $body = json_encode($data);    $headers = $auth->authorizationV2($apiUrl, "POST", $body, "application/json");    $ret = Client::post($apiUrl, $body, $headers);    return json_decode($ret->body, true);}
+**客服**：稍等
+**客服**：代码看上去也没问题。跑下面这个试下。<?php
+require_once __DIR__ . '/../autoload.php';
+use Qiniu\Auth;
+use Qiniu\Config;
+use Qiniu\Storage\ArgusManager;
+// 控制台获取密钥：https://portal.qiniu.com/user/key
+$accessKey = "";
+$secretKey = "";
+$auth = new Auth($accessKey, $secretKey);
+$config = new Config();
+$argusManager = new ArgusManager($auth, $config);
+// 图片内容审核
+// 参考文档：https://developer.qiniu.com/censor/api/5588/image-censor
+$body = '{
+    "data":{
+        "uri":"[URL已脱敏]
+    },
+    "params":{
+        "scenes":[
+            "pulp",
+            "terror",
+            "politician",
+            "ads"
+        ]
+    }
+}';
+list($ret, $err) = $argusManager->censorImage($body);
+echo "\n====> Result is: \n";
+if ($err !== null) {
+    var_dump($err);
+} else {
+    var_dump($ret);
+}
+**客户**：我换了图片就可以了，但是我看到接口说如果出现错误会返回一个message的错误信息，但是这个却返回了一个400的code和一张图片的代码，也没有看到有message字段，不知道是否是系统忽略的一个bug，如果是的话希望能够得到修复，感谢工程师的耐心解答！
+**客服**：您好，好的，您审核异常的图片，可以给下对应的图片地址，这边后面排查看下
+**客户**：就是你示例中给出的图片：[URL已脱敏]
+**客服**：您好，示例的不行哈，示例的是一个文件不存在的默认展示图片。请求是404的，您传递您自己的图片应该就可以了
+**客户**：好的，另外还有一个疑问，我购买一个抵扣包，但是它显示的是未开始，不太明白这个如何使用。[图片]
+**客户**：不好意思，图片传错了
+**客服**：好的，您这边还有其他问题吗
+**客户**：就是我买了一个审核抵扣包，显示的是未开始，我现在工单传不了图片了：内容审核融合包-10万次-6个月2024-11-01 00:00:00至2025-05-01 00:00:00一次性分配未开始0%已使用 0百张 共 (1000百张)详情
+**客服**：您好，本月开始的，明天您再看下，我们是当天的计量，次日八点更新，今天11.1号，昨天还没开始用。
+**客户**：好的，非常感谢，暂时没有其它问题了。
+
+### 根本原因分析
+
+需要系统后台异步处理
+
+---
+
+## 创建任务的请求延迟很大
+
+**问题分类**: 智能多媒体｜音视频处理
+
+### 问题描述
+
+我使用PHP SDK，创建pfop任务的请求时间很长，并不针对某一个源视频文件，已经测试多个。正常请求应该只要1秒，但经常要100秒以上，显然是不正常的。服务器位于新加坡，有什么建议？···function getQiniuAuth(){    $accessKey = config('filesystems.disks.qiniu.access_key');    $secretKey = config('filesystems.disks.qiniu.secret_key');    return new QiniuAuth($accessKey, $secretKey);}function callQiniuPfop($key, $fops){    $start = microtime(true);    $auth = getQiniuAuth();    dump('七牛auth用时：' . (microtime(true) - $start));    $pipeline = null;    $force = false;    $bucket = config('filesystems.disks.qiniu.bucket');    // 任务类型：0: 普通任务 1: 闲时任务（一旦指定闲时任务，$pipeline 必须为 null）    $type = 0;    //转码完成后通知到你的业务服务器。     $notifyUrl = '[URL已脱敏]    $config = new \Qiniu\Config();    $pfop = new PersistentFop($auth, $config);    // dump($bucket);    // dump($key);    // dump($fops);    $start = microtime(true);    list($id, $err) = $pfop->execute($bucket, $key, $fops, $pipeline, $notifyUrl, $force, $type);    dump('七牛pfop用时：' . (microtime(true) - $start));    if ($err != null) {        // dump(get_class_methods($err->getResponse()->body()));        throw new \Exception('创建七牛任务失败: ' . $err->getResponse()->body());    }    dump('创建任务成功：' . $id);    return $id;}···
+
+### 客服解答
+
+您好，这个任务开始发起请求的时间有记录吗，这边需要对比日志分析；好的，这边看下；费用上没有区别。机器执行效率也没有大的差别，实际机器处理也是分开来处理的。放在一条命令中，您那边可以少发起几次请求；[更多对话内容见详细描述]
+
+### 详细对话过程
+
+**客户**：我使用PHP SDK，创建pfop任务的请求时间很长，并不针对某一个源视频文件，已经测试多个。正常请求应该只要1秒，但经常要100秒以上，显然是不正常的。服务器位于新加坡，有什么建议？···function getQiniuAuth(){    $accessKey = config('filesystems.disks.qiniu.access_key');    $secretKey = config('filesystems.disks.qiniu.secret_key');    return new QiniuAuth($accessKey, $secretKey);}function callQiniuPfop($key, $fops){    $start = microtime(true);    $auth = getQiniuAuth();    dump('七牛auth用时：' . (microtime(true) - $start));    $pipeline = null;    $force = false;    $bucket = config('filesystems.disks.qiniu.bucket');    // 任务类型：0: 普通任务 1: 闲时任务（一旦指定闲时任务，$pipeline 必须为 null）    $type = 0;    //转码完成后通知到你的业务服务器。     $notifyUrl = '[URL已脱敏]    $config = new \Qiniu\Config();    $pfop = new PersistentFop($auth, $config);    // dump($bucket);    // dump($key);    // dump($fops);    $start = microtime(true);    list($id, $err) = $pfop->execute($bucket, $key, $fops, $pipeline, $notifyUrl, $force, $type);    dump('七牛pfop用时：' . (microtime(true) - $start));    if ($err != null) {        // dump(get_class_methods($err->getResponse()->body()));        throw new \Exception('创建七牛任务失败: ' . $err->getResponse()->body());    }    dump('创建任务成功：' . $id);    return $id;}···[图片]
+**客服**：稍等
+**客服**：您好，这个任务开始发起请求的时间有记录吗，这边需要对比日志分析
+**客户**：as0.01s002d5ag2edc17x400mvdgt300150l   2024-11-01 01:17:47as0.01s002d5ag44cd4g3w00mvdgt300152s  2024-11-01 01:20:02UTC时间
+**客服**：好的，这边看下
+**客户**：资源上传成功后触发执行的处理命令列表。以;分隔，可以指定多个数据处理命令,如：avthumb/mp4|saveas/cWJ1Y2tldDpxa2V5;avthumb/flv|saveas/cWJ1Y2tldDpxa2V5Mg==，是将上传的视频文件同时转码成mp4格式和flv格式后另存。上面内容来自文档，以下两种情况，在产生费用和执行效率方面有什么不同？1. 把多个处理命令放在一个任务2. 每个处理命令都生成一个任务，同时产生多个任务
+**客服**：稍等
+**客服**：费用上没有区别。机器执行效率也没有大的差别，实际机器处理也是分开来处理的。放在一条命令中，您那边可以少发起几次请求
+**客户**：$pfop = 'vsample/jpg/cellSize/' . $thumb_width . 'x' . $thumb_height . '/interval/1/lines/6/columns/6'             . '/savePattern/' . \Qiniu\base64_urlSafeEncode('screenshots/' . $video->id . '/$(count).jpg')            . '/saveSpritePattern/' . \Qiniu\base64_urlSafeEncode('preview_thumbnails/' . $video->id . '/$(count).jpg');生成雪碧图，这里保存了截图和雪碧图，我想对雪碧图做转格式和降低质量，imageView2/0/format/webp/q/10，应该怎样写？直接在后面加管道吗？那管道是作用于截图还是雪碧图，还是都作用？
+**客户**：[图片]为什么我只能同时处理2个任务？
+**客服**：您好，稍等
+**客服**：您好，加管道符，分号; 分隔的是两个处理任务， fop1|imageView2/0/format/webp/q/10;fop2|imageView2/0/format/webp/q/10机器处理资源有限，任务多的话，需要等待的前面的处理完成后，再处理后面等待的。
+**客户**：“加管道符，分号; 分隔的是两个处理任务”，这个我知道vsample 生成雪碧图，会输出截图和雪碧图，如果直接在后面加管道，作用在哪个？
+**客户**：我想降低雪碧图的质量，保持截图的质量
+**客服**：直接在后面加，是fop命令中，生效最后处理的那个命令，是雪碧图的就是生效雪碧图，是截图就生效截图。fop1;fop2|imageView2/0/format/webp/q/10这边就是只对fop2生效管道符后的命令。
+**客服**：另外，对于之前的请求延迟问题，日志中看接口服务端的响应时间 307ms，怀疑是网络链路上不稳定导致接收慢了，建议提高网络带宽或切换其他网络试下。
+**客户**：直接在后面加，是fop命令中，生效最后处理的那个命令，是雪碧图的就是生效雪碧图，是截图就生效截图。fop1;fop2|imageView2/0/format/webp/q/10这边就是只对fop2生效管道符后的命令。--------------------只有一个命令，一个fop，vsample ，同时生成了截图和雪碧图https://developer.qiniu.com/dora/12439/video-sprite-screenshots
+**客服**：您好，稍等，这边确认下
+**客服**：不行的，确认了下，雪碧图目前是是比较特殊的处理，是一个输入文件多个输出文件的形式，后面无法跟管道符转换格式的处理您这边如果需要转换格式，建议可以直接走同步处理的方式，请求时同步处理比如 [URL已脱敏]
+**客户**：请求延迟的问题，PHP SDK未能获取到指向新加坡的域名，而是把请求发向了指向杭州的默认域名api.qiniuapi.com我显式修改域名后，就没有延迟问题了
+**客服**：收到，感谢您的反馈。
+
+### 根本原因分析
+
+需要系统后台异步处理
+
+---
+
+## 萤石云C8CDS-2CD3T46WD-I3(C76451314)
+
+**问题分类**: 视频监控｜其他类咨询
+
+### 问题描述
+
+如何接入萤石云C8C 和DS-2CD3T46WD-I3(C76451314)
+
+### 客服解答
+
+您好，可以参考下视频监控-快速入门进行接入：https://developer.qiniu.com/qvs/6763/qvs-quick-start
+
+### 详细对话过程
+
+**客户**：如何接入萤石云C8C 和DS-2CD3T46WD-I3(C76451314)
+**客服**：您好，可以参考下视频监控-快速入门进行接入：https://developer.qiniu.com/qvs/6763/qvs-quick-start
+
+### 根本原因分析
+
+需要根据具体场景进行问题定位
+
+---
+
+## 一晚上了还没配置完成
+
+**问题分类**: CDN｜配置问题
+
+### 问题描述
+
+cdn-mining.ydzniot.com
+
+### 客服解答
+
+您好，久等了，配置已下发
+
+### 详细对话过程
+
+**客户**：cdn-mining.ydzniot.com
+**客服**：稍等
+**客服**：您好，久等了，配置已下发
+
+### 根本原因分析
+
+需要系统后台异步处理
+
+---
+
+## 文件已经上传三天了
+
+**问题分类**: 对象存储｜上传下载
+
+### 问题描述
+
+我的文件是[URL已脱敏]
+
+### 客服解答
+
+您好，重新刷新下cdn缓存，本地缓存也刷新看下吧
+
+### 详细对话过程
+
+**客户**：我的文件是[URL已脱敏]
+**客服**：您好，重新刷新下cdn缓存，本地缓存也刷新看下吧
+
+### 根本原因分析
+
+上传性能受网络环境和SDK版本影响
+
+---
+
+## 使用上传都很正常 但是视频超过1分钟大一点的视频就报错
+
+**问题分类**: 对象存储｜上传下载
+
+### 问题描述
+
+上传音频视频都正常 上传超过1分钟的大一点的视频就报错 报错内容：Class 'MyCLabs\Enum\Enum' not found
+
+### 客服解答
+
+您好，php composer.phar require qiniu/php-sdk 安装 php-sdk依赖调用uptoken 生成上传tokem$upToken = $auth->uploadToken($bucket, null, $expires);简单上传参考这里https://github.com/qiniu/php-sdk/blob/master/examples/upload_simple_file.php；您好，您这边使用的是php SDK吗参考下这个demo呢https://github.com/qiniu/php-sdk/blob/master/examples/upload_simple_file.php；php-sdk-7.14.0.zip[URL已脱敏]
+
+### 详细对话过程
+
+**客户**：上传音频视频都正常 上传超过1分钟的大一点的视频就报错 报错内容：Class 'MyCLabs\Enum\Enum' not found
+**客户**：报错位置  Qiniu\src\Qiniu\Enum\QiniuEnum.php 第22行<?php// @codingStandardsIgnoreStart// phpcs:disable PSR1.Classes.ClassDeclaration.MultipleClassesnamespace Qiniu\Enum;use MyCLabs\Enum\Enum;if (method_exists("MyCLabs\\Enum\\Enum", "from")) {    abstract class QiniuEnum extends Enum    {        // @codingStandardsIgnoreEnd        // @codingStandardsIgnoreStart    }} else {    /**     * poly fill MyCLabs\Enum\Enum::from in low version     *     * @link https://github.com/myclabs/php-enum     */    abstract class QiniuEnum extends Enum    {        // @codingStandardsIgnoreEnd是不是和命名空间有关系？
+**客服**：您好，php composer.phar require qiniu/php-sdk 安装 php-sdk依赖调用uptoken 生成上传tokem$upToken = $auth->uploadToken($bucket, null, $expires);简单上传参考这里https://github.com/qiniu/php-sdk/blob/master/examples/upload_simple_file.php
+**客服**：您好，您这边使用的是php SDK吗参考下这个demo呢https://github.com/qiniu/php-sdk/blob/master/examples/upload_simple_file.php
+**客户**：您能发我一份完整的php sdk吗 我这里上不了github网页
+**客服**：<?php
+require_once __DIR__ . '/../autoload.php';
+// 引入鉴权类
+use Qiniu\Auth;
+// 引入上传类
+use Qiniu\Storage\UploadManager;
+// 控制台获取密钥：https://portal.qiniu.com/user/key
+$accessKey = getenv('QINIU_ACCESS_KEY');
+$secretKey = getenv('QINIU_SECRET_KEY');
+$bucket = getenv('QINIU_TEST_BUCKET');
+// 构建鉴权对象
+$auth = new Auth($accessKey, $secretKey);
+// 生成上传 Token
+$token = $auth->uploadToken($bucket);
+// 要上传文件的本地路径
+$filePath = './php-logo.png';
+// 上传到七牛存储后保存的文件名
+$key = 'my-php-logo.png';
+// 初始化 UploadManager 对象并进行文件的上传。
+$uploadMgr = new UploadManager();
+// 调用 UploadManager 的 putFile 方法进行文件的上传，该方法会判断文件大小，进而决定使用表单上传还是分片上传，无需手动配置。
+list($ret, $err) = $uploadMgr->putFile($token, $key, $filePath);
+echo "\n====> putFile result: \n";
+if ($err !== null) {
+  var_dump($err);
+} else {
+  var_dump($ret);
+}
+**客服**：php-sdk-7.14.0.zip[URL已脱敏]
+**客户**：你好 你给我的文件类型下载后打不开[图片]
+**客户**：已经打开了 感谢
+**客服**：您好，好的
+**客户**：你好 我还想问一下如果是 form表单过来的文件 用哪个方法进行上传呢 调用这个UploadManager 方法 会报错 提示打不开文件
+**客服**：您好，上面的这个demo您看下呢，都可以使用这个
+**客户**：还有上传一定要依赖 php-enum 这个吗 我没有安装这个就报错
+**客服**：您好，是的，是需要的
+**客户**：您好 我想问一下这个分片上传是超过 4m 就会分片上传 我可以自己改成10m吗
+**客户**：config文件截图[图片]
+**客服**：您好，可以的，您可以自己修改的，这个不影响
+**客户**：我修改后超过4M的 也可以不执行分块上传 是吗
+**客户**：还是会依然有4m的限制？
+**客服**：您好，大文件会自动进行分片，您现在是上传有什么问题？
+**客户**：因为如果分片就会用到 php-enum 我的php没有这个类 所有会报错所以我想知道到底文件多大才会调用分片 这样我就可以写判断了咱们这边可以告诉我超过多少分片吗 具体数值
+**客服**：您好，这个是系统自己判断的，应该超过分片大小的文件就会进行分片上传
+**客户**：系统是我这里的代码 还是你们服务器那里的代码？哪里是决定是否分片上传？
+**客服**：您好，您这边使用我们的demo也无法正常上传吗
+**客户**：可以正常上传 目前我没有改config里面的 4M 的分片上传大小限制 我想知道你们服务器那边设置的大小是多少 我这里就可以改成和你们那边同步的大小
+**客服**：您好，我们默认分片就是4m的如果需要和我们一样，就不需要修改了
+**客户**：如果我把config代码改成8M 会变成到8M之后才分片吗
+**客服**：您好，会的
+**客户**：那这个值 我最大设置到多大？
+**客服**：您好，建议不要设置过大没有具体的数值
+**客户**：好的 感谢
+**客户**：20M可以吗
+**客服**：您好，可以的，分片大小没有限制的
+**客户**：你好 我想问一个上传相关的问题 就是我直接上传form表单过来的文件 SDK报错提示我 file can not open！，无法直接上传表单提交过来的文件吗？
+**客服**：您好，使用分片上传吧
+
+### 根本原因分析
+
+上传性能受网络环境和SDK版本影响
+
+---
+
+## 订单申请退款
+
+**问题分类**: 账户与财务｜计费问题
+
+### 问题描述
+
+32d7a0510f64cb6756ec8037a5203111
+
+### 客服解答
+
+好的，收到，这边商务会尽快协助您完成资源包退款
+
+### 详细对话过程
+
+**客户**：32d7a0510f64cb6756ec8037a5203111
+**客服**：好的，收到，这边商务会尽快协助您完成资源包退款
+**客户**：请问预计要多久
+
+### 根本原因分析
+
+需要根据具体场景进行问题定位
+
+---
+
+## 为什么备案域名用你们的CDN也有地区屏蔽？
+
+**问题分类**: CDN｜其他类咨询
+
+### 问题描述
+
+为什么备案域名用你们的CDN也有地区屏蔽？
+
+### 客服解答
+
+您好，什么意思，是哪里无法访问吗，无法访问的域名麻烦也提供下呢
+
+### 详细对话过程
+
+**客户**：为什么备案域名用你们的CDN也有地区屏蔽？
+**客服**：您好，什么意思，是哪里无法访问吗，无法访问的域名麻烦也提供下呢
+
+### 根本原因分析
+
+需要根据具体场景进行问题定位
+
+---
+
+## a.meishujia.net   这个已经购买过证书了，要安装证书，怎么操作
+
+**问题分类**: 云主机｜其他类咨询
+
+### 问题描述
+
+a.meishujia.net   这个已经购买过证书了，要安装证书，怎么操作
+
+### 客服解答
+
+您好，请稍等；您好，您的这个证书是否已经签发了呢，如果已经签发了，直接去证书列表那边，部署到CDN即可；您好，你们没有买证书，你们是不是都没有给证书补全信息？你们使用换一件https升级吧，那个更简单一些；[更多对话内容见详细描述]
+
+### 详细对话过程
+
+**客户**：a.meishujia.net   这个已经购买过证书了，要安装证书，怎么操作
+**客户**：速度回复我下喔
+**客服**：您好，请稍等
+**客服**：您好，您的这个证书是否已经签发了呢，如果已经签发了，直接去证书列表那边，部署到CDN即可
+**客户**：哪里查看
+**客户**：帮忙部署一下
+**客户**：都没有部署按钮
+**客服**：请稍等
+**客服**：您好，你们没有买证书，你们是不是都没有给证书补全信息？你们使用换一件https升级吧，那个更简单一些
+**客服**：您好，您可以在 [域名管理] 中，点击您想要配置https的域名右侧的 [配置] 按钮，在新的页面中，在 [https配置] 下点击 [修改配置] ,点击开启->免费证书→勾选 [同意七牛云代申请免费证书] →确认，之后输入您账号的密码即可。一键https使用的是免费证书，配置一键 https 需要注意：配置生效时间主要是用于等待 CA 机构签发证书，证书一旦签发会在 10 分钟内部署完成，整体一键 https 预计可在 2 小时内完成。期间您不要操作 ssl 证书服务，否则可能造成证书签发失败。免费证书只支持绑定单个普通域名，若您需要使用一级域名的免费证书，请到购买证书页购买免费证书开启了以下功能会导致代理验证失败，无法代理申请证书： 回源鉴权、时间戳防盗链、IP 黑白名单、referer 防盗链当前加速域名需要 CNAME 到七牛给您分配的 CNAME 域名 当前加速域名的 DNS 记录中不能有 CAA 记录，或者 CAA 记录包含 Digicert.com 和 digicert.com免费证书有效期为90天，过期请重新申请需要授权七牛云代申请免费证书
+**客户**：帮忙弄下吧，证书已经是有了的，但是不会弄
+**客服**：稍等
+**客服**：您好，麻烦您将您那边的证书上传到工单下需要 .crt 或者 .pem 后缀的文件内容 和 .key 后缀结尾的内容
+**客户**：传不上去，说是有限制
+**客服**：用文本编译器打开对应文件，把文件内容复制到工单就可以
+**客户**：[REDACTED_CERTIFICATE][REDACTED_CERTIFICATE][REDACTED_CERTIFICATE]
+**客户**：[REDACTED_PRIVATE_KEY]
+**客服**：收到，稍等
+**客服**：您好，您这个证书已经过期了，用不了的。
+**客服**：是不是提供错了呢，麻烦检查下哈
+**客户**：他里面下载显示就是这个
+**客服**：您从哪下载的，我们这边后台只有您旧证书的，没有新证书，你看下证书的过期时间呢
+**客户**：这边看有一条是还没补完，公司信息这些也要填吗？
+**客服**：查看您提交的免费证书订单，直接用代申请免费证书就可以，不用您再手动补全，再验证了。您可以在 [域名管理] 中，点击您想要配置https的域名右侧的 [配置] 按钮，在新的页面中，在 [https配置] 下点击 [修改配置] ,点击开启->免费证书→勾选 [同意七牛云代申请免费证书] →确认，之后输入您账号的密码即可。域名管理：https://portal.qiniu.com/cdn/domain
+**客户**：可以电话沟通下吗？没找到具体位置[图片]
+**客户**：刚刚已经提交了
+**客服**：等待配置完成就可以了
+**客服**：更新完成了哈
+**客户**：如果90天后到期了，再如何续？也是同样的方法吗
+**客服**：您好，是的，同样的方法，代理申请证书就可以。
+**客户**：已经解决！感谢
+
+### 根本原因分析
+
+需要系统后台异步处理
+
+---
+
+## 免费 from 自动催单
+
+**问题分类**: CDN｜证书问题
+
+### 问题描述
+
+长时间处于免费证书申请环节
+
+### 客服解答
+
+您好，请稍等；您好，您使用的是一键升级 https，该操作需要七牛帮您申请一个免费的 ssl 证书， 当前证书正在等待CA机构颁发，期间您不要操作 ssl 证书服务，一般会在 2 小时左右处理升级完成，请耐心等待。；域名存在caa记录，删除或停用下，影响证书签发了[图片]；[更多对话内容见详细描述]
+
+### 详细对话过程
+
+**客户**：长时间处于免费证书申请环节
+**客服**：您好，请稍等
+**客服**：您好，您使用的是一键升级 https，该操作需要七牛帮您申请一个免费的 ssl 证书， 当前证书正在等待CA机构颁发，期间您不要操作 ssl 证书服务，一般会在 2 小时左右处理升级完成，请耐心等待。
+**客户**：我昨天就申请了，一直卡着的
+**客服**：稍等
+**客服**：域名存在caa记录，删除或停用下，影响证书签发了[图片]
+**客户**：好的，已停用
+**客服**：好的，需要等待下ca那边审核签发证书，稍等下
+**客服**：您好，配置已完成
+**客户**：好的，非常感谢
+
+### 根本原因分析
+
+CDN证书配置或域名绑定问题
+
+---
+

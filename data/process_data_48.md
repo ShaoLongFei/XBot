@@ -1,6 +1,6 @@
 # 客服问答数据集 - Part 48
 
-本文档包含 80 个客服问答记录，已进行结构化处理和隐私脱敏。
+本文档包含 90 个客服问答记录，已进行结构化处理和隐私脱敏。
 
 ---
 
@@ -1843,6 +1843,339 @@ SSL证书过期，需要续期或申请新证书
 **客服**：您好请稍等，这边看下
 **客服**：您好，抱歉让您久等了，已经处理完成，您确认下。
 **客户**：收到
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## 免费 from 自动催单
+
+**问题分类**：CDN｜证书问题
+
+### 问题描述
+
+长时间处于免费证书申请环节
+
+### 客服解答
+
+**客户**：长时间处于免费证书申请环节
+**客服**：您好请稍等，这边看下
+**客服**：您好，抱歉让您久等了，已经处理完成，您确认下。
+**客户**：好的，可以了
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## 账号注销
+
+**问题分类**：账户与财务｜账户问题
+
+### 问题描述
+
+申请注销
+
+### 客服解答
+
+**客户**：申请注销
+**客服**：您好，目前注销可以在控制台操作[REDACTED_URL]
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## 为什么会报错：无法访问未定义的数据z2
+
+**问题分类**：对象存储｜上传下载
+
+### 问题描述
+
+这边网络请求是成功的，但是显示上传失败配置代码：代码：const handleBeforeUpload = async (file) => {  console.log(file.type)  try {    const isValidType =      props.fileType === 'image'        ? QINIU_CONFIG.imageTypes.includes(file.type)        : QINIU_CONFIG.videoTypes.includes(file.type)    if (!isValidType) {      ElMessage.error(        `只能上传${props.fileType === 'image' ? 'JPG/PNG 格式图片' : 'MP4 格式视频'}`,      )      return false    }    if (file.size > QINIU_CONFIG.maxSize) {      ElMessage.error(        `文件大小不能超过 ${QINIU_CONFIG.maxSize / 1024 / 1024}MB`,      )      return false    }    const { data: token } = await getUploadToken()    if (!token) {      throw new Error('获取上传令牌失败')    }    const suffix = file.name.substring(file.name.lastIndexOf('.'))    const key = `uploads/${props.fileType}/${Date.now()}-${Math.random().toString(36).slice(-6)}${suffix}`    const putExtra = {}    const config = {      useCdnDomain: true,      region: region[QINIU_CONFIG.region],    }    const observable = upload(file, key, token, putExtra, config)    const observer = {      next(res) {        uploadProgress.value = Math.floor(res.total.percent)      },      error(err) {        console.error('上传错误:', err)        ElMessage.error('上传失败')        uploadProgress.value = 0      },      complete(res) {        fileUrl.value = `[REDACTED_URL]        console.log(fileUrl.value)        ElMessage.success('上传成功')        emit('upload-success', fileUrl.value)        uploadProgress.value = 100      },    }    const subscription = observable.subscribe(observer)  } catch (error) {    console.error('上传错误:', error)    ElMessage.error('上传失败')    uploadProgress.value = 0  }  return false}
+
+### 客服解答
+
+**客户**：[图片]这边网络请求是成功的，但是显示上传失败配置代码：[图片]代码：const handleBeforeUpload = async (file) => {  console.log(file.type)  try {    const isValidType =      props.fileType === 'image'        ? QINIU_CONFIG.imageTypes.includes(file.type)        : QINIU_CONFIG.videoTypes.includes(file.type)    if (!isValidType) {      ElMessage.error(        `只能上传${props.fileType === 'image' ? 'JPG/PNG 格式图片' : 'MP4 格式视频'}`,      )      return false    }    if (file.size > QINIU_CONFIG.maxSize) {      ElMessage.error(        `文件大小不能超过 ${QINIU_CONFIG.maxSize / 1024 / 1024}MB`,      )      return false    }    const { data: token } = await getUploadToken()    if (!token) {      throw new Error('获取上传令牌失败')    }    const suffix = file.name.substring(file.name.lastIndexOf('.'))    const key = `uploads/${props.fileType}/${Date.now()}-${Math.random().toString(36).slice(-6)}${suffix}`    const putExtra = {}    const config = {      useCdnDomain: true,      region: region[QINIU_CONFIG.region],    }    const observable = upload(file, key, token, putExtra, config)    const observer = {      next(res) {        uploadProgress.value = Math.floor(res.total.percent)      },      error(err) {        console.error('上传错误:', err)        ElMessage.error('上传失败')        uploadProgress.value = 0      },      complete(res) {        fileUrl.value = `[REDACTED_URL]        console.log(fileUrl.value)        ElMessage.success('上传成功')        emit('upload-success', fileUrl.value)        uploadProgress.value = 100      },    }    const subscription = observable.subscribe(observer)  } catch (error) {    console.error('上传错误:', error)    ElMessage.error('上传失败')    uploadProgress.value = 0  }  return false}
+**客户**：上传空间是zhentaojiaoyu
+**客服**：您好您那边使用的是什么语言的SDK？
+**客户**：vue文件中使用的js
+**客户**：js
+**客服**：您好vue 上传可以参考下这个示例demo：vue-demo.zip
+**客户**：那你知道这个报错是怎么回事吗SDK是js语言
+**客户**：就这个报错[图片]
+**客户**：这个只有存储空间哪里有一个z2，其他地方没有设置z2，也没出现z2
+**客服**：您好从报错看是 z2 参数未定义，看着是您的vue环境引入js SDK后加载不到相关依赖函数引起的。如果是vue上传可以参考下前面给您的示例
+**客户**：下载解压的时候显示客户端没有所需的特权
+**客服**：您引入的js sdk是哪个版本
+**客户**：这个解决了打开了但是引入qiniu.js的时候的是空的[图片][图片]
+**客服**：用这个方式引入 [REDACTED_URL]
+**客户**：还是那样，没变化[图片]配置的也配置了[图片][图片]
+**客户**：第85行的报错还是和一开始说的那个一样[图片]
+**客户**：这怎么整，都是按文档上去下载和导入的，就是没有region一直为空
+**客服**：这边确认下 请稍等
+**客户**：下载的版本[图片]都没错吧，这是什么情况
+**客服**：这边确认下 请稍等
+**客服**：您好，sdk本身只需要传token 和 file 就可以上传了。 sdk 会根据token 来自动判断 具体 上传region，不需要手动指定。 [图片]
+**客服**：您好，qiniu.upload 的config参数也可以设置region 。这些都是有代码提示的。 [图片]
+**客户**：js的SDK对node版本有要求吗
+**客户**：现在是我在引入upload后，打印出来为空我卸载重新下载和删除node包再下载都试过了，还是显示为空
+**客户**：用这种方法引入后import * as qiniu from 'qiniu-js'打印出来的都是这样的：[图片]
+**客服**：您好，nodejs sdk 和 web用的sdk 是不一样的。上面你发的截图中显示 createDirect ... 这些是 4.x 版本的sdk 。可以降低版本到 3.x ，之后正常按照文档 使用 qiniu.upload 接口即可
+**客户**：谢谢
+**客服**：没事的
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## 不能下载
+
+**问题分类**：对象存储｜上传下载
+
+### 问题描述
+
+页面右键下载文件失败外链地址：[REDACTED_URL] to open page
+
+### 客服解答
+
+**客户**：页面右键下载文件失败外链地址：[REDACTED_URL] to open page
+**客服**：您好这边测试可以正常访问下载，您那边 提示：Failed to open page  这个是在哪个页面点击下载出现的？
+**客户**：[REDACTED_URL]  这个页面，点击更多-下载，会打开新tab，显示failed
+**客服**：您好麻烦右键打开检查模式，然后再操作点击下载，复现后给下network中的错误信息，这边看下
+**客户**：换了个网络可以了。谢谢
+**客服**：您好好的
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## 免费 from 自动催单
+
+**问题分类**：CDN｜证书问题
+
+### 问题描述
+
+长时间处于免费证书申请环节
+
+### 客服解答
+
+**客户**：长时间处于免费证书申请环节
+**客服**：您好，抱歉让您久等了，已经处理完成，您确认下。
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## exceed connection limit
+
+**问题分类**：对象存储｜上传下载
+
+### 问题描述
+
+[REDACTED_URL]
+
+### 客服解答
+
+**客户**：[REDACTED_URL]
+**客户**："error": "exceed connection limit"
+**客服**：您好请稍等，这边看下
+**客户**：现在这个空间，只要加后缀就都无法访问了。
+**客户**：都返回："error": "exceed connection limit"
+**客户**：怎么样啦
+**客服**：您好看下来是触发图片处理策略限制了，具体原因还在确认中
+**客户**：有没有什么手段先放开限制，慢慢查原因
+**客户**：难道是有违规内容么？ 我们现在流程是这样的：上传图片-》审核-》删除违规内容。
+**客服**：您好后端已经在处理了，有进展这边及时同步过来
+**客服**：您好非常抱歉久等了，目前测试正常了，您那边再观察看下
+**客户**：可以了，什么原因？
+**客服**：您好具体原因内部还在确定，有进展这边及时同步您
+**客户**：ok
+**客服**：嗯嗯好的还请耐心等待一下
+
+### 根本原因分析
+
+服务访问异常，可能是网络、配置或临时故障
+
+---
+
+## 无法访问图片
+
+**问题分类**：CDN｜访问下载
+
+### 问题描述
+
+访问这个bucket资源不定期出现大量的    "error": "exceed connection limit"过段十几二十分钟时间自动恢复这是抓到的其中一个请求标头GET /mote_img/FmwHgIJmQo7Fv8TOJWWQj3C-_xI8-default HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Cache-Control: max-age=0
+Connection: keep-alive
+Cookie: Hm_lvt_1eb6bae4a6c3f9f739a74410951500f8=1730561339
+Host: imgpro.wangpai.cc
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/[REDACTED_IP] Safari/537.36 Edg/[REDACTED_IP]
+sec-ch-ua: "Microsoft Edge";v="129", "Not=A?Brand";v="8", "Chromium";v="129"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"响应标头HTTP/1.1 472 status code 472
+Server: JSP3/2.0.14
+Date: Mon, 04 Nov 2024 14:38:38 GMT
+Content-Type: application/json
+Content-Length: 35
+Connection: keep-alive
+Accept-Ranges: none
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: X-Log, X-Reqid
+Access-Control-Max-Age: 2592000
+X-Log: X-Log
+X-M-Log: QNM:yzh160;SRCPROXY:yzh173;SRC:34/472;SRCPROXY:34/472;QNM3:35/472
+X-M-Reqid: fDMAAGVgyVTIygQY
+X-Qnm-Cache: Miss
+X-Reqid: psYAAACTFlXIygQY
+X-Resp-Code: 490
+X-Svr: IO
+Ohc-Cache-HIT: jn14cm78 [1], suzix78 [1]
+Ohc-File-Size: 35
+X-Error-Info: Origin
+X-Cache-Status: MISS请求 URL:[REDACTED_URL] status code 472远程地址:[2409:8c3c:900:2::78dd:8a29]:443引用站点策略:strict-origin-when-cross-origin
+
+### 客服解答
+
+**客户**：访问这个bucket资源不定期出现大量的    "error": "exceed connection limit"过段十几二十分钟时间自动恢复这是抓到的其中一个请求标头GET /mote_img/FmwHgIJmQo7Fv8TOJWWQj3C-_xI8-default HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Cache-Control: max-age=0
+Connection: keep-alive
+Cookie: Hm_lvt_1eb6bae4a6c3f9f739a74410951500f8=1730561339
+Host: imgpro.wangpai.cc
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/[REDACTED_IP] Safari/537.36 Edg/[REDACTED_IP]
+sec-ch-ua: "Microsoft Edge";v="129", "Not=A?Brand";v="8", "Chromium";v="129"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"响应标头HTTP/1.1 472 status code 472
+Server: JSP3/2.0.14
+Date: Mon, 04 Nov 2024 14:38:38 GMT
+Content-Type: application/json
+Content-Length: 35
+Connection: keep-alive
+Accept-Ranges: none
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: X-Log, X-Reqid
+Access-Control-Max-Age: 2592000
+X-Log: X-Log
+X-M-Log: QNM:yzh160;SRCPROXY:yzh173;SRC:34/472;SRCPROXY:34/472;QNM3:35/472
+X-M-Reqid: fDMAAGVgyVTIygQY
+X-Qnm-Cache: Miss
+X-Reqid: psYAAACTFlXIygQY
+X-Resp-Code: 490
+X-Svr: IO
+Ohc-Cache-HIT: jn14cm78 [1], suzix78 [1]
+Ohc-File-Size: 35
+X-Error-Info: Origin
+X-Cache-Status: MISS请求 URL:[REDACTED_URL] status code 472远程地址:[2409:8c3c:900:2::78dd:8a29]:443引用站点策略:strict-origin-when-cross-origin
+**客户**：访问截图目前这个bucket大量图片看不到[图片]
+**客户**：另一个bucket 也出现问题[REDACTED_URL]
+**客服**：您好请稍等，这边看下
+**客户**：源文件可以，加上图片样式后缀就不行了
+**客户**：[REDACTED_URL]  这个的源文件[REDACTED_URL] 可以访问
+**客户**：[REDACTED_URL]  这个去掉图片样式，在控制台是可以看到的
+**客服**：您好看下来是触发图片处理策略限制了，具体原因还在确认中
+**客户**：我看任务队列正常，这个问题已经连续三天出现了
+**客服**：您好带图片样式的访问请求不会进队列任务，是同步处理的。已经反馈后端在确定了，有进展会及时同步您
+**客户**：好的，难得能抓住这次机会，请及时处理，再复现就不太容易了
+**客户**：访问恢复正常了，是否已经定位到问题？
+**客服**：您好非常抱歉久等了，目前正常了，您那边再观察看看具体原因还在内部确认中
+**客户**：好的，看还会不会复现
+**客服**：您好嗯嗯
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## 文件访问返回472
+
+**问题分类**：对象存储｜上传下载
+
+### 问题描述
+
+访问文件返回 code 472
+
+### 客服解答
+
+**客户**：访问文件返回 code 472 [图片]
+**客服**：您好请稍等，这边看下
+**客户**：麻烦快一点，急！生产在用的从今天8点开始的之前的都没有问题没有做任何改变
+**客服**：您好非常抱歉久等了，目前测试正常了，您那边再观察看看
+**客户**：什么原因呢？
+**客服**：您好具体原因内部还在确定，有进展这边及时同步您
+**客户**：还没有确定好吗？
+**客服**：产品侧在核查确认中 确认好后我们会及时同步您的 辛苦耐心等待
+**客户**：?
+**客服**：您好，由于非工作日时间，相关专员不在线，这边记录下，下个工作日为您跟进确认下最新进展。抱歉还需要您耐心等待下
+**客户**：？
+**客服**：稍等
+**客服**：您好，久等了内部复盘，是有异常请求导致图片服务资源被占满，影响到了图片处理服务，我们会已对此特殊情况进行处理优化。抱歉给您带来的不便，后续您可以再观察下
+
+### 根本原因分析
+
+具体问题需要根据日志和配置进一步分析
+
+---
+
+## 账号注销
+
+**问题分类**：账户与财务｜账户问题
+
+### 问题描述
+
+不想用了
+
+### 客服解答
+
+**客户**：不想用了
+**客服**：您好，目前注销可以在控制台操作[REDACTED_URL]
+
+### 根本原因分析
+
+SSL证书配置问题
+
+---
+
+## 修改 HTTPS 配置
+
+**问题分类**：CDN｜配置问题
+
+### 问题描述
+
+修改 HTTPS 配置 不生效，一直处理中。
+
+### 客服解答
+
+**客户**：修改 HTTPS 配置 不生效，一直处理中。
+**客服**：您好请稍等，这边看下
+**客服**：您好，抱歉让您久等了，已经处理完成，您确认下。
+**客户**：可以了
 
 ### 根本原因分析
 

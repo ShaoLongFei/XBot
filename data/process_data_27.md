@@ -1419,3 +1419,196 @@ upload makeupImg failed:invalid upload token, format error只看到了ak和sk，
 
 ---
 
+## 账号给盗刷流量问题   处理不了麻烦给能负责的人联系方式
+
+**分类**：账户与财务｜计费问题
+
+### 问题描述
+
+账号给盗刷流量问题   处理不了麻烦给能负责的人联系方式
+
+### 客服解答
+
+1. 您好给下您的联系方式 这边同步商务联系您
+
+### 根本原因
+
+服务被恶意利用或出现异常访问
+
+---
+
+## 手机h5端怎么切换到听筒外放
+
+**分类**：实时互动｜RTC线上问题
+
+### 问题描述
+
+手机h5端怎么切换到听筒外放我目前用的websdk
+
+### 客服解答
+
+1. 您好，您稍等这边帮您确认一下
+2. 您好，web端没有相关的接口 。 目前是声音很小吗？
+3. 您好，还请耐心等待一下这边为您确认一下的
+...（共8条回复）
+
+### 根本原因
+
+需要进一步技术支持或业务咨询
+
+---
+
+## 修改登录手机号
+
+**分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+修改登录手机号为：[已脱敏]
+
+### 客服解答
+
+客服正在处理中
+
+### 根本原因
+
+需要进一步技术支持或业务咨询
+
+---
+
+## 视频打开后拖动进度条 卡顿 加载慢
+
+**分类**：CDN｜访问下载
+
+### 问题描述
+
+浏览器打开 外链播放视频卡顿 加载慢
+
+### 客服解答
+
+1. 您好，尝试先预取下文件看下呢预取方法请参考：1. api 接口地址：[已脱敏URL] portal.qiniu.com 控制台进行资源预取，点击左侧融合cdn => 刷新预取3. url 资源预取，全网生效 10min 左右
+
+### 根本原因
+
+需要进一步技术支持或业务咨询
+
+---
+
+## 在更换手机号操作中以下邮箱收不到验证码
+
+**分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+在更换手机号操作中以下邮箱收不到验证码[已脱敏]
+
+### 客服解答
+
+1. 您好，看起来是发送成功了的，在垃圾邮件看看
+2. 您好，您这边将收信息的手机号给一下这边看下
+3. 您好，这边后台看是发送成功的，您这边还是收不到的话，可以看下提供一下账号认证人员手持身份证照片，这边将验证码信息转给您确认一下的
+...（共4条回复）
+
+### 根本原因
+
+用户忘记登录凭证
+
+---
+
+## 怎么设置Cross-Origin-Resource-Policy
+
+**分类**：对象存储｜其他类咨询
+
+### 问题描述
+
+你好，因为我们的项目嵌入另一个项目的界面，需要开启跨域隔离，将[已脱敏密钥]（COEP）策略设置为require-corp，这样我们项目访问七牛云的图片就报错了，需要在七牛云上设置开启[已脱敏密钥]（CORP）响应头，但七牛云的跨域策略是下拉选择的，没找到这一项的配置，请问应该怎么处理
+
+### 客服解答
+
+1. 您好，麻烦将需要配置的域名以及需配置的 键 值 提供下，这边人工处理
+2. 需配置域名提供下
+3. 您好已为 imgs.beihest.com 添加响应头  [已脱敏密钥] 为cross-origin  预计5min左右生效，您稍后测试看下
+
+### 根本原因
+
+系统错误或配置问题
+
+---
+
+## 短信发送失败
+
+**分类**：云短信｜其他类咨询
+
+### 问题描述
+
+[已脱敏手机号][已脱敏手机号][已脱敏手机号]MA:0006(查看错误码)NE:0105(查看错误码)NE:0105(查看错误码)您好，多个号码短信出现如上报错信息，请问什么原因？
+
+### 客服解答
+
+1. 稍等下，这边核实下
+2. 您好，错误代码: NE:0105，[已脱敏]，手机停机了错误信息: MA:0006，教育签名有拦截，已经重新给您调整
+
+### 根本原因
+
+系统错误或配置问题
+
+---
+
+## 更换覆盖节点卡住
+
+**分类**：CDN｜配置问题
+
+### 问题描述
+
+avicone.comwww.avicone.com更换覆盖节点卡住
+
+### 客服解答
+
+1. 您好这边帮您手动介入处理下 请稍等
+2. 您好已经处理完成
+
+### 根本原因
+
+需要进一步技术支持或业务咨询
+
+---
+
+## CNAME配置
+
+**分类**：CDN｜配置问题
+
+### 问题描述
+
+配置时 主机记录怎么填写才能配置成功
+
+### 客服解答
+
+1. 您好，稍等
+
+### 根本原因
+
+需要进一步技术支持或业务咨询
+
+---
+
+## 为什么总是上传失败
+
+**分类**：对象存储｜上传下载
+
+### 问题描述
+
+Mac mac = new Mac(accessKey, secretKey);//鉴权对象                               // 空间名                string Bucket = "rhpdf";                // 设置上传策略                PutPolicy putPolicy = new PutPolicy();                putPolicy.Scope = Bucket + ":" + key;                putPolicy.SetExpires(3600);                string token = Auth.CreateUploadToken(mac, putPolicy.ToJsonString());                Config config = new Config();                // 设置上传区域                config.Zone = Zone.ZONE_CN_North;                // 设置 http 或者 https 上传                config.UseHttps = true;                config.UseCdnDomains = true;                config.ChunkSize = ChunkUnit.U512K;                ResumableUploader target = new ResumableUploader(config);                PutExtra extra = new PutExtra();                //设置断点续传进度记录文件                extra.ResumeRecordFile = ResumeHelper.GetDefaultRecordKey(filePath, key);                Console.WriteLine("record file:" + extra.ResumeRecordFile);                extra.ResumeRecordFile = "test.progress";                //指定分片上传版本，默认分片上传 v1                extra.Version = "v2";                // 分片上传 v2 指定 part 大小，默认大小为4MB 分片大小范围为1 MB - 1 GB                extra.PartSize = 4 * 1024 * 1024;                // 指定分片并发大小，默认为1                 extra.BlockUploadThreads = 4;                HttpResult result = target.UploadFile(filePath, key, token, extra);                                labmess.Text = result.ToString();                Console.WriteLine("resume upload: " + result.ToString());                this.txtURL.Text = qnURL + "/" + key;
+
+### 客服解答
+
+1. 您好，错误看是 Waithandle 数组问题，您检查下这个数组传参呢
+2. 去掉  extra.BlockUploadThreads = 4; 上传试下
+3. [已脱敏URL]
+...（共6条回复）
+
+### 根本原因
+
+系统错误或配置问题
+
+---
+
